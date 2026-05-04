@@ -814,7 +814,7 @@
 
   /* ====== ABOUT ====== */
   .about {
-    background: var(--off-white);
+    background: var(--paper);
     border-top: 1px solid var(--border-soft);
     border-bottom: 1px solid var(--border-soft);
   }
@@ -867,7 +867,9 @@
 
   /* ====== PARTNERSHIP CALLOUT ====== */
   .partnership-callout {
-    background: var(--paper);
+    background: var(--off-white);
+    border-top: 1px solid var(--border-soft);
+    border-bottom: 1px solid var(--border-soft);
   }
 
   /* P1-P4 partnership cards in a single row */
@@ -898,7 +900,7 @@
 
   /* Featured pilot (Sense 2026) */
   .featured-pilot {
-    background: var(--off-white);
+    background: var(--paper);
     border: 1px solid rgba(201, 169, 97, 0.55);
     border-radius: 14px;
     padding: 40px 42px;
@@ -906,6 +908,27 @@
     position: relative;
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(201, 169, 97, 0.08), 0 14px 36px rgba(31, 78, 121, 0.06);
+  }
+
+  .pilot-visual {
+    margin: 6px 0 30px;
+    padding: 24px 28px;
+    background: var(--off-white);
+    border: 1px solid var(--border-soft);
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pilot-visual svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-width: 600px;
+  }
+
+  @media (max-width: 540px) {
+    .pilot-visual { padding: 20px 18px; }
   }
 
   .featured-pilot::before {
@@ -1489,6 +1512,45 @@
       <p class="pilot-tagline">Query to quote in a minute.</p>
       <p class="pilot-desc">Today, a customer's technical question routes through a senior expert and waits two or three days for a reply. <strong>Sense brings that down to minutes.</strong> Your team asks in plain English, gets a draft with cited sources pulled from your own documents and past answers, and sends after a quick review. Each reply quietly trains the system, so the next colleague who asks something similar gets the answer instantly.</p>
       <p class="pilot-desc">Your data stays on your server. The software runs as a single self-contained install, free to evaluate, with a tailored advisor file backing the workflows that matter to your business. The prototype backbone is ready, and I'm recruiting design partners for a <strong>4-week build phase plus a 30-day trial program</strong>. Built for teams writing the same answer to different customers every other week, while those customers wait days for what already exists somewhere in the company. If that sounds like yours, bring one real workflow and test the prototype against your hardest week.</p>
+
+      <div class="pilot-visual">
+        <svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Where your data lives: inside your server, with external LLMs and connectors off by default">
+          <text x="0" y="16" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10" letter-spacing="1.8" font-weight="700" fill="#C9A961">WHERE YOUR DATA LIVES</text>
+
+          <rect x="0" y="38" width="270" height="110" rx="6" fill="#FAFAF7" stroke="#1F4E79" stroke-opacity="0.4" stroke-width="1.2"/>
+          <text x="18" y="60" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10" letter-spacing="1.8" font-weight="700" fill="#1F4E79">YOUR SERVER</text>
+
+          <circle cx="30" cy="92" r="3.5" fill="#C9A961"/>
+          <text x="42" y="96" font-family="Georgia, serif" font-size="13" fill="#1F4E79">Data</text>
+
+          <circle cx="98" cy="92" r="3.5" fill="#C9A961"/>
+          <text x="110" y="96" font-family="Georgia, serif" font-size="13" fill="#1F4E79">AI models</text>
+
+          <circle cx="206" cy="92" r="3.5" fill="#C9A961"/>
+          <text x="218" y="96" font-family="Georgia, serif" font-size="13" fill="#1F4E79">Audit</text>
+
+          <text x="18" y="130" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" font-style="italic" fill="#5A5A54">Sense lives here. Your data never leaves.</text>
+
+          <line x1="270" y1="90" x2="330" y2="90" stroke="#8B8B83" stroke-opacity="0.5" stroke-width="1" stroke-dasharray="3 3"/>
+          <text x="278" y="84" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="9" font-style="italic" fill="#8B8B83">opt-in</text>
+
+          <rect x="330" y="42" width="260" height="106" rx="6" fill="none" stroke="#8B8B83" stroke-opacity="0.45" stroke-dasharray="4 3" stroke-width="1"/>
+          <text x="348" y="64" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10" letter-spacing="1.8" font-weight="700" fill="#8B8B83">EXTERNAL</text>
+
+          <text x="348" y="84" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="9" letter-spacing="1.2" font-weight="600" fill="#8B8B83">LLMS</text>
+          <text x="348" y="100" font-family="Georgia, serif" font-size="12" fill="#5A5A54">OpenAI · Anthropic · Gemini</text>
+
+          <text x="348" y="120" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="9" letter-spacing="1.2" font-weight="600" fill="#8B8B83">CONNECTORS</text>
+          <text x="348" y="136" font-family="Georgia, serif" font-size="12" fill="#5A5A54">Gmail · Slack · Drive · SharePoint · CRM</text>
+
+          <text x="348" y="158" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10" font-style="italic" fill="#8B8B83">Off by default · admin-enabled</text>
+
+          <line x1="0" y1="180" x2="590" y2="180" stroke="#EFEAD9" stroke-width="1"/>
+
+          <text x="0" y="206" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" font-style="italic" fill="#5A5A54">No vendor cloud. No data egress. No SaaS account to compromise.</text>
+        </svg>
+      </div>
+
       <div class="pilot-ctas">
         <a class="pilot-cta pilot-cta-primary" href="https://calendar.app.google/Dz9ut3khMGarLtYA7" target="_blank" rel="noopener noreferrer">
           Book a pilot call
