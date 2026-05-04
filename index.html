@@ -870,6 +870,32 @@
     background: var(--paper);
   }
 
+  /* P1-P4 partnership cards in a single row */
+  .partnership-callout .services-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .partnership-callout .service-card {
+    padding: 32px 26px;
+  }
+
+  .partnership-callout .service-body {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  @media (max-width: 960px) {
+    .partnership-callout .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 540px) {
+    .partnership-callout .services-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
   /* Featured pilot (Sense 2026) */
   .featured-pilot {
     background: var(--off-white);
@@ -1591,9 +1617,9 @@
 <section id="contact" class="contact">
   <div class="contact-inner">
     <div class="eyebrow">Let's talk</div>
-    <h2 class="contact-title">An email is the best way to start.</h2>
+    <h2 class="contact-title">Whichever way works for you.</h2>
     <p class="contact-lead">
-      I read every one myself, with replies usually within two working days. Write in any language. Korean, English, and Dutch are easiest for me, but a real clue to a problem usually carries across whatever language it arrives in.
+      Every channel reaches me directly, with replies usually within two working days. Write or speak in any language. Korean, English, and Dutch are easiest for me, but a real clue to a problem usually carries across whatever language it arrives in.
     </p>
 
     <div class="contact-grid contact-grid-primary">
