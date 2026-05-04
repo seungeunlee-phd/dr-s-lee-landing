@@ -103,6 +103,22 @@
 
   .topbar nav a:hover { color: var(--navy); }
 
+  .topbar nav a[aria-current="page"] {
+    color: var(--gold);
+    position: relative;
+  }
+
+  .topbar nav a[aria-current="page"]::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.7;
+  }
+
   @media (max-width: 720px) {
     .topbar nav { display: none; }
   }
@@ -204,7 +220,87 @@
     color: var(--gold);
     font-size: 14px;
     letter-spacing: 0.5px;
-    margin-bottom: 48px;
+    margin-bottom: 24px;
+  }
+
+  .hero-promo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+    padding: 10px 18px 10px 14px;
+    background: rgba(201, 169, 97, 0.10);
+    border: 1px solid rgba(201, 169, 97, 0.35);
+    border-radius: 999px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    max-width: 100%;
+  }
+
+  .hero-promo:hover {
+    background: rgba(201, 169, 97, 0.18);
+    border-color: rgba(201, 169, 97, 0.55);
+    transform: translateY(-1px);
+  }
+
+  .hero-promo-pulse {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .hero-promo-pulse::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: var(--gold);
+    opacity: 0.4;
+    animation: heroPulse 2s ease-out infinite;
+  }
+
+  @keyframes heroPulse {
+    0% { transform: scale(0.5); opacity: 0.55; }
+    100% { transform: scale(1.6); opacity: 0; }
+  }
+
+  .hero-promo-tag {
+    font-size: 10px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .hero-promo-text {
+    color: var(--cream);
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .hero-promo svg {
+    width: 14px;
+    height: 14px;
+    color: var(--gold);
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  .hero-promo:hover svg {
+    transform: translateX(3px);
+  }
+
+  @media (max-width: 540px) {
+    .hero-promo {
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 12px 16px;
+    }
+    .hero-promo-text { white-space: normal; }
   }
 
   .hero-ctas {
@@ -349,6 +445,55 @@
     color: var(--text-medium);
     line-height: 1.7;
   }
+
+  .service-note {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-soft);
+    text-decoration: none;
+    color: var(--navy);
+    transition: gap 0.2s ease;
+  }
+
+  .service-note:hover { gap: 14px; }
+
+  .service-note-tag {
+    font-size: 9px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 700;
+    background: rgba(201, 169, 97, 0.12);
+    padding: 4px 9px;
+    border-radius: 999px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .service-note-text {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 13.5px;
+    color: var(--navy);
+    flex: 1;
+    line-height: 1.4;
+    transition: color 0.2s ease;
+  }
+
+  .service-note:hover .service-note-text { color: var(--gold); }
+
+  .service-note svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    color: var(--gold);
+    transition: transform 0.2s ease;
+  }
+
+  .service-note:hover svg { transform: translateX(2px); }
 
   /* ====== WHY THIS COMBINATION IS RARE ====== */
   .why-rare {
@@ -556,6 +701,17 @@
     line-height: 1.7;
   }
 
+  .dip-location {
+    font-size: 11px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    font-weight: 500;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border-soft);
+  }
+
   @media (max-width: 720px) {
     .diptych::before { display: none; }
     .diptych { grid-template-columns: 1fr; gap: 16px; }
@@ -707,6 +863,226 @@
   @media (max-width: 720px) {
     .about-grid { grid-template-columns: 1fr; gap: 28px; }
     .about-photo { max-width: 240px; margin: 0 auto; }
+  }
+
+  /* ====== PARTNERSHIP CALLOUT ====== */
+  .partnership-callout {
+    background: var(--paper);
+  }
+
+  /* Featured pilot (Sense 2026) */
+  .featured-pilot {
+    background: var(--off-white);
+    border: 1px solid rgba(201, 169, 97, 0.55);
+    border-radius: 14px;
+    padding: 40px 42px;
+    margin-bottom: 56px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(201, 169, 97, 0.08), 0 14px 36px rgba(31, 78, 121, 0.06);
+  }
+
+  .featured-pilot::before {
+    content: '';
+    position: absolute;
+    top: -120px;
+    right: -120px;
+    width: 360px;
+    height: 360px;
+    background: radial-gradient(circle, rgba(201, 169, 97, 0.10) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .pilot-tag {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 700;
+    background: rgba(201, 169, 97, 0.13);
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pilot-name {
+    font-family: var(--serif);
+    font-size: clamp(24px, 2.6vw, 30px);
+    color: var(--navy);
+    font-weight: 600;
+    margin-bottom: 6px;
+    letter-spacing: -0.2px;
+    position: relative;
+    z-index: 1;
+    line-height: 1.2;
+  }
+
+  .pilot-tagline {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--gold);
+    font-size: clamp(15px, 1.5vw, 17px);
+    margin-bottom: 22px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pilot-desc {
+    font-size: 15px;
+    color: var(--text-medium);
+    line-height: 1.7;
+    margin-bottom: 18px;
+    max-width: 720px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pilot-desc:last-of-type {
+    margin-bottom: 28px;
+  }
+
+  .pilot-desc strong {
+    color: var(--navy);
+    font-weight: 600;
+  }
+
+  .pilot-ctas {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pilot-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 22px;
+    border-radius: 10px;
+    font-family: var(--sans);
+    font-size: 13.5px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+  }
+
+  .pilot-cta-primary {
+    background: var(--navy);
+    color: var(--off-white);
+  }
+
+  .pilot-cta-primary:hover {
+    background: var(--navy-deep);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(31, 78, 121, 0.18);
+  }
+
+  .pilot-cta-secondary {
+    background: transparent;
+    color: var(--navy);
+    border-color: var(--border);
+  }
+
+  .pilot-cta-secondary:hover {
+    border-color: var(--navy);
+    background: rgba(31, 78, 121, 0.04);
+  }
+
+  .pilot-cta svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  @media (max-width: 540px) {
+    .featured-pilot { padding: 32px 28px; }
+  }
+
+  .callout-tags {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+
+  .callout-tag {
+    display: block;
+    padding: 24px 26px;
+    background: var(--off-white);
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text-dark);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 1px 2px rgba(31, 78, 121, 0.03);
+  }
+
+  .callout-tag:hover {
+    border-color: var(--gold);
+    transform: translateY(-2px);
+    box-shadow: 0 1px 2px rgba(201, 169, 97, 0.08), 0 12px 28px rgba(31, 78, 121, 0.06);
+  }
+
+  .callout-tag-num {
+    display: inline-block;
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--gold);
+    font-size: 13px;
+    letter-spacing: 0.4px;
+    margin-bottom: 8px;
+  }
+
+  .callout-tag-name {
+    display: block;
+    font-family: var(--serif);
+    font-size: 17px;
+    color: var(--navy);
+    font-weight: 600;
+    margin-bottom: 8px;
+    letter-spacing: -0.1px;
+  }
+
+  .callout-tag-desc {
+    display: block;
+    font-size: 13.5px;
+    color: var(--text-medium);
+    line-height: 1.55;
+  }
+
+  .callout-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--navy);
+    text-decoration: none;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    border-bottom: 1px solid rgba(201, 169, 97, 0.5);
+    padding-bottom: 4px;
+    transition: gap 0.2s ease, border-color 0.2s ease;
+  }
+
+  .callout-link:hover {
+    gap: 14px;
+    border-bottom-color: var(--gold);
+  }
+
+  .callout-link svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.2s ease;
+  }
+
+  .callout-link:hover svg {
+    transform: translateX(2px);
   }
 
   /* ====== CONTACT ====== */
@@ -902,6 +1278,7 @@
     <nav aria-label="Main navigation">
       <a href="#practice">Practice</a>
       <a href="#background">Background</a>
+      <a href="#partnership">Partnership</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -937,7 +1314,17 @@
       Strategy, technical operations, and capability building in biotech, genomics, and diagnostics.
     </p>
 
-    <p class="hero-sig">Dr. Seungeun Lee, PhD &nbsp;·&nbsp; Founder, Dr. S. Lee Life Sciences</p>
+    <p class="hero-sig">Seungeun Lee, PhD &nbsp;·&nbsp; Founder &amp; Principal, Dr. S. Lee Life Sciences</p>
+
+    <a href="#partnership" class="hero-promo" aria-label="Sense 2026 pilot and partnership opportunities">
+      <span class="hero-promo-pulse" aria-hidden="true"></span>
+      <span class="hero-promo-tag">Recruiting now</span>
+      <span class="hero-promo-text">Sense 2026 pilot &nbsp;·&nbsp; partnership tracks open</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="5" y1="12" x2="19" y2="12"/>
+        <polyline points="12 5 19 12 12 19"/>
+      </svg>
+    </a>
 
     <div class="hero-ctas">
       <a class="btn btn-primary" href="https://calendar.app.google/Dz9ut3khMGarLtYA7" target="_blank" rel="noopener noreferrer">
@@ -987,6 +1374,14 @@
         <div class="service-num">03</div>
         <h3 class="service-title">Digital Infrastructure</h3>
         <p class="service-body">Database architecture, LIMS and Biobank system design, sales and operations data platforms (Agentic AI, Python, R, SAP, Power BI).</p>
+        <a href="#partnership" class="service-note" aria-label="See Sense 2026 pilot in Partnership section">
+          <span class="service-note-tag">Active pilot</span>
+          <span class="service-note-text">Sense 2026: technical query to quote in a minute in life science industry</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
       </article>
 
       <article class="service-card">
@@ -1072,38 +1467,43 @@
       <article class="dip-item both">
         <span class="dip-tag">Both tracks</span>
         <div class="dip-period">May 2026 – Current</div>
-        <div class="dip-org">Dr. S. Lee Life Sciences, Nieuw-Vennep</div>
+        <div class="dip-org">Dr. S. Lee Life Sciences</div>
         <div class="dip-role">Founder &amp; Principal Consultant</div>
         <p class="dip-detail">Independent advisory across commercial strategy, technical operations, digital infrastructure, training, and scientific writing. Engagements with biotech, genomics, and diagnostics teams building across EMEA and Asia.</p>
+        <div class="dip-location">Nieuw-Vennep, Netherlands</div>
       </article>
 
       <article class="dip-item strat">
         <div class="dip-period">Mar 2026 – May 2026</div>
-        <div class="dip-org">Builders, Rotterdam</div>
+        <div class="dip-org">Builders</div>
         <div class="dip-role">Entrepreneur in Residence</div>
         <p class="dip-detail">Domain research, ICP definition, and customer development for an early-stage AI SaaS exploration in life sciences. Mapped senior buyer dynamics and market entry mechanisms across R&amp;D and biotech services globally.</p>
+        <div class="dip-location">Rotterdam, Netherlands</div>
       </article>
 
       <article class="dip-item both">
         <span class="dip-tag">Both tracks</span>
         <div class="dip-period">Feb 2021 – Feb 2026</div>
-        <div class="dip-org">Macrogen Europe B.V., Amsterdam</div>
-        <div class="dip-role">Senior Project Manager &nbsp;→&nbsp; Head of Project Management</div>
+        <div class="dip-org">Macrogen Europe B.V.</div>
+        <div class="dip-role">Senior Project Manager &nbsp;·&nbsp; Head of Project Management</div>
         <p class="dip-detail">EMEA commercialization of scientific innovations. B2B/B2C partnerships, pricing and branding strategy, fiscal planning, revenue forecasting. ISO-compliant systems and LIMS-based documentation. Reporting infrastructure with SAP and Power BI. Multidisciplinary leadership across sales, project management, lab operations, and bioinformatics.</p>
+        <div class="dip-location">Amsterdam, Netherlands</div>
       </article>
 
       <article class="dip-item sci">
         <div class="dip-period">Jan 2017 – Jan 2021</div>
-        <div class="dip-org">WFSR / NVWA, Wageningen</div>
+        <div class="dip-org">WFSR / NVWA</div>
         <div class="dip-role">Researcher Genomics &nbsp;·&nbsp; Data Scientist</div>
         <p class="dip-detail">Genomic surveillance of food-borne pathogenic microbes using Illumina and Nanopore sequencing, with Python, R, Docker, and Git workflows. EU Reference Laboratory inter-laboratory studies and proficiency-test evaluations on Shiga toxin–producing <em>E. coli</em>, <em>Listeria monocytogenes</em>, and pathogenic <em>E. coli</em>. Biobank database infrastructure on LIMS, RDBMS, and Jupyter.</p>
+        <div class="dip-location">Wageningen, Netherlands</div>
       </article>
 
       <article class="dip-item sci">
         <div class="dip-period">Apr 2016 – Oct 2016</div>
-        <div class="dip-org">PBL Netherlands Environmental Assessment Agency, Bilthoven</div>
+        <div class="dip-org">PBL Netherlands Environmental Assessment Agency</div>
         <div class="dip-role">Guest Researcher</div>
         <p class="dip-detail">Curated metadata to refine the GLOBIO-Aquatic Projection model. Applied R for variable analysis, regression modelling, and dataset alignment.</p>
+        <div class="dip-location">Bilthoven, Netherlands</div>
       </article>
 
       <article class="dip-item sci">
@@ -1111,6 +1511,7 @@
         <div class="dip-org">Seoul National University, Environmental Health Engineering Lab</div>
         <div class="dip-role">PhD Researcher, Public Health</div>
         <p class="dip-detail">Built a laboratory from the ground up to optimize in vitro and in silico workflows. Refined NGS data with bioinformatics tools to identify environmental pathogens and improve microbial molecular identification.</p>
+        <div class="dip-location">Seoul, Korea</div>
       </article>
 
       <article class="dip-item sci">
@@ -1118,9 +1519,71 @@
         <div class="dip-org">Genome Research Center for Diabetes and Endocrine Disease, Seoul National University Hospital</div>
         <div class="dip-role">MSc Student Researcher, Molecular Medicine and Biopharmaceutical Science</div>
         <p class="dip-detail">Molecular and clinical research on diabetes and endocrine disease. Cell culture, differentiation, and drug treatments. qPCR, bioluminescent assays, immunoblotting, and protein extraction. Cloning workflows including DNA fragment design, insertion, and digestion.</p>
+        <div class="dip-location">Seoul, Korea</div>
       </article>
 
     </div>
+  </div>
+</section>
+
+<!-- ====== PARTNERSHIP ====== -->
+<section id="partnership" class="standard partnership-callout">
+  <div class="section-inner">
+    <div class="eyebrow">Also building</div>
+    <h2 class="section-title">Looking for partners on parallel tracks.</h2>
+    <div class="section-divider"></div>
+    <p class="section-lead">
+      Alongside the consulting practice, I'm developing two early-stage initiatives in life sciences: an AI SaaS for the workflows R&amp;D and commercial teams run repeatedly, and a mentoring program around strategic skillsets and knowledge. Open to a small set of partnerships across both while they're early.
+    </p>
+
+    <article class="featured-pilot">
+      <span class="pilot-tag">Active pilot · recruiting design partners</span>
+      <h3 class="pilot-name">Sense 2026</h3>
+      <p class="pilot-tagline">Query to quote in a minute.</p>
+      <p class="pilot-desc">Today, a customer's technical question routes through a senior expert and waits two or three days for a reply. <strong>Sense brings that down to minutes.</strong> Your team asks in plain English, gets a draft with cited sources pulled from your own documents and past answers, and sends after a quick review. Each reply quietly trains the system, so the next colleague who asks something similar gets the answer instantly.</p>
+      <p class="pilot-desc">Your data stays on your server. The software runs as a single self-contained install, free to evaluate, with a tailored advisor file backing the workflows that matter to your business. The prototype backbone is ready, and I'm recruiting design partners for a <strong>4-week build phase plus a 30-day trial program</strong>. Built for teams writing the same answer to different customers every other week, while those customers wait days for what already exists somewhere in the company. If that sounds like yours, bring one real workflow and test the prototype against your hardest week.</p>
+      <div class="pilot-ctas">
+        <a class="pilot-cta pilot-cta-primary" href="https://calendar.app.google/Dz9ut3khMGarLtYA7" target="_blank" rel="noopener noreferrer">
+          Book a pilot call
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+        <a class="pilot-cta pilot-cta-secondary" href="mailto:seungeun@drsleelifesciences.com?subject=Sense%202026%20pilot">
+          Email about Sense 2026
+        </a>
+      </div>
+    </article>
+
+    <div class="services-grid">
+
+      <article class="service-card">
+        <div class="service-num">P1</div>
+        <h3 class="service-title">Design Partner</h3>
+        <p class="service-body">R&amp;D or commercial leader in biotech, genomics, diagnostics, or pharma who feels the pain of the workflows I'm building for. You give honest feedback on early prototypes. You get heavily discounted access during build, and your needs shape product direction. Sense 2026 is the first active pilot, with more topics in the pipeline.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="service-num">P2</div>
+        <h3 class="service-title">Co-builder</h3>
+        <p class="service-body">You have your own thesis about an AI tool or program in life sciences and you'd rather build it with someone than alone. Maybe a wedge into a workflow I'm not covering. Maybe complementary to one of mine. If we resonate on what's worth building and how, several shapes are possible, from project collaboration to deeper alignment.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="service-num">P3</div>
+        <h3 class="service-title">Project Engineer</h3>
+        <p class="service-body">Engineer interested in shipping bounded scope across AI tooling, data architecture, or data curation. ML or AI background welcome but not required. Strong craft in pipelines, schemas, or curation work is equally valuable. Paid contract engagement, collaboration credit. Domain context (biology, NGS, healthcare data) is a plus.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="service-num">P4</div>
+        <h3 class="service-title">Student Researcher</h3>
+        <p class="service-body">Undergrad or grad student in CS, life sciences, or related fields, looking for hands-on experience at the AI and life sciences intersection. Capstone projects, master's thesis topics, summer internships. We define the scope together; you get structured mentorship and a real project to point at.</p>
+      </article>
+
+    </div>
+
   </div>
 </section>
 
