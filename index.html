@@ -1490,7 +1490,7 @@
 
 <main id="top">
 
-<!-- ====== HERO ====== -->
+<!-- ====== HERO (visible only on Practice tab) ====== -->
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-mark">
@@ -1917,9 +1917,15 @@
       if (id === name) panel.removeAttribute('hidden');
       else panel.setAttribute('hidden', '');
     });
+    // Hero is visible only on the Practice tab
+    var hero = document.querySelector('.hero');
+    if (hero) {
+      if (name === 'practice') hero.removeAttribute('hidden');
+      else hero.setAttribute('hidden', '');
+    }
     if (opts && opts.scroll) {
-      var panel = document.getElementById(name);
-      if (panel) panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      var target = (name === 'practice') ? hero : document.getElementById(name);
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 
