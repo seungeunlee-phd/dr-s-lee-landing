@@ -129,6 +129,27 @@
     display: none !important;
   }
 
+  /* Tab content fade-in */
+  main > [role="tabpanel"]:not([hidden]) {
+    animation: tabFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .partner-panel:not([hidden]) {
+    animation: tabFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @keyframes tabFadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    main > [role="tabpanel"]:not([hidden]),
+    .partner-panel:not([hidden]) {
+      animation: none;
+    }
+  }
+
   @media (max-width: 720px) {
     .topbar-inner {
       flex-direction: column;
@@ -1423,6 +1444,18 @@
     white-space: nowrap;
   }
 
+  .contact-close {
+    margin-top: 36px;
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--cream);
+    font-size: 15px;
+    line-height: 1.6;
+    letter-spacing: 0.2px;
+    text-align: center;
+    opacity: 0.85;
+  }
+
   /* ====== FOOTER ====== */
   footer {
     background: var(--navy-deep);
@@ -1707,7 +1740,10 @@
     </h1>
 
     <p class="hero-sub">
-      Independent advisory for life sciences leaders building across EMEA and Asia. Commercial Strategy, data architecture and agentic AI infrastructure, technical operations, and capability building in biotech, genomics, and diagnostics.
+      Independent advisory for life sciences leaders building across EMEA and Asia.
+    </p>
+    <p class="hero-sub">
+      Commercial strategy, technical and scientific advisory, and digital infrastructure for biotech, genomics, and diagnostics.
     </p>
 
     <p class="hero-sig">Seungeun Lee, PhD &nbsp;·&nbsp; Founder &amp; Principal, Dr. S. Lee Life Sciences</p>
@@ -1753,10 +1789,10 @@
 <section id="practice" class="standard practice" role="tabpanel" aria-labelledby="tab-practice">
   <div class="section-inner">
     <div class="eyebrow">The practice</div>
-    <h2 class="section-title">Five overlapping areas, scoped to the engagement.</h2>
+    <h2 class="section-title">Three overlapping areas, scoped to the engagement.</h2>
     <div class="section-divider"></div>
     <p class="section-lead">
-      Most projects pull from two or three of these at once. What's rare is finding <strong>bench-level technical depth</strong>, <strong>commercial leadership</strong>, and <strong>Europe–Asia operating fluency</strong> in one person. Engagements are scoped to deliverables, with longer fractional advisory where it fits.
+      Most engagements pull from more than one. What's rare is finding <strong>bench-level technical depth</strong>, <strong>commercial leadership</strong>, and <strong>Europe–Asia operating fluency</strong> in one person. Engagements are scoped to deliverables, with longer fractional advisory where it fits.
     </p>
 
     <div class="services-grid">
@@ -1764,13 +1800,13 @@
       <article class="service-card">
         <div class="service-num">01</div>
         <h3 class="service-title">Commercial Strategy &amp; Market Entry</h3>
-        <p class="service-body">Europe–Asia go-to-market, partnership development, pricing and positioning for biotech and diagnostics.</p>
+        <p class="service-body">Europe–Asia go-to-market, partnership development, pricing, and positioning. Workshops and capability programs for commercial teams in biotech and diagnostics.</p>
       </article>
 
       <article class="service-card">
         <div class="service-num">02</div>
-        <h3 class="service-title">Technical Advisory</h3>
-        <p class="service-body">NGS workflow design and optimization across in vivo, in vitro, and in silico methods. Method validation, proficiency testing, and bioinformatics pipeline architecture.</p>
+        <h3 class="service-title">Technical &amp; Scientific Advisory</h3>
+        <p class="service-body">NGS workflow design across in vivo, in vitro, and in silico methods, with method validation and bioinformatics pipeline architecture. Peer-reviewed manuscripts, technical reports, grant proposals, and regulatory documentation. Workshops and capability programs for scientific teams.</p>
       </article>
 
       <article class="service-card">
@@ -1785,18 +1821,6 @@
             <polyline points="12 5 19 12 12 19"/>
           </svg>
         </a>
-      </article>
-
-      <article class="service-card">
-        <div class="service-num">04</div>
-        <h3 class="service-title">Training &amp; Capability Building</h3>
-        <p class="service-body">Workshops, lectures, and custom programs for scientific and commercial teams in life sciences.</p>
-      </article>
-
-      <article class="service-card">
-        <div class="service-num">05</div>
-        <h3 class="service-title">Scientific Writing &amp; Research Advisory</h3>
-        <p class="service-body">Peer-reviewed manuscripts, technical reports, grant proposals, and regulatory documentation.</p>
       </article>
 
     </div>
@@ -1942,7 +1966,7 @@
     <h2 class="section-title">Two tracks, one practice.</h2>
     <div class="section-divider"></div>
     <p class="section-lead">
-      Reading top to bottom traces the most recent work first. The visual lean shows where each role belonged: scientific and technical on the left, commercial and strategic on the right, both at the centre when one person was doing the work of two.
+      Fifteen years between research benches, regulatory bodies, and commercial leadership. The arc below reads top to bottom (most recent first), scientific work on the left, commercial on the right, both at the centre when one role demanded both.
     </p>
 
     <div class="diptych-cols" aria-hidden="true">
@@ -2085,6 +2109,9 @@
       </a>
 
     </div>
+
+    <p class="contact-close">Whether for consulting, the pilot, mentoring, or just to say hello, you decide where to start.</p>
+
   </div>
 </section>
 
