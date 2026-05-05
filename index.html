@@ -1243,18 +1243,46 @@
     .about-photo { max-width: 240px; margin: 0 auto; }
   }
 
-  .background-portrait {
+  .founder-card {
     margin: 0 auto 48px;
-    text-align: center;
-    max-width: 240px;
+    max-width: 280px;
+    padding: 18px 20px 20px;
+    background: var(--off-white);
+    border: 1px solid var(--border-soft);
+    border-radius: 14px;
+    box-shadow: 0 1px 2px rgba(31, 78, 121, 0.04), 0 6px 18px rgba(31, 78, 121, 0.05);
   }
 
-  .background-portrait img {
-    width: 100%;
+  .founder-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .founder-card-logo {
+    width: 18px;
+    height: 30px;
+    flex-shrink: 0;
+  }
+
+  .founder-card-org {
+    font-family: var(--serif);
+    font-size: 12.5px;
+    color: var(--navy);
+    letter-spacing: 0.4px;
+  }
+
+  .founder-card-photo {
     aspect-ratio: 4 / 5;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .founder-card-photo img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border-radius: 12px;
-    border: 1px solid var(--border-soft);
     display: block;
   }
 
@@ -1568,14 +1596,14 @@
 
   .contact-header {
     display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 36px;
+    grid-template-columns: 240px 1fr;
+    gap: 40px;
     align-items: start;
     margin-bottom: 12px;
   }
 
   .contact-photo {
-    width: 200px;
+    width: 240px;
     aspect-ratio: 4 / 5;
     border-radius: 12px;
     overflow: hidden;
@@ -2252,9 +2280,23 @@
       Fifteen years between research benches, regulatory bodies, and commercial leadership. The arc below reads top to bottom (most recent first), scientific work on the left, commercial on the right, both at the centre when one role demanded both.
     </p>
 
-    <figure class="background-portrait">
-      <img src="images/seungeun-portrait-1.jpg" alt="Seungeun Lee">
-    </figure>
+    <div class="founder-card">
+      <div class="founder-card-header">
+        <svg class="founder-card-logo" viewBox="0 0 60 110" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="15" cy="15" r="5" fill="none" stroke="#1F4E79" stroke-width="2"/>
+          <circle cx="40" cy="40" r="5" fill="#1F4E79"/>
+          <circle cx="15" cy="65" r="5" fill="none" stroke="#1F4E79" stroke-width="2"/>
+          <circle cx="40" cy="90" r="5" fill="#1F4E79"/>
+          <line x1="18.54" y1="18.54" x2="36.46" y2="36.46" stroke="#1F4E79" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="36.46" y1="43.54" x2="18.54" y2="61.46" stroke="#1F4E79" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="18.54" y1="68.54" x2="36.46" y2="86.46" stroke="#1F4E79" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span class="founder-card-org">Dr. S. Lee Life Sciences</span>
+      </div>
+      <div class="founder-card-photo">
+        <img src="images/seungeun-portrait-1.jpg" alt="Seungeun Lee">
+      </div>
+    </div>
 
     <div class="diptych-cols" aria-hidden="true">
       <div class="dip-rail-label">Scientific &amp; technical</div>
@@ -2338,35 +2380,33 @@
         <p class="contact-lead">
           Every channel reaches me directly, with replies usually within two working days. Write or speak in any language. A real clue to a problem usually carries across whatever language it arrives in.
         </p>
+
+        <div class="contact-grid contact-grid-primary">
+          <a href="https://calendar.app.google/Dz9ut3khMGarLtYA7" target="_blank" rel="noopener noreferrer" class="contact-item contact-item-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+            <span class="contact-text">
+              <span class="contact-label">Book a call</span>
+              <span class="contact-value">30-minute discovery call</span>
+            </span>
+          </a>
+
+          <a href="https://card.drsleelifesciences.com/" target="_blank" rel="noopener noreferrer" class="contact-item contact-item-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2" ry="2"/>
+              <line x1="2" y1="10" x2="22" y2="10"/>
+            </svg>
+            <span class="contact-text">
+              <span class="contact-label">Save my contact</span>
+              <span class="contact-value">Open digital business card</span>
+            </span>
+          </a>
+        </div>
       </div>
-    </div>
-
-    <div class="contact-grid contact-grid-primary">
-
-      <a href="https://calendar.app.google/Dz9ut3khMGarLtYA7" target="_blank" rel="noopener noreferrer" class="contact-item contact-item-primary">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-          <line x1="16" y1="2" x2="16" y2="6"/>
-          <line x1="8" y1="2" x2="8" y2="6"/>
-          <line x1="3" y1="10" x2="21" y2="10"/>
-        </svg>
-        <span class="contact-text">
-          <span class="contact-label">Book a call</span>
-          <span class="contact-value">30-minute discovery call</span>
-        </span>
-      </a>
-
-      <a href="https://card.drsleelifesciences.com/" target="_blank" rel="noopener noreferrer" class="contact-item contact-item-primary">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <rect x="2" y="4" width="20" height="16" rx="2" ry="2"/>
-          <line x1="2" y1="10" x2="22" y2="10"/>
-        </svg>
-        <span class="contact-text">
-          <span class="contact-label">Save my contact</span>
-          <span class="contact-value">Open digital business card</span>
-        </span>
-      </a>
-
     </div>
 
     <div class="contact-grid contact-grid-secondary">
