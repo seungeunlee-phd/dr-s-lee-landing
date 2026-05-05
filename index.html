@@ -255,11 +255,11 @@
   }
 
   .hero-sub {
-    font-size: clamp(16px, 1.6vw, 19px);
+    font-size: clamp(14px, 1.4vw, 16px);
     line-height: 1.55;
     color: var(--cream);
     max-width: 600px;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
   }
 
   .hero-sig {
@@ -481,16 +481,21 @@
   @media (min-width: 960px) {
     .hero-middle {
       display: grid;
-      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1fr);
-      column-gap: 8px;
+      grid-template-columns: minmax(0, 1fr) 260px;
+      column-gap: 0;
       align-items: start;
       margin-bottom: 0;
     }
 
+    .hero-text .hero-sub {
+      max-width: none;
+    }
+
     .hero-pilot-card {
       margin-bottom: 0;
-      max-width: 280px;
+      max-width: 260px;
       padding: 56px 22px;
+      justify-self: start;
     }
 
     .hero-pilot-tag { margin-bottom: 22px; }
