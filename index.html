@@ -1007,19 +1007,20 @@
     .process-step:last-child { border-bottom: none; }
   }
 
-  /* Engagement spectrum, minimal horizontal timeline */
+  /* Engagement process, minimal horizontal timeline */
   .engage-timeline {
     list-style: none;
     padding: 0;
     margin: 0 0 36px 0;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 0;
+    align-items: start;
   }
 
   .engage-step {
     position: relative;
-    padding: 0 24px 0 0;
+    padding: 0 28px 0 0;
   }
 
   .engage-step:last-child {
@@ -1070,6 +1071,39 @@
     font-size: 14px;
     line-height: 1.55;
     padding-right: 12px;
+  }
+
+  .step-formats {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .step-format {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 8px 12px;
+    border-left: 2px solid var(--gold);
+    background: var(--off-white);
+    border-radius: 0 6px 6px 0;
+  }
+
+  .step-format-name {
+    font-family: var(--serif);
+    font-weight: 600;
+    color: var(--navy);
+    font-size: 13.5px;
+    letter-spacing: -0.1px;
+  }
+
+  .step-format-desc {
+    color: var(--text-medium);
+    font-size: 12.5px;
+    line-height: 1.5;
   }
 
   @media (max-width: 720px) {
@@ -2009,22 +2043,21 @@
           <div class="step-detail">Free initial conversation to understand the situation and check fit.</div>
         </li>
         <li class="engage-step">
-          <div class="step-duration">2 weeks</div>
+          <div class="step-duration">Within days</div>
           <div class="step-marker" aria-hidden="true"></div>
-          <div class="step-label">Two-week sprint</div>
-          <div class="step-detail">A bounded deliverable: market scan, technical audit, partnership shortlist.</div>
+          <div class="step-label">Scoped proposal</div>
+          <div class="step-detail">Written scope, deliverables, timeline, and fees before any work begins.</div>
         </li>
         <li class="engage-step">
-          <div class="step-duration">Ongoing</div>
+          <div class="step-duration">Sprint to ongoing</div>
           <div class="step-marker" aria-hidden="true"></div>
-          <div class="step-label">Fractional advisory</div>
-          <div class="step-detail">Defined cadence (weekly or bi-weekly) for leadership teams.</div>
-        </li>
-        <li class="engage-step">
-          <div class="step-duration">1 session</div>
-          <div class="step-marker" aria-hidden="true"></div>
-          <div class="step-label">One-time deep dive</div>
-          <div class="step-detail">Scientific due diligence, ISO/LIMS audit, or capability assessment for a specific decision.</div>
+          <div class="step-label">Delivery</div>
+          <div class="step-detail">Async-friendly rhythm with structured checkpoints, in one of three formats:</div>
+          <ul class="step-formats" aria-label="Delivery formats">
+            <li class="step-format"><span class="step-format-name">Two-week sprint</span><span class="step-format-desc">A bounded deliverable: market scan, technical audit, partnership shortlist.</span></li>
+            <li class="step-format"><span class="step-format-name">Fractional advisory</span><span class="step-format-desc">Defined cadence (weekly or bi-weekly) for leadership teams.</span></li>
+            <li class="step-format"><span class="step-format-name">Project-based deep dive</span><span class="step-format-desc">Due diligence, ISO/LIMS audit, R&amp;D research support, or capability assessment for a specific decision.</span></li>
+          </ul>
         </li>
       </ol>
 
