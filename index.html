@@ -1575,6 +1575,79 @@
   .partnership-callout .service-body {
     color: var(--cream);
   }
+
+  /* Partner sub-tabs (within Partnership section) */
+  .partner-tabs {
+    display: flex;
+    gap: 28px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid rgba(232, 220, 196, 0.18);
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+
+  .partner-tab {
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 8px 4px 14px;
+    margin-bottom: -1px;
+    cursor: pointer;
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: rgba(232, 220, 196, 0.65);
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .partner-tab:hover {
+    color: var(--cream);
+  }
+
+  .partner-tab[aria-selected="true"] {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+  }
+
+  .partner-tab:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .partner-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .partnership-callout .service-card.partner-panel {
+    max-width: 720px;
+    padding: 32px 32px 36px;
+  }
+
+  .partnership-callout .featured-pilot.partner-panel {
+    margin-bottom: 0;
+  }
+
+  .partner-panel[hidden] {
+    display: none !important;
+  }
+
+  @media (max-width: 540px) {
+    .partner-tabs {
+      gap: 18px;
+    }
+    .partner-tab {
+      font-size: 11px;
+      letter-spacing: 1.2px;
+    }
+    .partnership-callout .service-card.partner-panel {
+      padding: 26px 24px 30px;
+    }
+  }
 </style>
 </head>
 <body>
@@ -1758,94 +1831,100 @@
     <h2 class="section-title">Looking for partners on parallel tracks.</h2>
     <div class="section-divider"></div>
     <p class="section-lead">
-      Alongside the consulting practice, I'm developing two early-stage initiatives in life sciences: an AI SaaS for the workflows R&amp;D and commercial teams run repeatedly, and a mentoring program around strategic skillsets and knowledge. Open to a small set of partnerships across both while they're early.
+      Alongside the consulting practice, I'm building three early-stage initiatives in life sciences: <strong>Sense 2026</strong> (an AI SaaS for repeated R&amp;D and commercial workflows), a <strong>mentoring program</strong> around strategic skillsets, and <strong>skill-set services</strong> that pair specialized expertise with hands-on delivery. Open to partners across any of these, especially collaborators who want to combine their own work with mine.
     </p>
 
-    <article class="featured-pilot">
-      <span class="pilot-tag">Active pilot · recruiting design partners</span>
-      <h3 class="pilot-name">Sense 2026</h3>
-      <p class="pilot-tagline">Query to quote in a minute.</p>
-      <p class="pilot-desc">Today, a customer's technical question routes through a senior expert and waits two or three days for a reply. <strong>Sense brings that down to minutes.</strong> Your team asks in plain English, gets a draft with cited sources pulled from your own documents and past answers, and sends after a quick review. Each reply quietly trains the system, so the next colleague who asks something similar gets the answer instantly.</p>
-      <p class="pilot-desc">Your data stays on your server. The software runs as a single self-contained install, free to evaluate, with a tailored advisor file backing the workflows that matter to your business. The prototype backbone is ready, and I'm recruiting design partners for a <strong>4-week build phase plus a 30-day trial program</strong>. Built for teams writing the same answer to different customers every other week, while those customers wait days for what already exists somewhere in the company. If that sounds like yours, bring one real workflow and test the prototype against your hardest week.</p>
+    <div class="partner-tabs" role="tablist" aria-label="Partner type">
+      <button id="ptab-pilot" class="partner-tab" data-partner-tab="pilot" role="tab" aria-selected="true" aria-controls="partner-pilot">Active Pilot</button>
+      <button id="ptab-p1" class="partner-tab" data-partner-tab="p1" role="tab" aria-selected="false" aria-controls="partner-p1">Design Partner</button>
+      <button id="ptab-p2" class="partner-tab" data-partner-tab="p2" role="tab" aria-selected="false" aria-controls="partner-p2">Co-builder</button>
+      <button id="ptab-p3" class="partner-tab" data-partner-tab="p3" role="tab" aria-selected="false" aria-controls="partner-p3">Project Engineer</button>
+      <button id="ptab-p4" class="partner-tab" data-partner-tab="p4" role="tab" aria-selected="false" aria-controls="partner-p4">Student Researcher</button>
+    </div>
 
-      <div class="pilot-visual">
-        <svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Where your data lives: inside your server, with external LLMs and connectors off by default">
-          <text x="0" y="16" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10" letter-spacing="1.8" font-weight="700" fill="#C9A961">WHERE YOUR DATA LIVES</text>
+    <div class="partner-content">
+      <article id="partner-pilot" class="featured-pilot partner-panel" role="tabpanel" aria-labelledby="ptab-pilot">
+        <span class="pilot-tag">Active pilot · recruiting design partners</span>
+        <h3 class="pilot-name">Sense 2026</h3>
+        <p class="pilot-tagline">Query to quote in a minute.</p>
+        <p class="pilot-desc">Today, a customer's technical question routes through a senior expert and waits two or three days for a reply. <strong>Sense brings that down to minutes.</strong> Your team asks in plain English, gets a draft with cited sources pulled from your own documents and past answers, and sends after a quick review. Each reply quietly trains the system, so the next colleague who asks something similar gets the answer instantly.</p>
+        <p class="pilot-desc">Your data stays on your server. The software runs as a single self-contained install, free to evaluate, with a tailored advisor file backing the workflows that matter to your business. The prototype backbone is ready, and I'm recruiting design partners for a <strong>4-week build phase plus a 30-day trial program</strong>. Built for teams writing the same answer to different customers every other week, while those customers wait days for what already exists somewhere in the company. If that sounds like yours, bring one real workflow and test the prototype against your hardest week.</p>
 
-          <rect x="0" y="38" width="270" height="110" rx="6" fill="#FAFAF7" stroke="#1F4E79" stroke-opacity="0.4" stroke-width="1.2"/>
-          <text x="18" y="60" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10" letter-spacing="1.8" font-weight="700" fill="#1F4E79">YOUR SERVER</text>
+        <div class="pilot-visual">
+          <svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Where your data lives: inside your server, with external LLMs and connectors off by default">
+            <text x="0" y="16" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10" letter-spacing="1.8" font-weight="700" fill="#C9A961">WHERE YOUR DATA LIVES</text>
 
-          <circle cx="30" cy="92" r="3.5" fill="#C9A961"/>
-          <text x="42" y="96" font-family="Georgia, serif" font-size="13" fill="#1F4E79">Data</text>
+            <rect x="0" y="38" width="270" height="110" rx="6" fill="#FAFAF7" stroke="#1F4E79" stroke-opacity="0.4" stroke-width="1.2"/>
+            <text x="18" y="60" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10" letter-spacing="1.8" font-weight="700" fill="#1F4E79">YOUR SERVER</text>
 
-          <circle cx="98" cy="92" r="3.5" fill="#C9A961"/>
-          <text x="110" y="96" font-family="Georgia, serif" font-size="13" fill="#1F4E79">AI models</text>
+            <circle cx="30" cy="92" r="3.5" fill="#C9A961"/>
+            <text x="42" y="96" font-family="Georgia, serif" font-size="13" fill="#1F4E79">Data</text>
 
-          <circle cx="206" cy="92" r="3.5" fill="#C9A961"/>
-          <text x="218" y="96" font-family="Georgia, serif" font-size="13" fill="#1F4E79">Audit</text>
+            <circle cx="98" cy="92" r="3.5" fill="#C9A961"/>
+            <text x="110" y="96" font-family="Georgia, serif" font-size="13" fill="#1F4E79">AI models</text>
 
-          <text x="18" y="130" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" font-style="italic" fill="#5A5A54">Sense lives here. Your data never leaves.</text>
+            <circle cx="206" cy="92" r="3.5" fill="#C9A961"/>
+            <text x="218" y="96" font-family="Georgia, serif" font-size="13" fill="#1F4E79">Audit</text>
 
-          <line x1="270" y1="90" x2="330" y2="90" stroke="#8B8B83" stroke-opacity="0.5" stroke-width="1" stroke-dasharray="3 3"/>
-          <text x="278" y="84" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="9" font-style="italic" fill="#8B8B83">opt-in</text>
+            <text x="18" y="130" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" font-style="italic" fill="#5A5A54">Sense lives here. Your data never leaves.</text>
 
-          <rect x="330" y="42" width="260" height="106" rx="6" fill="none" stroke="#8B8B83" stroke-opacity="0.45" stroke-dasharray="4 3" stroke-width="1"/>
-          <text x="348" y="64" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10" letter-spacing="1.8" font-weight="700" fill="#8B8B83">EXTERNAL</text>
+            <line x1="270" y1="90" x2="330" y2="90" stroke="#8B8B83" stroke-opacity="0.5" stroke-width="1" stroke-dasharray="3 3"/>
+            <text x="278" y="84" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="9" font-style="italic" fill="#8B8B83">opt-in</text>
 
-          <text x="348" y="84" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="9" letter-spacing="1.2" font-weight="600" fill="#8B8B83">LLMS</text>
-          <text x="348" y="100" font-family="Georgia, serif" font-size="12" fill="#5A5A54">OpenAI · Anthropic · Gemini</text>
+            <rect x="330" y="42" width="260" height="106" rx="6" fill="none" stroke="#8B8B83" stroke-opacity="0.45" stroke-dasharray="4 3" stroke-width="1"/>
+            <text x="348" y="64" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10" letter-spacing="1.8" font-weight="700" fill="#8B8B83">EXTERNAL</text>
 
-          <text x="348" y="120" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="9" letter-spacing="1.2" font-weight="600" fill="#8B8B83">CONNECTORS</text>
-          <text x="348" y="136" font-family="Georgia, serif" font-size="12" fill="#5A5A54">Gmail · Slack · Drive · SharePoint · CRM</text>
+            <text x="348" y="84" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="9" letter-spacing="1.2" font-weight="600" fill="#8B8B83">LLMS</text>
+            <text x="348" y="100" font-family="Georgia, serif" font-size="12" fill="#5A5A54">OpenAI · Anthropic · Gemini</text>
 
-          <text x="348" y="158" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10" font-style="italic" fill="#8B8B83">Off by default · admin-enabled</text>
+            <text x="348" y="120" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="9" letter-spacing="1.2" font-weight="600" fill="#8B8B83">CONNECTORS</text>
+            <text x="348" y="136" font-family="Georgia, serif" font-size="12" fill="#5A5A54">Gmail · Slack · Drive · SharePoint · CRM</text>
 
-          <line x1="0" y1="180" x2="590" y2="180" stroke="#EFEAD9" stroke-width="1"/>
+            <text x="348" y="158" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10" font-style="italic" fill="#8B8B83">Off by default · admin-enabled</text>
 
-          <text x="0" y="206" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" font-style="italic" fill="#5A5A54">No vendor cloud. No data egress. No SaaS account to compromise.</text>
-        </svg>
-      </div>
+            <line x1="0" y1="180" x2="590" y2="180" stroke="#EFEAD9" stroke-width="1"/>
 
-      <div class="pilot-ctas">
-        <a class="pilot-cta pilot-cta-primary" href="https://calendar.app.google/Dz9ut3khMGarLtYA7" target="_blank" rel="noopener noreferrer">
-          Book a pilot call
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <line x1="5" y1="12" x2="19" y2="12"/>
-            <polyline points="12 5 19 12 12 19"/>
+            <text x="0" y="206" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" font-style="italic" fill="#5A5A54">No vendor cloud. No data egress. No SaaS account to compromise.</text>
           </svg>
-        </a>
-        <a class="pilot-cta pilot-cta-secondary" href="mailto:seungeun@drsleelifesciences.com?subject=Sense%202026%20pilot">
-          Email about Sense 2026
-        </a>
-      </div>
-    </article>
+        </div>
 
-    <div class="services-grid">
+        <div class="pilot-ctas">
+          <a class="pilot-cta pilot-cta-primary" href="https://calendar.app.google/Dz9ut3khMGarLtYA7" target="_blank" rel="noopener noreferrer">
+            Book a pilot call
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+          <a class="pilot-cta pilot-cta-secondary" href="mailto:seungeun@drsleelifesciences.com?subject=Sense%202026%20pilot">
+            Email about Sense 2026
+          </a>
+        </div>
+      </article>
 
-      <article class="service-card">
+      <article id="partner-p1" class="service-card partner-panel" role="tabpanel" aria-labelledby="ptab-p1" hidden>
         <div class="service-num">P1</div>
         <h3 class="service-title">Design Partner</h3>
         <p class="service-body">R&amp;D or commercial leader in biotech, genomics, diagnostics, or pharma who feels the pain of the workflows I'm building for. You give honest feedback on early prototypes. You get heavily discounted access during build, and your needs shape product direction. Sense 2026 is the first active pilot, with more topics in the pipeline.</p>
       </article>
 
-      <article class="service-card">
+      <article id="partner-p2" class="service-card partner-panel" role="tabpanel" aria-labelledby="ptab-p2" hidden>
         <div class="service-num">P2</div>
         <h3 class="service-title">Co-builder</h3>
-        <p class="service-body">You have your own thesis about an AI tool or program in life sciences and you'd rather build it with someone than alone. Maybe a wedge into a workflow I'm not covering. Maybe complementary to one of mine. If we resonate on what's worth building and how, several shapes are possible, from project collaboration to deeper alignment.</p>
+        <p class="service-body">You have your own thesis about an AI tool, program, or service in life sciences and you'd rather build it with someone than alone. Maybe a wedge into a workflow I'm not covering. Maybe complementary to one of mine. If we resonate on what's worth building and how, several shapes are possible, from project collaboration to deeper alignment.</p>
       </article>
 
-      <article class="service-card">
+      <article id="partner-p3" class="service-card partner-panel" role="tabpanel" aria-labelledby="ptab-p3" hidden>
         <div class="service-num">P3</div>
         <h3 class="service-title">Project Engineer</h3>
         <p class="service-body">Engineer interested in shipping bounded scope across AI tooling, data architecture, or data curation. ML or AI background welcome but not required. Strong craft in pipelines, schemas, or curation work is equally valuable. Paid contract engagement, collaboration credit. Domain context (biology, NGS, healthcare data) is a plus.</p>
       </article>
 
-      <article class="service-card">
+      <article id="partner-p4" class="service-card partner-panel" role="tabpanel" aria-labelledby="ptab-p4" hidden>
         <div class="service-num">P4</div>
         <h3 class="service-title">Student Researcher</h3>
         <p class="service-body">Undergrad or grad student in CS, life sciences, or related fields, looking for hands-on experience at the AI and life sciences intersection. Capstone projects, master's thesis topics, summer internships. We define the scope together; you get structured mentorship and a real project to point at.</p>
       </article>
-
     </div>
 
   </div>
@@ -2077,6 +2156,32 @@
     var name = window.location.hash.slice(1);
     if (tabIds.indexOf(name) === -1) name = 'practice';
     activateTab(name, { scroll: false });
+  });
+})();
+
+/* Partner sub-tabs (within Partnership section) */
+(function() {
+  var partnerTabs = document.querySelectorAll('.partner-tab');
+  var partnerPanels = document.querySelectorAll('.partner-panel');
+
+  if (partnerTabs.length === 0) return;
+
+  function activatePartnerTab(name) {
+    partnerTabs.forEach(function(tab) {
+      var active = tab.dataset.partnerTab === name;
+      tab.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+    partnerPanels.forEach(function(panel) {
+      var match = panel.id === 'partner-' + name;
+      if (match) panel.removeAttribute('hidden');
+      else panel.setAttribute('hidden', '');
+    });
+  }
+
+  partnerTabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      activatePartnerTab(tab.dataset.partnerTab);
+    });
   });
 })();
 </script>
