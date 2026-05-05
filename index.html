@@ -477,16 +477,28 @@
     .hero-pilot-name { font-size: 20px; }
   }
 
-  /* Hero middle row: text column on the left, pilot card on the right */
+  /* Hero middle row: on desktop, hero-text becomes a 2-col grid with pilot card spanning rows on the right */
   @media (min-width: 960px) {
-    .hero-middle {
+    .hero-text {
       display: grid;
       grid-template-columns: minmax(0, 1fr) 260px;
+      grid-template-areas:
+        "title pilot"
+        "sub1  pilot"
+        "sub2  pilot"
+        "sig   pilot"
+        "ctas  pilot";
       column-gap: 0;
       align-items: start;
-      margin-bottom: 0;
       max-width: 880px;
     }
+
+    .hero-text > :nth-child(1) { grid-area: title; }
+    .hero-text > :nth-child(2) { grid-area: sub1; }
+    .hero-text > :nth-child(3) { grid-area: sub2; }
+    .hero-text > :nth-child(4) { grid-area: sig; }
+    .hero-text > :nth-child(5) { grid-area: pilot; }
+    .hero-text > :nth-child(6) { grid-area: ctas; }
 
     .hero-text .hero-sub {
       max-width: none;
@@ -1815,6 +1827,23 @@
 
         <p class="hero-sig">Seungeun Lee, PhD &nbsp;·&nbsp; Founder &amp; Principal, Dr. S. Lee Life Sciences</p>
 
+        <a href="#partnership" class="hero-pilot-card" aria-label="Sense 2026 pilot, AI SaaS for life-science teams, recruiting design partners">
+          <span class="hero-pilot-tag">
+            <span class="hero-pilot-pulse" aria-hidden="true"></span>
+            Active pilot · recruiting
+          </span>
+          <h3 class="hero-pilot-name">Sense 2026</h3>
+          <p class="hero-pilot-tagline">Query to quote in a minute.</p>
+          <p class="hero-pilot-desc">AI SaaS for life-science consulting teams. Prototype ready, being shaped further with design partners now.</p>
+          <span class="hero-pilot-link">
+            See pilot details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </span>
+        </a>
+
         <div class="hero-ctas">
           <a class="btn btn-primary" href="https://calendar.app.google/Dz9ut3khMGarLtYA7" target="_blank" rel="noopener noreferrer">
             Book a discovery call
@@ -1833,23 +1862,6 @@
           </a>
         </div>
       </div>
-
-      <a href="#partnership" class="hero-pilot-card" aria-label="Sense 2026 pilot, AI SaaS for life-science teams, recruiting design partners">
-        <span class="hero-pilot-tag">
-          <span class="hero-pilot-pulse" aria-hidden="true"></span>
-          Active pilot · recruiting
-        </span>
-        <h3 class="hero-pilot-name">Sense 2026</h3>
-        <p class="hero-pilot-tagline">Query to quote in a minute.</p>
-        <p class="hero-pilot-desc">AI SaaS for life-science consulting teams. Prototype ready, being shaped further with design partners now.</p>
-        <span class="hero-pilot-link">
-          See pilot details
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <line x1="5" y1="12" x2="19" y2="12"/>
-            <polyline points="12 5 19 12 12 19"/>
-          </svg>
-        </span>
-      </a>
     </div>
   </div>
 </section>
@@ -1858,7 +1870,7 @@
 <section id="practice" class="standard practice" role="tabpanel" aria-labelledby="tab-practice">
   <div class="section-inner">
     <div class="eyebrow">The practice</div>
-    <h2 class="section-title">Three overlapping areas, scoped to the engagement.</h2>
+    <h2 class="section-title">From bench to commercial outcome, in one thread.</h2>
     <div class="section-divider"></div>
     <p class="section-lead">
       <strong>Bench-level technical depth</strong> across in vitro, in vivo, and in silico, with hands-on history in bioinformatics workflows, LIMS design, and database architecture and curation, including biobank and reference sequence systems. Paired with <strong>commercial leadership</strong> and <strong>Europe–Asia operating fluency</strong>, this lets clients work through scientific and commercial questions in one thread: a single working session can move from a protocol to an actionable commercial solution in EMEA or Asia, without restarting context. Engagements are scoped to deliverables, with fractional advisory where it fits.
