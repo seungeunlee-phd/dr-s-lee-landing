@@ -995,32 +995,94 @@
     .process-step:last-child { border-bottom: none; }
   }
 
-  .modes {
+  /* Engagement spectrum, minimal horizontal timeline */
+  .engage-timeline {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 36px 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
   }
 
-  .mode {
-    padding: 24px 24px;
-    border-left: 2px solid var(--gold);
-    background: var(--off-white);
-    border-radius: 0 12px 12px 0;
+  .engage-step {
+    position: relative;
+    padding: 0 24px 0 0;
   }
 
-  .mode-name {
+  .engage-step:last-child {
+    padding-right: 0;
+  }
+
+  .engage-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 36px;
+    left: 18px;
+    right: 0;
+    height: 1px;
+    background: rgba(201, 169, 97, 0.4);
+  }
+
+  .step-duration {
+    font-size: 10px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .step-marker {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 0 4px var(--off-white), 0 0 0 5.5px rgba(201, 169, 97, 0.5);
+    margin: 4px 0 18px 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-label {
     font-family: var(--serif);
-    color: var(--navy);
     font-weight: 600;
+    color: var(--navy);
     font-size: 16px;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     letter-spacing: -0.1px;
   }
 
-  .mode-desc {
+  .step-detail {
     color: var(--text-medium);
-    font-size: 14.5px;
+    font-size: 14px;
     line-height: 1.55;
+    padding-right: 12px;
+  }
+
+  @media (max-width: 720px) {
+    .engage-timeline {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .engage-step {
+      padding: 0 0 0 32px;
+    }
+    .engage-step:not(:last-child)::after {
+      top: 36px;
+      bottom: -24px;
+      left: 4px;
+      right: auto;
+      width: 1px;
+      height: auto;
+    }
+    .step-marker {
+      position: absolute;
+      left: 0;
+      top: 28px;
+      margin: 0;
+    }
+    .step-detail { padding-right: 0; }
   }
 
   .nda-note {
@@ -1641,6 +1703,8 @@
 
   .partnership-callout .pilot-desc {
     color: var(--cream);
+    font-size: 14px;
+    line-height: 1.65;
   }
 
   .partnership-callout .pilot-desc strong {
@@ -1924,20 +1988,26 @@
         Most engagements start with a free 30-minute discovery call to understand the situation and whether there's a fit. A written proposal with scope, deliverables, timeline, and fees follows before any work begins. Delivery runs on an async-friendly rhythm with structured checkpoints, producing outputs the team can act on.
       </p>
 
-      <div class="modes">
-        <div class="mode">
-          <div class="mode-name">Two-week sprint</div>
-          <div class="mode-desc">A bounded deliverable: market scan, technical audit, partnership shortlist.</div>
-        </div>
-        <div class="mode">
-          <div class="mode-name">Fractional advisory</div>
-          <div class="mode-desc">Ongoing engagement at a defined cadence (weekly or bi-weekly) for leadership teams.</div>
-        </div>
-        <div class="mode">
-          <div class="mode-name">One-time deep dive</div>
-          <div class="mode-desc">Scientific due diligence, ISO/LIMS audit, or capability assessment for a specific decision.</div>
-        </div>
-      </div>
+      <ol class="engage-timeline">
+        <li class="engage-step">
+          <div class="step-duration">1 session</div>
+          <div class="step-marker" aria-hidden="true"></div>
+          <div class="step-label">One-time deep dive</div>
+          <div class="step-detail">Scientific due diligence, ISO/LIMS audit, or capability assessment for a specific decision.</div>
+        </li>
+        <li class="engage-step">
+          <div class="step-duration">2 weeks</div>
+          <div class="step-marker" aria-hidden="true"></div>
+          <div class="step-label">Two-week sprint</div>
+          <div class="step-detail">A bounded deliverable: market scan, technical audit, partnership shortlist.</div>
+        </li>
+        <li class="engage-step">
+          <div class="step-duration">Ongoing</div>
+          <div class="step-marker" aria-hidden="true"></div>
+          <div class="step-label">Fractional advisory</div>
+          <div class="step-detail">Defined cadence (weekly or bi-weekly) for leadership teams.</div>
+        </li>
+      </ol>
 
       <p class="nda-note">NDA available on request before discovery.</p>
     </div>
