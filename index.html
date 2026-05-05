@@ -555,38 +555,43 @@
   .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1px;
-    background: var(--border-soft);
-    border: 1px solid var(--border-soft);
-    border-radius: 14px;
-    overflow: hidden;
+    gap: 18px;
   }
 
   .service-card {
     background: var(--off-white);
     padding: 40px 36px;
-    transition: background 0.25s ease;
+    border-radius: 14px;
+    border: 1px solid var(--border-soft);
+    box-shadow: 0 1px 2px rgba(31, 78, 121, 0.03), 0 6px 18px rgba(31, 78, 121, 0.04);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    position: relative;
   }
 
-  .service-card:hover { background: var(--paper); }
+  .service-card:hover {
+    border-color: rgba(201, 169, 97, 0.45);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(201, 169, 97, 0.08), 0 14px 32px rgba(31, 78, 121, 0.07);
+  }
 
   .service-num {
     font-family: var(--serif);
     font-style: italic;
     color: var(--gold);
-    font-size: 14px;
+    font-size: 18px;
     letter-spacing: 0.4px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+    line-height: 1;
   }
 
   .service-title {
     font-family: var(--serif);
-    font-size: 20px;
+    font-size: 21px;
     color: var(--navy);
     font-weight: 500;
     margin-bottom: 14px;
     line-height: 1.3;
-    letter-spacing: -0.1px;
+    letter-spacing: -0.15px;
   }
 
   .service-body {
@@ -1554,18 +1559,18 @@
     background: rgba(232, 220, 196, 0.06);
   }
 
-  /* P1-P4 partnership cards on navy */
-  .partnership-callout .services-grid {
-    background: rgba(201, 169, 97, 0.18);
-    border-color: rgba(201, 169, 97, 0.18);
-  }
-
+  /* P1-P4 partnership panels on navy (only one visible at a time) */
   .partnership-callout .service-card {
     background: rgba(255, 255, 255, 0.02);
+    border-color: rgba(232, 220, 196, 0.12);
+    box-shadow: none;
   }
 
   .partnership-callout .service-card:hover {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(232, 220, 196, 0.12);
+    transform: none;
+    box-shadow: none;
   }
 
   .partnership-callout .service-title {
@@ -2089,7 +2094,7 @@
 <footer>
   <div class="footer-inner">
     <div>
-      © 2026 Dr. S. Lee Life Sciences &nbsp;·&nbsp; KvK 42045333 &nbsp;·&nbsp; Nieuw-Vennep, Netherlands
+      © 2026 Dr. S. Lee Life Sciences &nbsp;·&nbsp; KvK 42045333 &nbsp;·&nbsp; Netherlands
     </div>
   </div>
 </footer>
