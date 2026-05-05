@@ -103,20 +103,30 @@
 
   .topbar nav a:hover { color: var(--navy); }
 
-  .topbar nav a[aria-current="page"] {
+  .topbar nav a[aria-current="page"],
+  .topbar nav a[aria-selected="true"] {
     color: var(--gold);
     position: relative;
   }
 
-  .topbar nav a[aria-current="page"]::after {
+  .topbar nav a[aria-current="page"]::after,
+  .topbar nav a[aria-selected="true"]::after {
     content: '';
     position: absolute;
     left: 0;
     right: 0;
     bottom: -6px;
-    height: 1px;
+    height: 1.5px;
     background: var(--gold);
-    opacity: 0.7;
+    opacity: 0.85;
+  }
+
+  .topbar nav a[role="tab"] {
+    cursor: pointer;
+  }
+
+  [role="tabpanel"][hidden] {
+    display: none !important;
   }
 
   @media (max-width: 720px) {
@@ -1456,11 +1466,11 @@
       </svg>
       Dr. S. Lee Life Sciences
     </a>
-    <nav aria-label="Main navigation">
-      <a href="#practice">Practice</a>
-      <a href="#partnership">Partnership</a>
-      <a href="#background">Background</a>
-      <a href="#contact">Contact</a>
+    <nav role="tablist" aria-label="Section navigation">
+      <a href="#practice" id="tab-practice" class="topbar-tab" data-tab="practice" role="tab" aria-selected="true" aria-controls="practice">Practice</a>
+      <a href="#partnership" id="tab-partnership" class="topbar-tab" data-tab="partnership" role="tab" aria-selected="false" aria-controls="partnership">Partnership</a>
+      <a href="#background" id="tab-background" class="topbar-tab" data-tab="background" role="tab" aria-selected="false" aria-controls="background">Background</a>
+      <a href="#contact" id="tab-contact" class="topbar-tab" data-tab="contact" role="tab" aria-selected="false" aria-controls="contact">Contact</a>
     </nav>
   </div>
 </header>
@@ -1534,7 +1544,7 @@
 </section>
 
 <!-- ====== THE PRACTICE ====== -->
-<section id="practice" class="standard practice">
+<section id="practice" class="standard practice" role="tabpanel" aria-labelledby="tab-practice">
   <div class="section-inner">
     <div class="eyebrow">The practice</div>
     <h2 class="section-title">Five overlapping areas, scoped to the engagement.</h2>
@@ -1614,7 +1624,7 @@
 </section>
 
 <!-- ====== PARTNERSHIP ====== -->
-<section id="partnership" class="standard partnership-callout">
+<section id="partnership" class="standard partnership-callout" role="tabpanel" aria-labelledby="tab-partnership" hidden>
   <div class="section-inner">
     <div class="eyebrow">Also building</div>
     <h2 class="section-title">Looking for partners on parallel tracks.</h2>
@@ -1714,7 +1724,7 @@
 </section>
 
 <!-- ====== BACKGROUND (Where I've operated) ====== -->
-<section id="background" class="standard about">
+<section id="background" class="standard about" role="tabpanel" aria-labelledby="tab-background" hidden>
   <div class="section-inner">
     <div class="eyebrow">Where I've operated</div>
     <h2 class="section-title">Two tracks, one practice.</h2>
@@ -1793,7 +1803,7 @@
 </section>
 
 <!-- ====== CONTACT ====== -->
-<section id="contact" class="contact">
+<section id="contact" class="contact" role="tabpanel" aria-labelledby="tab-contact" hidden>
   <div class="contact-inner">
     <div class="eyebrow">Let's talk</div>
     <h2 class="contact-title">Whichever way works for you.</h2>
@@ -1876,6 +1886,66 @@
     </div>
   </div>
 </footer>
+
+<script>
+(function() {
+  var tabs = document.querySelectorAll('.topbar-tab');
+  var tabIds = Array.prototype.map.call(tabs, function(t){ return t.dataset.tab; });
+
+  function activateTab(name, opts) {
+    if (tabIds.indexOf(name) === -1) return;
+    tabs.forEach(function(tab) {
+      var active = tab.dataset.tab === name;
+      tab.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+    tabIds.forEach(function(id) {
+      var panel = document.getElementById(id);
+      if (!panel) return;
+      if (id === name) panel.removeAttribute('hidden');
+      else panel.setAttribute('hidden', '');
+    });
+    if (opts && opts.scroll) {
+      var panel = document.getElementById(name);
+      if (panel) panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  // Tab clicks
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function(e) {
+      e.preventDefault();
+      var name = tab.dataset.tab;
+      activateTab(name, { scroll: true });
+      history.replaceState(null, '', '#' + name);
+    });
+  });
+
+  // In-page anchor links to tab panels (e.g. Sense card, service-note)
+  var anchorLinks = document.querySelectorAll('a[href^="#"]');
+  anchorLinks.forEach(function(link) {
+    var hash = link.getAttribute('href').slice(1);
+    if (tabIds.indexOf(hash) !== -1 && !link.classList.contains('topbar-tab')) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        activateTab(hash, { scroll: true });
+        history.replaceState(null, '', '#' + hash);
+      });
+    }
+  });
+
+  // Initial state from URL hash (default: practice)
+  var initial = window.location.hash.slice(1);
+  if (tabIds.indexOf(initial) === -1) initial = 'practice';
+  activateTab(initial, { scroll: false });
+
+  // Browser back/forward
+  window.addEventListener('popstate', function() {
+    var name = window.location.hash.slice(1);
+    if (tabIds.indexOf(name) === -1) name = 'practice';
+    activateTab(name, { scroll: false });
+  });
+})();
+</script>
 
 </body>
 </html>
