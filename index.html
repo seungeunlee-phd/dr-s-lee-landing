@@ -1243,18 +1243,16 @@
     .about-photo { max-width: 240px; margin: 0 auto; }
   }
 
-  .about-grid {
-    margin-bottom: 56px;
-  }
-
-  .about-closing {
-    margin: 56px auto 0;
+  .background-portrait {
+    margin: 0 auto 48px;
     text-align: center;
-    max-width: 280px;
+    max-width: 240px;
   }
 
-  .about-closing img {
+  .background-portrait img {
     width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
     border-radius: 12px;
     border: 1px solid var(--border-soft);
     display: block;
@@ -1566,6 +1564,43 @@
     font-size: clamp(24px, 2.8vw, 32px);
     color: var(--off-white);
     margin-bottom: 18px;
+  }
+
+  .contact-header {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 36px;
+    align-items: start;
+    margin-bottom: 12px;
+  }
+
+  .contact-photo {
+    width: 200px;
+    aspect-ratio: 4 / 5;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(232, 220, 196, 0.25);
+  }
+
+  .contact-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  @media (max-width: 540px) {
+    .contact-header {
+      grid-template-columns: 1fr;
+      justify-items: center;
+      gap: 24px;
+    }
+    .contact-photo {
+      width: 160px;
+    }
+    .contact-intro {
+      text-align: left;
+    }
   }
 
   .contact-lead {
@@ -2217,16 +2252,9 @@
       Fifteen years between research benches, regulatory bodies, and commercial leadership. The arc below reads top to bottom (most recent first), scientific work on the left, commercial on the right, both at the centre when one role demanded both.
     </p>
 
-    <div class="about-grid">
-      <div class="about-photo">
-        <img src="images/seungeun-portrait-1.jpg" alt="Seungeun Lee at her workspace">
-      </div>
-      <div class="about-bio">
-        <p>Korean-trained molecular biologist who moved to the Netherlands for environmental genomics research, then into EMEA commercial leadership at Macrogen Europe.</p>
-        <p>The recent year in Rotterdam as Entrepreneur in Residence applied a research lens to AI tools for life-science teams.</p>
-        <p>Now working independently from Nieuw-Vennep, between Europe and Asia. Comfortable in Korean, English, and Dutch.</p>
-      </div>
-    </div>
+    <figure class="background-portrait">
+      <img src="images/seungeun-portrait-1.jpg" alt="Seungeun Lee">
+    </figure>
 
     <div class="diptych-cols" aria-hidden="true">
       <div class="dip-rail-label">Scientific &amp; technical</div>
@@ -2294,21 +2322,24 @@
       </article>
 
     </div>
-
-    <figure class="about-closing">
-      <img src="images/seungeun-portrait-2.jpg" alt="Seungeun Lee">
-    </figure>
   </div>
 </section>
 
 <!-- ====== CONTACT ====== -->
 <section id="contact" class="contact" role="tabpanel" aria-labelledby="tab-contact" hidden>
   <div class="contact-inner">
-    <div class="eyebrow">Let's talk</div>
-    <h2 class="contact-title">Whichever way works for you.</h2>
-    <p class="contact-lead">
-      Every channel reaches me directly, with replies usually within two working days. Write or speak in any language. A real clue to a problem usually carries across whatever language it arrives in.
-    </p>
+    <div class="contact-header">
+      <div class="contact-photo">
+        <img src="images/seungeun-portrait-2.jpg" alt="Seungeun Lee">
+      </div>
+      <div class="contact-intro">
+        <div class="eyebrow">Let's talk</div>
+        <h2 class="contact-title">Whichever way works for you.</h2>
+        <p class="contact-lead">
+          Every channel reaches me directly, with replies usually within two working days. Write or speak in any language. A real clue to a problem usually carries across whatever language it arrives in.
+        </p>
+      </div>
+    </div>
 
     <div class="contact-grid contact-grid-primary">
 
