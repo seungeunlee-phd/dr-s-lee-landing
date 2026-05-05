@@ -502,7 +502,7 @@
 
   /* ====== SECTIONS ====== */
   section.standard {
-    padding: 104px 24px;
+    padding: 88px 24px 104px;
   }
 
   .section-inner {
@@ -512,37 +512,37 @@
 
   .eyebrow {
     font-size: 11px;
-    letter-spacing: 2.4px;
+    letter-spacing: 2.6px;
     text-transform: uppercase;
     color: var(--gold);
     font-weight: 600;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
   }
 
   h2.section-title {
     font-family: var(--serif);
     font-weight: 500;
-    font-size: clamp(30px, 3.6vw, 40px);
-    line-height: 1.18;
+    font-size: clamp(32px, 4vw, 44px);
+    line-height: 1.16;
     color: var(--navy);
-    letter-spacing: -0.4px;
+    letter-spacing: -0.5px;
     margin-bottom: 0;
-    max-width: 720px;
+    max-width: 760px;
   }
 
   .section-lead {
     font-size: 17px;
-    line-height: 1.65;
+    line-height: 1.7;
     color: var(--text-medium);
-    max-width: 660px;
+    max-width: 680px;
     margin-bottom: 64px;
   }
 
   .section-divider {
-    width: 40px;
+    width: 48px;
     height: 1px;
     background: var(--gold);
-    margin: 22px 0 24px;
+    margin: 24px 0 26px;
   }
 
   /* ====== THE PRACTICE ====== */
@@ -1459,6 +1459,121 @@
     outline: 2px solid var(--gold);
     outline-offset: 3px;
     border-radius: 3px;
+  }
+
+  /* ====== PARTNERSHIP TAB — NAVY DARK TREATMENT ====== */
+  .partnership-callout {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color: var(--off-white);
+    border-top: none;
+    border-bottom: none;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .partnership-callout::before {
+    content: '';
+    position: absolute;
+    top: -150px;
+    right: -150px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(201, 169, 97, 0.10) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .partnership-callout::after {
+    content: '';
+    position: absolute;
+    bottom: -200px;
+    left: -150px;
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, rgba(232, 220, 196, 0.04) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .partnership-callout .section-inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  .partnership-callout .section-title {
+    color: var(--off-white);
+  }
+
+  .partnership-callout .section-lead {
+    color: var(--cream);
+  }
+
+  .partnership-callout .section-lead strong {
+    color: var(--gold-soft);
+  }
+
+  /* Featured pilot (Sense 2026) on navy */
+  .partnership-callout .featured-pilot {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(201, 169, 97, 0.55);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10), 0 14px 36px rgba(0, 0, 0, 0.18);
+  }
+
+  .partnership-callout .featured-pilot::before {
+    background: radial-gradient(circle, rgba(201, 169, 97, 0.18) 0%, transparent 65%);
+  }
+
+  .partnership-callout .pilot-name {
+    color: var(--off-white);
+  }
+
+  .partnership-callout .pilot-desc {
+    color: var(--cream);
+  }
+
+  .partnership-callout .pilot-desc strong {
+    color: var(--off-white);
+  }
+
+  .partnership-callout .pilot-cta-primary {
+    background: var(--gold);
+    color: var(--navy-deep);
+    border-color: var(--gold);
+  }
+
+  .partnership-callout .pilot-cta-primary:hover {
+    background: var(--gold-soft);
+    box-shadow: 0 6px 18px rgba(201, 169, 97, 0.30);
+  }
+
+  .partnership-callout .pilot-cta-secondary {
+    color: var(--cream);
+    border-color: rgba(232, 220, 196, 0.32);
+  }
+
+  .partnership-callout .pilot-cta-secondary:hover {
+    border-color: var(--cream);
+    background: rgba(232, 220, 196, 0.06);
+  }
+
+  /* P1-P4 partnership cards on navy */
+  .partnership-callout .services-grid {
+    background: rgba(201, 169, 97, 0.18);
+    border-color: rgba(201, 169, 97, 0.18);
+  }
+
+  .partnership-callout .service-card {
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .partnership-callout .service-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .partnership-callout .service-title {
+    color: var(--off-white);
+  }
+
+  .partnership-callout .service-body {
+    color: var(--cream);
   }
 </style>
 </head>
