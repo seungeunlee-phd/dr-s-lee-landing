@@ -477,14 +477,14 @@
     .hero-pilot-name { font-size: 20px; }
   }
 
-  /* Hero middle row: subs and pilot card side-by-side on desktop */
+  /* Hero middle row: text column on the left, pilot card on the right */
   @media (min-width: 960px) {
     .hero-middle {
       display: grid;
       grid-template-columns: minmax(0, 2.1fr) minmax(0, 1fr);
-      column-gap: 32px;
+      column-gap: 16px;
       align-items: center;
-      margin-bottom: 24px;
+      margin-bottom: 0;
     }
 
     .hero-pilot-card {
@@ -1798,13 +1798,33 @@
     </h1>
 
     <div class="hero-middle">
-      <div class="hero-subs">
+      <div class="hero-text">
         <p class="hero-sub">
           Independent advisory for life sciences leaders building across EMEA and Asia.
         </p>
         <p class="hero-sub">
           Commercial strategy, technical and scientific advisory, and digital infrastructure for biotech, genomics, and diagnostics.
         </p>
+
+        <p class="hero-sig">Seungeun Lee, PhD &nbsp;·&nbsp; Founder &amp; Principal, Dr. S. Lee Life Sciences</p>
+
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="https://calendar.app.google/Dz9ut3khMGarLtYA7" target="_blank" rel="noopener noreferrer">
+            Book a discovery call
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+          <a class="btn btn-secondary" href="https://card.drsleelifesciences.com/" target="_blank" rel="noopener">
+            View digital card
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+          </a>
+        </div>
       </div>
 
       <a href="#partnership" class="hero-pilot-card" aria-label="Sense 2026 pilot, AI SaaS for life-science teams, recruiting design partners">
@@ -1822,26 +1842,6 @@
             <polyline points="12 5 19 12 12 19"/>
           </svg>
         </span>
-      </a>
-    </div>
-
-    <p class="hero-sig">Seungeun Lee, PhD &nbsp;·&nbsp; Founder &amp; Principal, Dr. S. Lee Life Sciences</p>
-
-    <div class="hero-ctas">
-      <a class="btn btn-primary" href="https://calendar.app.google/Dz9ut3khMGarLtYA7" target="_blank" rel="noopener noreferrer">
-        Book a discovery call
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <line x1="5" y1="12" x2="19" y2="12"/>
-          <polyline points="12 5 19 12 12 19"/>
-        </svg>
-      </a>
-      <a class="btn btn-secondary" href="https://card.drsleelifesciences.com/" target="_blank" rel="noopener">
-        View digital card
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-          <polyline points="15 3 21 3 21 9"/>
-          <line x1="10" y1="14" x2="21" y2="3"/>
-        </svg>
       </a>
     </div>
   </div>
