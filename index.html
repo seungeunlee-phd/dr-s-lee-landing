@@ -125,6 +125,10 @@
     cursor: pointer;
   }
 
+  .topbar nav a.hidden-tab {
+    display: none;
+  }
+
   [role="tabpanel"][hidden] {
     display: none !important;
   }
@@ -993,6 +997,40 @@
     border-top: 1px solid var(--border-soft);
   }
 
+  .practice-bg-link-wrap {
+    margin-top: 72px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border-soft);
+    text-align: center;
+  }
+
+  .practice-bg-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--navy);
+    text-decoration: none;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 16px;
+    letter-spacing: 0.2px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgba(201, 169, 97, 0.5);
+    transition: gap 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  }
+
+  .practice-bg-link:hover {
+    gap: 14px;
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+  }
+
+  .practice-bg-link svg {
+    width: 14px;
+    height: 14px;
+    color: var(--gold);
+  }
+
   /* ====== ABOUT ====== */
   .about {
     background: var(--paper);
@@ -1708,7 +1746,7 @@
     <nav role="tablist" aria-label="Section navigation">
       <a href="#practice" id="tab-practice" class="topbar-tab" data-tab="practice" role="tab" aria-selected="true" aria-controls="practice">Practice</a>
       <a href="#partnership" id="tab-partnership" class="topbar-tab" data-tab="partnership" role="tab" aria-selected="false" aria-controls="partnership">Partnership</a>
-      <a href="#background" id="tab-background" class="topbar-tab" data-tab="background" role="tab" aria-selected="false" aria-controls="background">Background</a>
+      <a href="#background" id="tab-background" class="topbar-tab hidden-tab" data-tab="background" role="tab" aria-selected="false" aria-controls="background">Background</a>
       <a href="#contact" id="tab-contact" class="topbar-tab" data-tab="contact" role="tab" aria-selected="false" aria-controls="contact">Contact</a>
     </nav>
   </div>
@@ -1792,7 +1830,7 @@
     <h2 class="section-title">Three overlapping areas, scoped to the engagement.</h2>
     <div class="section-divider"></div>
     <p class="section-lead">
-      Most engagements pull from more than one. What's rare is finding <strong>bench-level technical depth</strong>, <strong>commercial leadership</strong>, and <strong>Europe–Asia operating fluency</strong> in one person. Engagements are scoped to deliverables, with longer fractional advisory where it fits.
+      <strong>Bench-level technical depth</strong>, <strong>commercial leadership</strong>, and <strong>Europe–Asia operating fluency</strong> in one person. That's the rare overlap. Most engagements pull from more than one of these. Scoped to deliverables, with fractional advisory where it fits.
     </p>
 
     <div class="services-grid">
@@ -1849,6 +1887,16 @@
       </div>
 
       <p class="nda-note">NDA available on request before discovery.</p>
+    </div>
+
+    <div class="practice-bg-link-wrap">
+      <a href="#background" class="practice-bg-link">
+        See where I've operated
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
     </div>
   </div>
 </section>
