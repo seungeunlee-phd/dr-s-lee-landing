@@ -241,11 +241,11 @@
   h1.hero-title {
     font-family: var(--serif);
     font-weight: 500;
-    font-size: clamp(30px, 4.6vw, 48px);
-    line-height: 1.1;
+    font-size: clamp(24px, 3.6vw, 36px);
+    line-height: 1.15;
     letter-spacing: -0.5px;
     color: var(--off-white);
-    margin-bottom: 26px;
+    margin-bottom: 22px;
     max-width: 880px;
   }
 
@@ -255,8 +255,8 @@
   }
 
   .hero-sub {
-    font-size: clamp(14px, 1.4vw, 16px);
-    line-height: 1.55;
+    font-size: clamp(12px, 1.2vw, 14px);
+    line-height: 1.6;
     color: var(--cream);
     max-width: 600px;
     margin-bottom: 12px;
@@ -266,7 +266,7 @@
     font-family: var(--serif);
     font-style: italic;
     color: var(--gold);
-    font-size: 14px;
+    font-size: 12px;
     letter-spacing: 0.5px;
     margin-bottom: 24px;
   }
@@ -392,9 +392,29 @@
     text-transform: uppercase;
     color: var(--gold);
     font-weight: 700;
+    margin-right: 8px;
     margin-bottom: 14px;
     position: relative;
     z-index: 1;
+    vertical-align: middle;
+  }
+
+  .hero-pilot-offer {
+    display: inline-block;
+    padding: 3px 10px;
+    background: rgba(201, 169, 97, 0.10);
+    border: 1px solid rgba(201, 169, 97, 0.45);
+    border-radius: 999px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--gold-soft);
+    letter-spacing: 0.3px;
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
+    vertical-align: middle;
   }
 
   .hero-pilot-pulse {
@@ -418,7 +438,7 @@
 
   .hero-pilot-name {
     font-family: var(--serif);
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 600;
     color: var(--off-white);
     margin-bottom: 4px;
@@ -432,7 +452,7 @@
     font-family: var(--serif);
     font-style: italic;
     color: var(--gold-soft);
-    font-size: 13.5px;
+    font-size: 12px;
     margin-bottom: 12px;
     position: relative;
     z-index: 1;
@@ -440,7 +460,7 @@
 
   .hero-pilot-desc {
     color: var(--cream);
-    font-size: 12.5px;
+    font-size: 11.5px;
     line-height: 1.6;
     margin-bottom: 12px;
     position: relative;
@@ -452,7 +472,7 @@
     font-style: italic;
     color: var(--cream);
     opacity: 0.8;
-    font-size: 11.5px;
+    font-size: 10.5px;
     line-height: 1.5;
     margin-bottom: 14px;
     position: relative;
@@ -486,7 +506,7 @@
 
   @media (max-width: 540px) {
     .hero-pilot-card { padding: 22px 22px; }
-    .hero-pilot-name { font-size: 19px; }
+    .hero-pilot-name { font-size: 16px; }
   }
 
   /* Hero middle row: on desktop, hero-text becomes a 2-col grid with pilot card spanning rows on the right */
@@ -598,7 +618,7 @@
   h2.section-title {
     font-family: var(--serif);
     font-weight: 500;
-    font-size: clamp(26px, 3.2vw, 36px);
+    font-size: clamp(20px, 2.2vw, 26px);
     line-height: 1.2;
     color: var(--navy);
     letter-spacing: -0.4px;
@@ -607,11 +627,11 @@
   }
 
   .section-lead {
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 13px;
+    line-height: 1.65;
     color: var(--text-medium);
     max-width: 680px;
-    margin-bottom: 56px;
+    margin-bottom: 40px;
   }
   .section-lead strong {
     color: var(--navy-deep);
@@ -726,24 +746,24 @@
     font-family: var(--serif);
     font-style: italic;
     color: var(--gold);
-    font-size: 18px;
+    font-size: 15px;
     letter-spacing: 0.4px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     line-height: 1;
   }
 
   .service-title {
     font-family: var(--serif);
-    font-size: 19px;
+    font-size: 16px;
     color: var(--navy);
     font-weight: 500;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
     line-height: 1.3;
     letter-spacing: -0.15px;
   }
 
   .service-body {
-    font-size: 13px;
+    font-size: 12px;
     color: var(--text-medium);
     line-height: 1.6;
   }
@@ -1269,14 +1289,14 @@
     font-family: var(--serif);
     font-weight: 600;
     color: var(--navy);
-    font-size: 16px;
-    margin-bottom: 6px;
+    font-size: 14px;
+    margin-bottom: 5px;
     letter-spacing: -0.1px;
   }
 
   .step-detail {
     color: var(--text-medium);
-    font-size: 13px;
+    font-size: 12px;
     line-height: 1.55;
     padding-right: 12px;
   }
@@ -1304,13 +1324,13 @@
     font-family: var(--serif);
     font-weight: 600;
     color: var(--navy);
-    font-size: 13px;
+    font-size: 12px;
     letter-spacing: -0.1px;
   }
 
   .step-format-desc {
     color: var(--text-medium);
-    font-size: 12px;
+    font-size: 11px;
     line-height: 1.5;
   }
 
@@ -1341,7 +1361,7 @@
 
   .nda-note {
     margin-top: 36px;
-    font-size: 13.5px;
+    font-size: 12px;
     color: var(--text-light);
     font-style: italic;
   }
@@ -1370,8 +1390,8 @@
   }
 
   .practice-bg-link-wrap {
-    margin-top: -36px;
-    margin-bottom: 28px;
+    margin-top: 8px;
+    margin-bottom: 32px;
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
@@ -1386,7 +1406,7 @@
     text-decoration: none;
     font-family: var(--serif);
     font-style: italic;
-    font-size: 13.5px;
+    font-size: 13px;
     letter-spacing: 0.2px;
     padding-bottom: 3px;
     border-bottom: 1px solid rgba(201, 169, 97, 0.5);
@@ -1530,13 +1550,13 @@
 
   .cg-tip {
     position: absolute;
-    bottom: calc(100% + 8px);
+    bottom: calc(100% + 7px);
     left: 50%;
     transform: translateX(-50%);
     white-space: nowrap;
     font-family: var(--serif);
     background: var(--paper);
-    padding: 4px 9px;
+    padding: 3px 8px;
     border: 1px solid rgba(201, 169, 97, 0.4);
     border-radius: 4px;
     opacity: 0;
@@ -1549,14 +1569,14 @@
     text-align: center;
   }
   .cg-tip-org {
-    font-size: 9.5px;
+    font-size: 7.5px;
     font-weight: 600;
     font-style: italic;
     color: var(--navy-deep);
     letter-spacing: 0.2px;
   }
   .cg-tip-role {
-    font-size: 8.5px;
+    font-size: 6.5px;
     font-style: italic;
     color: var(--text-medium);
     letter-spacing: 0.3px;
@@ -1914,14 +1934,34 @@
     background: rgba(201, 169, 97, 0.13);
     padding: 6px 14px;
     border-radius: 999px;
+    margin-right: 8px;
     margin-bottom: 20px;
+    vertical-align: middle;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pilot-offer {
+    display: inline-block;
+    padding: 5px 12px;
+    background: rgba(201, 169, 97, 0.06);
+    border: 1px solid rgba(201, 169, 97, 0.5);
+    border-radius: 999px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 10.5px;
+    font-weight: 600;
+    color: var(--gold-soft);
+    letter-spacing: 0.3px;
+    margin-bottom: 20px;
+    vertical-align: middle;
     position: relative;
     z-index: 1;
   }
 
   .pilot-name {
     font-family: var(--serif);
-    font-size: clamp(22px, 2.3vw, 26px);
+    font-size: clamp(18px, 2vw, 22px);
     color: var(--navy);
     font-weight: 600;
     margin-bottom: 6px;
@@ -1935,17 +1975,17 @@
     font-family: var(--serif);
     font-style: italic;
     color: var(--gold);
-    font-size: clamp(15px, 1.5vw, 17px);
-    margin-bottom: 22px;
+    font-size: clamp(13px, 1.3vw, 15px);
+    margin-bottom: 20px;
     position: relative;
     z-index: 1;
   }
 
   .pilot-desc {
-    font-size: 15px;
+    font-size: 13px;
     color: var(--text-medium);
-    line-height: 1.6;
-    margin-bottom: 14px;
+    line-height: 1.65;
+    margin-bottom: 12px;
     max-width: 720px;
     position: relative;
     z-index: 1;
@@ -2128,9 +2168,9 @@
   h2.contact-title {
     font-family: var(--serif);
     font-weight: 500;
-    font-size: clamp(24px, 2.8vw, 32px);
+    font-size: clamp(20px, 2.2vw, 26px);
     color: var(--off-white);
-    margin-bottom: 18px;
+    margin-bottom: 14px;
   }
 
   .contact-header {
@@ -2171,11 +2211,15 @@
   }
 
   .contact-lead {
-    font-size: 15px;
+    font-size: 13px;
     color: var(--cream);
     max-width: 620px;
-    margin-bottom: 44px;
-    line-height: 1.6;
+    margin-bottom: 36px;
+    line-height: 1.65;
+  }
+  .contact-lead strong {
+    color: var(--gold-soft);
+    font-weight: 600;
   }
 
   .contact-grid {
@@ -2267,8 +2311,8 @@
     font-family: var(--serif);
     font-style: italic;
     color: var(--cream);
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 13px;
+    line-height: 1.65;
     letter-spacing: 0.2px;
     text-align: center;
     opacity: 0.85;
@@ -2571,14 +2615,15 @@
 
         <p class="hero-sig">Seungeun Lee, PhD &nbsp;·&nbsp; Founder &amp; Principal, Dr. S. Lee Life Sciences</p>
 
-        <a href="#partnership" class="hero-pilot-card" aria-label="Sense 2026 pilot and other partner roles, AI SaaS for life-science teams">
+        <a href="#partnership" class="hero-pilot-card" aria-label="Sense 2026 pilot and other partner roles, agentic AI workflowspace for life-science teams">
           <span class="hero-pilot-tag">
             <span class="hero-pilot-pulse" aria-hidden="true"></span>
-            Active pilot · recruiting
+            Active pilot · spots open
           </span>
+          <span class="hero-pilot-offer">Founding-partner pricing</span>
           <h3 class="hero-pilot-name">Sense 2026</h3>
           <p class="hero-pilot-tagline">Query to quote in a minute.</p>
-          <p class="hero-pilot-desc">AI SaaS for life-science consulting teams. Design partners shape product direction, with early-partner pricing locked in through launch.</p>
+          <p class="hero-pilot-desc">An agentic AI workflowspace, designed around how life-science teams actually operate. Reads from your existing platforms without disrupting them, ready to tune to your stack.</p>
           <p class="hero-pilot-also">Pilot is one shape. Other scoped projects and partner roles also open.</p>
           <span class="hero-pilot-link">
             Find a fit
@@ -2643,19 +2688,19 @@
       <article class="service-card">
         <div class="service-num">01</div>
         <h3 class="service-title">Commercial Strategy &amp; Partnerships</h3>
-        <p class="service-body">Europe–Asia go-to-market and partnership development across biotech and diagnostics. Market sizing, ICP definition, pricing, and positioning. Channel strategy, KOL mapping, and competitive context when relevant. Sales and operations data analysis to inform commercial decisions. Workshops and capability programs for commercial teams.</p>
+        <p class="service-body"><strong>Europe–Asia go-to-market and partnership development</strong> across biotech and diagnostics. <strong>Market sizing, ICP definition, pricing, and positioning</strong>. Channel strategy, stakeholder mapping, and competitive context when relevant. <strong>Sales and operations data analysis</strong> to inform commercial decisions. Workshops and capability programs for commercial teams.</p>
       </article>
 
       <article class="service-card">
         <div class="service-num">02</div>
         <h3 class="service-title">Technical &amp; Scientific Advisory</h3>
-        <p class="service-body">Short-term R&amp;D project and research support, NGS workflow design across in vivo, in vitro, and in silico methods, with method validation and bioinformatics pipeline architecture. Peer-reviewed manuscripts, technical reports, grant proposals, and regulatory documentation. Partnership development and project structuring for co-builders. Workshops and capability programs for scientific teams.</p>
+        <p class="service-body">Short-term R&amp;D project and research support across <strong>clinical, environmental, and food-safety domains</strong>. <strong>NGS workflow design</strong> across in vivo, in vitro, and in silico methods, with method validation, <strong>proficiency testing</strong>, and bioinformatics pipeline architecture (Python, R, Docker). Peer-reviewed manuscripts, technical reports, grant proposals, and regulatory documentation. Partnership development and project structuring for co-builders. Workshops and capability programs for scientific teams.</p>
       </article>
 
       <article class="service-card">
         <div class="service-num">03</div>
         <h3 class="service-title">Digital Infrastructure</h3>
-        <p class="service-body">Tailored to each company's existing systems: database re-scoping, re-structuring, architecture, and linking across technical and commercial operations data platforms (LIMS, sales operations, and others). Platform-flexible across Agentic AI, Python, R, SAP, Power BI, SharePoint, and others already in your stack.</p>
+        <p class="service-body">Tailored to each company's existing systems: <strong>database architecture and integration</strong> across technical and commercial operations data platforms. Biobank, LIMS, sales operations, and reporting infrastructure under ISO 17025 &amp; ISO 9001. Platform-flexible across Agentic AI, Python, R, SAP, Power BI, SharePoint, and others already in your stack. Includes <strong>agentic AI workflowspace design</strong> where it fits.</p>
         <a href="#partnership" class="service-note" aria-label="See Sense 2026 pilot in Partnership section">
           <span class="service-note-tag">Active pilot</span>
           <span class="service-note-text">Sense 2026: technical query to quote in a minute in life science industry</span>
@@ -2710,7 +2755,7 @@
     <h2 class="section-title">Looking for partners on parallel tracks.</h2>
     <div class="section-divider"></div>
     <p class="section-lead">
-      Alongside the consulting practice, I'm building three early-stage initiatives in life sciences: <strong>Sense 2026</strong> (an AI SaaS for repeated R&amp;D and commercial workflows), a <strong>mentoring program</strong> around strategic skillsets, and <strong>skill-set services</strong> that pair specialized expertise with hands-on delivery, including data infrastructure and analytics work. Open to partners across any of these, especially collaborators who want to combine their own work with mine.
+      Alongside the consulting practice, I'm building three early-stage initiatives in life sciences: <strong>Sense 2026</strong> (an agentic AI workflowspace for life-science teams), a <strong>mentoring program</strong> around strategic skillsets, and <strong>skill-set services</strong> that pair specialized expertise with hands-on delivery in database architecture, agentic AI tooling, and analytics. Open to partners across any of these, especially collaborators who want to combine their own work with mine.
     </p>
 
     <div class="partner-tabs" role="tablist" aria-label="Partner type">
@@ -2723,11 +2768,12 @@
 
     <div class="partner-content">
       <article id="partner-pilot" class="featured-pilot partner-panel" role="tabpanel" aria-labelledby="ptab-pilot">
-        <span class="pilot-tag">Active pilot · recruiting design partners</span>
+        <span class="pilot-tag">Active pilot · design partner spots open</span>
+        <span class="pilot-offer">Founding-partner pricing</span>
         <h3 class="pilot-name">Sense 2026</h3>
         <p class="pilot-tagline">Query to quote in a minute.</p>
-        <p class="pilot-desc">Today, a customer's technical question routes through a senior expert and waits two or three days for a reply. <strong>Sense brings that down to minutes.</strong> Your team asks in plain English, gets a draft with cited sources pulled from your own documents and past answers, and sends after a quick review. <strong>Built around your domain's taxonomy, in your team's language</strong>: when a question is missing context, Sense asks back or shows where to confirm it, instead of returning a flood of related-but-irrelevant results. Each reply quietly trains the system, so the next colleague who asks something similar gets the answer instantly.</p>
-        <p class="pilot-desc">Your data stays on your server. The software runs as a single self-contained install, free to evaluate, with a tailored advisor file backing the workflows that matter to your business. The prototype backbone is ready, and I'm recruiting design partners for a <strong>4-week build phase plus a 30-day trial program</strong>. Built for teams writing the same answer to different customers every other week, while those customers wait days for what already exists somewhere in the company. If that sounds like yours, bring one real workflow and test the prototype against your hardest week.</p>
+        <p class="pilot-desc">Today, a customer's technical question routes through a senior expert and waits two or three days for a reply. <strong>Sense is an agentic AI workflowspace that brings that down to minutes</strong>. Agents handle routing, drafting, and source-checking inside a workspace shaped to your team's flows. Your team asks in their native language, gets a draft with cited sources from your own documents, and sends after a quick review. <strong>Designed around your domain's taxonomy, in the words your team actually uses</strong>: each reply quietly trains the workspace, so the next colleague gets the answer instantly.</p>
+        <p class="pilot-desc">Your data stays on your server, no outbound data. <strong>Sense reads from the platforms you already use, no disruption to current operations</strong>. Single self-contained install, free to evaluate, with a tailored advisor file backing the workflows that matter. <strong>Ready to build into your stack and tune to your team's flows</strong>; data architecture and indexing can be designed alongside when needed. Design partner spots are open for a <strong>4-week build phase plus a 30-day trial program</strong>. Bring one real workflow and test it against your hardest week.</p>
 
         <div class="pilot-visual">
           <svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Where your data lives: inside your server, with external LLMs and connectors off by default">
@@ -2985,7 +3031,7 @@
       <div class="contact-intro">
         <h2 class="contact-title">Whichever way works for you.</h2>
         <p class="contact-lead">
-          Every channel reaches me directly, with replies usually within two working days. Write or speak in any language. A real clue to a problem usually carries across whatever language it arrives in.
+          Every channel <strong>reaches me directly</strong>, with replies usually within <strong>two working days</strong>. Write or speak in <strong>any language</strong>. A real clue to a problem usually carries across whatever language it arrives in.
         </p>
 
         <div class="contact-grid contact-grid-primary">
