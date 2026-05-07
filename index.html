@@ -25,6 +25,7 @@
     --sage: #9BAFA1;
     --sage-soft: #B0BEB3;
     --accent-warm: #C77E5A;
+    --text-emphasis: #0F4FA0;
     --cream: #E8DCC4;
     --off-white: #FAFAF7;
     --paper: #F5F3EE;
@@ -44,7 +45,10 @@
   html { scroll-behavior: smooth; }
 
   html, body {
-    background: var(--paper);
+    background-color: var(--paper);
+    background-image: radial-gradient(circle at center, rgba(44, 74, 107, 0.07) 1.2px, transparent 1.5px);
+    background-size: 28px 28px;
+    background-position: 0 0;
     color: var(--text-dark);
     font-family: var(--sans);
     line-height: 1.6;
@@ -656,7 +660,7 @@
     margin-bottom: 40px;
   }
   .section-lead strong {
-    color: var(--navy-deep);
+    color: var(--text-emphasis);
     font-weight: 600;
   }
 
@@ -701,7 +705,7 @@
     margin-top: 4px;
   }
   .credentials-list strong {
-    color: var(--navy-deep);
+    color: var(--text-emphasis);
     font-weight: 600;
   }
   .credentials-meta-text {
@@ -820,12 +824,12 @@
 
   .service-title {
     font-family: var(--serif);
-    font-size: 16px;
+    font-size: 15px;
     color: var(--navy);
     font-weight: 500;
     margin-bottom: 12px;
     line-height: 1.3;
-    letter-spacing: -0.15px;
+    letter-spacing: -0.2px;
   }
 
   .service-body {
@@ -849,7 +853,7 @@
   }
   .service-list li:last-child { margin-bottom: 0; }
   .service-list strong {
-    color: var(--navy-deep);
+    color: var(--text-emphasis);
     font-weight: 600;
   }
   .service-list li::before {
@@ -922,13 +926,13 @@
   .service-inline-tag {
     font-family: var(--sans);
     font-style: normal;
-    font-size: 7.5px;
+    font-size: 8px;
     letter-spacing: 1.4px;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--navy-deep);
     font-weight: 700;
-    background: rgba(197, 181, 154, 0.12);
-    padding: 2px 6px;
+    background: var(--gold);
+    padding: 2px 7px;
     border-radius: 999px;
     white-space: nowrap;
     flex-shrink: 0;
@@ -1420,93 +1424,120 @@
   .engage-mini-dot {
     position: absolute;
     top: 50%;
-    width: 10px;
-    height: 10px;
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
     background: var(--gold);
     transform: translate(-50%, -50%);
     border: 2px solid var(--off-white);
     box-shadow: 0 0 0 1px rgba(44, 74, 107, 0.18);
-    cursor: default;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
     outline: none;
   }
-  .engage-mini-dot:hover, .engage-mini-dot:focus-visible {
-    transform: translate(-50%, -50%) scale(1.4);
-    box-shadow: 0 0 0 1px rgba(197, 181, 154, 0.45), 0 4px 10px rgba(44, 74, 107, 0.15);
+  .engage-mini-dot:hover,
+  .engage-mini-dot:focus-visible {
+    transform: translate(-50%, -50%) scale(1.25);
+    background: var(--accent-warm);
+    box-shadow: 0 0 0 1px rgba(199, 126, 90, 0.45), 0 4px 10px rgba(44, 74, 107, 0.18);
     z-index: 3;
   }
-  .engage-mini-tip {
+  .engage-mini-popup {
     position: absolute;
-    bottom: calc(100% + 10px);
+    bottom: calc(100% + 14px);
     left: 50%;
-    transform: translateX(-50%);
-    width: 220px;
-    font-family: var(--serif);
-    background: var(--paper);
-    padding: 7px 10px;
-    border: 1px solid rgba(197, 181, 154, 0.4);
-    border-radius: 5px;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s ease;
+    transform: translateX(-50%) translateY(4px);
+    width: 240px;
+    padding: 12px 14px;
+    background: var(--off-white);
+    border: 1px solid rgba(197, 181, 154, 0.55);
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(44, 74, 107, 0.12), 0 2px 4px rgba(44, 74, 107, 0.06);
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    gap: 5px;
     text-align: left;
-    white-space: normal;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
     z-index: 4;
   }
-  .engage-mini-dot:hover .engage-mini-tip,
-  .engage-mini-dot:focus-visible .engage-mini-tip {
+  .engage-mini-popup::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 10px;
+    height: 10px;
+    background: var(--off-white);
+    border-right: 1px solid rgba(197, 181, 154, 0.55);
+    border-bottom: 1px solid rgba(197, 181, 154, 0.55);
+  }
+  .engage-mini-dot:hover .engage-mini-popup,
+  .engage-mini-dot:focus .engage-mini-popup,
+  .engage-mini-dot:focus-visible .engage-mini-popup {
     opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
   }
-  .emt-step {
+  .ems-popup-step {
     font-family: var(--sans);
-    font-size: 6.5px;
+    font-size: 10px;
     font-weight: 700;
-    letter-spacing: 1.6px;
+    color: var(--navy-deep);
+    letter-spacing: 1px;
     text-transform: uppercase;
-    color: var(--gold);
   }
-  .emt-duration {
+  .ems-popup-detail {
     font-family: var(--sans);
-    font-size: 8.5px;
-    font-weight: 700;
-    color: var(--navy-deep);
-    letter-spacing: 0.2px;
-  }
-  .emt-detail {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 7.5px;
+    font-size: 9.5px;
     line-height: 1.5;
-    color: var(--navy-deep);
+    color: var(--text-medium);
   }
-  .emt-detail strong {
-    font-style: normal;
-    color: var(--navy-deep);
+  .ems-popup-detail strong {
+    color: var(--text-emphasis);
     font-weight: 600;
   }
   .engage-mini-axis {
     position: relative;
-    height: 20px;
-    margin-top: 4px;
+    height: 38px;
+    margin-top: 12px;
   }
   .engage-mini-label {
     position: absolute;
     top: 0;
     transform: translateX(-50%);
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 13px;
-    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    white-space: nowrap;
+  }
+  .eml-name {
+    font-family: var(--sans);
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--navy-deep);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .eml-num {
     color: var(--gold);
+    margin-right: 4px;
+  }
+  .eml-duration {
+    font-family: var(--sans);
+    font-size: 10.5px;
+    font-weight: 600;
+    color: var(--text-emphasis);
     letter-spacing: 0.4px;
   }
   .engage-mini-note {
-    margin-top: 10px;
-    font-size: 8.5px;
+    margin-top: 14px;
+    font-size: 10px;
     color: var(--text-light);
     font-style: italic;
     text-align: center;
@@ -1514,16 +1545,34 @@
   @media (max-width: 720px) {
     .engage-mini { padding: 14px 16px 12px; }
     .engage-mini-headline { font-size: 11px; }
-    .engage-mini-tip { width: 170px; }
-    .emt-detail { font-size: 9.5px; }
-    .engage-mini-track .engage-mini-dot:nth-of-type(1) .engage-mini-tip {
+    .engage-mini-popup { width: 180px; }
+    .engage-mini-track .engage-mini-dot:nth-of-type(1) .engage-mini-popup {
       left: 0;
-      transform: translateX(0);
+      transform: translateX(0) translateY(4px);
     }
-    .engage-mini-track .engage-mini-dot:nth-of-type(3) .engage-mini-tip {
+    .engage-mini-dot:nth-of-type(1):hover .engage-mini-popup,
+    .engage-mini-dot:nth-of-type(1):focus .engage-mini-popup,
+    .engage-mini-dot:nth-of-type(1):focus-visible .engage-mini-popup {
+      transform: translateX(0) translateY(0);
+    }
+    .engage-mini-track .engage-mini-dot:nth-of-type(1) .engage-mini-popup::after {
+      left: 14px;
+      transform: translateX(0) rotate(45deg);
+    }
+    .engage-mini-track .engage-mini-dot:nth-of-type(3) .engage-mini-popup {
       left: auto;
       right: 0;
-      transform: translateX(0);
+      transform: translateX(0) translateY(4px);
+    }
+    .engage-mini-dot:nth-of-type(3):hover .engage-mini-popup,
+    .engage-mini-dot:nth-of-type(3):focus .engage-mini-popup,
+    .engage-mini-dot:nth-of-type(3):focus-visible .engage-mini-popup {
+      transform: translateX(0) translateY(0);
+    }
+    .engage-mini-track .engage-mini-dot:nth-of-type(3) .engage-mini-popup::after {
+      left: auto;
+      right: 14px;
+      transform: translateX(0) rotate(45deg);
     }
   }
 
@@ -2075,7 +2124,7 @@
     color: var(--text-medium);
   }
   .pc-list strong {
-    color: var(--navy-deep);
+    color: var(--text-emphasis);
     font-weight: 600;
   }
   .pc-list div + div { margin-top: 5px; }
@@ -2237,7 +2286,9 @@
   }
 
   .pilot-tag {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     font-size: 10px;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -2251,6 +2302,23 @@
     vertical-align: middle;
     position: relative;
     z-index: 1;
+  }
+  .pilot-tag-pulse {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent-warm);
+    position: relative;
+    flex-shrink: 0;
+  }
+  .pilot-tag-pulse::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    background: var(--accent-warm);
+    opacity: 0.45;
+    animation: heroPulse 2s ease-out infinite;
   }
 
   .pilot-offer {
@@ -2309,7 +2377,7 @@
   }
 
   .pilot-desc strong {
-    color: var(--navy);
+    color: var(--text-emphasis);
     font-weight: 600;
   }
 
@@ -3150,38 +3218,41 @@
     <!-- Minimal engagement timeline -->
     <div class="engage-mini" id="engage">
       <div class="engage-mini-head">
-        <span class="engage-mini-eyebrow">How to engage</span>
+        <span class="engage-mini-eyebrow">How it works</span>
       </div>
       <div class="engage-mini-track">
         <div class="engage-mini-line"></div>
-        <span class="engage-mini-dot" style="left:10%" tabindex="0" aria-label="Discovery: 30 minutes to 1 hour. Free initial conversation to check fit.">
-          <span class="engage-mini-tip">
-            <span class="emt-step">01 &middot; Discovery</span>
-            <span class="emt-duration">30 min &ndash; 1 hr</span>
-            <span class="emt-detail">Free initial conversation to understand the situation and check fit.</span>
+        <button type="button" class="engage-mini-dot" style="left:10%" aria-label="Discovery details">
+          <span class="engage-mini-popup" role="tooltip">
+            <span class="ems-popup-detail">Goals, fit, and direction <strong>are discovered</strong> in a free first call.</span>
           </span>
-        </span>
-        <span class="engage-mini-dot" style="left:50%" tabindex="0" aria-label="Alignment: at your pace. Written scope, deliverables, timeline, and fees before work begins.">
-          <span class="engage-mini-tip">
-            <span class="emt-step">02 &middot; Alignment</span>
-            <span class="emt-duration">At your pace</span>
-            <span class="emt-detail">Written scope, deliverables, timeline, and fees before any work begins.</span>
+        </button>
+        <button type="button" class="engage-mini-dot" style="left:50%" aria-label="Alignment details">
+          <span class="engage-mini-popup" role="tooltip">
+            <span class="ems-popup-detail">Scope, timeline, and fees <strong>are aligned</strong> in writing before any work begins.</span>
           </span>
-        </span>
-        <span class="engage-mini-dot" style="left:90%" tabindex="0" aria-label="Delivery: project to ongoing. Fractional advisory or project-based deep dive.">
-          <span class="engage-mini-tip">
-            <span class="emt-step">03 &middot; Delivery</span>
-            <span class="emt-duration">Project to ongoing</span>
-            <span class="emt-detail"><strong>Fractional advisory</strong> (weekly/bi-weekly) or <strong>project-based deep dive</strong>, async with structured checkpoints.</span>
+        </button>
+        <button type="button" class="engage-mini-dot" style="left:90%" aria-label="Delivery details">
+          <span class="engage-mini-popup" role="tooltip">
+            <span class="ems-popup-detail">Outcomes <strong>are delivered</strong> through fractional advisory or project-based deep dive.</span>
           </span>
-        </span>
+        </button>
       </div>
       <div class="engage-mini-axis">
-        <span class="engage-mini-label" style="left:10%">Discovery</span>
-        <span class="engage-mini-label" style="left:50%">Alignment</span>
-        <span class="engage-mini-label" style="left:90%">Delivery</span>
+        <span class="engage-mini-label" style="left:10%">
+          <span class="eml-name"><span class="eml-num">01</span> Discovery</span>
+          <span class="eml-duration">30 min &ndash; 1 hr</span>
+        </span>
+        <span class="engage-mini-label" style="left:50%">
+          <span class="eml-name"><span class="eml-num">02</span> Alignment</span>
+          <span class="eml-duration">At your pace</span>
+        </span>
+        <span class="engage-mini-label" style="left:90%">
+          <span class="eml-name"><span class="eml-num">03</span> Delivery</span>
+          <span class="eml-duration">Project to ongoing</span>
+        </span>
       </div>
-      <p class="engage-mini-note">NDA available on request before and after discovery.</p>
+      <p class="engage-mini-note">Tap each step for details. NDA available on request before and after discovery.</p>
     </div>
 
     <div class="services-grid">
@@ -3196,9 +3267,9 @@
         </div>
         <h3 class="service-title">Commercial Strategy &amp; Partnerships</h3>
         <ul class="service-list">
-          <li><strong>Europe&ndash;Asia</strong> go-to-market and partnership development for life-science teams, with B2B/B2C, channel, and distribution strategies</li>
+          <li><strong>Europe&ndash;Asia</strong> go-to-market and partnerships, with B2B/B2C, channel, and distribution strategies</li>
           <li><strong>Sales-operations data analysis</strong>, <strong>strategic direction</strong> & pricing optimization</li>
-          <li>Market sizing, ICP, <strong>pricing &amp; positioning</strong>, channel and stakeholder strategy</li>
+          <li>Market sizing, ICP definition, <strong>pricing &amp; positioning</strong>, channel and stakeholder strategy</li>
           <li>Workshops &amp; capability programs</li>
         </ul>
         <a class="service-cta" href="https://card.drsleelifesciences.com/" target="_blank" rel="noopener noreferrer">
@@ -3223,7 +3294,7 @@
         <ul class="service-list">
           <li><strong>Experimental design &amp; troubleshooting</strong> from <strong>wet-lab to bioinformatics</strong> across clinical, environmental, food-safety: NGS, molecular biology, cell, microbial, animal, field</li>
           <li>Method validation &amp; <strong>proficiency testing</strong></li>
-          <li><strong>Peer-reviewed manuscripts</strong>, grant proposals &amp; <strong>regulatory documentation</strong></li>
+          <li><strong>Peer-reviewed manuscripts</strong>, technical reports, proposals &amp; <strong>regulatory documentation</strong></li>
           <li>Workshops &amp; capability programs</li>
         </ul>
         <a class="service-cta" href="https://card.drsleelifesciences.com/" target="_blank" rel="noopener noreferrer">
@@ -3256,7 +3327,7 @@
             <strong>Agentic AI workspace design</strong>
             <a class="service-inline-link" href="#partnership" aria-label="See Sense 2026 active build in Partnership section">
               <span class="service-inline-tag">Active build</span>
-              <span class="service-inline-text">Sense 2026: technical query to quote in a minute</span>
+              <span class="service-inline-text"><strong>Sense 2026</strong>: technical query to quote in a minute</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <line x1="5" y1="12" x2="19" y2="12"/>
                 <polyline points="12 5 19 12 12 19"/>
@@ -3302,7 +3373,7 @@
       <article id="partner-pilot" class="featured-pilot partner-panel" role="tabpanel" aria-labelledby="ptab-pilot">
         <div class="pilot-header">
           <div class="pilot-header-badges">
-            <span class="pilot-tag">Active build · design partner spots open</span>
+            <span class="pilot-tag"><span class="pilot-tag-pulse" aria-hidden="true"></span>Active build &middot; spots open</span>
             <span class="pilot-offer">Founding-partner pricing</span>
           </div>
           <div class="pilot-header-title-row">
