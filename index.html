@@ -753,14 +753,56 @@
     box-shadow: 0 2px 4px rgba(201, 169, 97, 0.08), 0 14px 32px rgba(31, 78, 121, 0.07);
   }
 
+  .service-card-commercial {
+    border-left: 3px solid var(--navy);
+    background: linear-gradient(to right, rgba(31, 78, 121, 0.05) 0%, var(--off-white) 60%);
+  }
+  .service-card-scientific {
+    border-left: 3px solid var(--gold);
+    background: linear-gradient(to right, rgba(201, 169, 97, 0.07) 0%, var(--off-white) 60%);
+  }
+  .service-card-digital {
+    border-left: 3px solid var(--gold);
+    border-right: 3px solid var(--navy);
+    background: linear-gradient(to right,
+      rgba(201, 169, 97, 0.08) 0%,
+      var(--off-white) 35%,
+      var(--off-white) 65%,
+      rgba(31, 78, 121, 0.06) 100%);
+  }
+
+  .service-mark {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .service-icon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+  }
+  .service-card-commercial .service-icon { color: var(--navy); }
+  .service-card-scientific .service-icon { color: var(--gold); }
+
   .service-num {
     font-family: var(--serif);
     font-style: italic;
     color: var(--gold);
-    font-size: 15px;
+    font-size: 14px;
     letter-spacing: 0.4px;
-    margin-bottom: 10px;
     line-height: 1;
+  }
+  .service-num::before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 1px;
+    background: rgba(201, 169, 97, 0.5);
+    vertical-align: middle;
+    margin-right: 8px;
+    transform: translateY(-1px);
   }
 
   .service-title {
@@ -2720,20 +2762,46 @@
 
     <div class="services-grid">
 
-      <article class="service-card">
-        <div class="service-num">01</div>
+      <article class="service-card service-card-commercial">
+        <div class="service-mark">
+          <svg class="service-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="16" r="7"/>
+            <circle cx="20" cy="16" r="7"/>
+          </svg>
+          <span class="service-num">01</span>
+        </div>
         <h3 class="service-title">Commercial Strategy &amp; Partnerships</h3>
         <p class="service-body"><strong>Europe–Asia go-to-market and partnership development</strong> across biotech and diagnostics. <strong>Market sizing, ICP definition, pricing, and positioning</strong>. Channel strategy, stakeholder mapping, and competitive context when relevant. <strong>Sales and operations data analysis</strong> to inform commercial decisions. Workshops and capability programs for commercial teams.</p>
       </article>
 
-      <article class="service-card">
-        <div class="service-num">02</div>
+      <article class="service-card service-card-scientific">
+        <div class="service-mark">
+          <svg class="service-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M13 5v8L7 26a1.6 1.6 0 0 0 1.4 2.3h15.2A1.6 1.6 0 0 0 25 26L19 13V5"/>
+            <line x1="11" y1="5" x2="21" y2="5"/>
+            <line x1="9.5" y1="19" x2="22.5" y2="19"/>
+          </svg>
+          <span class="service-num">02</span>
+        </div>
         <h3 class="service-title">Technical &amp; Scientific Advisory</h3>
         <p class="service-body">Short-term R&amp;D project and research support across <strong>clinical, environmental, and food-safety domains</strong>. <strong>NGS workflow design</strong> across in vivo, in vitro, and in silico methods, with method validation, <strong>proficiency testing</strong>, and bioinformatics pipeline architecture (Python, R, Docker). Peer-reviewed manuscripts, technical reports, grant proposals, and regulatory documentation. Partnership development and project structuring for co-builders. Workshops and capability programs for scientific teams.</p>
       </article>
 
-      <article class="service-card">
-        <div class="service-num">03</div>
+      <article class="service-card service-card-digital">
+        <div class="service-mark">
+          <svg class="service-icon" viewBox="0 0 32 32" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <defs>
+              <linearGradient id="svc-digital-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="50%" stop-color="#C9A961"/>
+                <stop offset="50%" stop-color="#1F4E79"/>
+              </linearGradient>
+            </defs>
+            <ellipse cx="16" cy="7" rx="9" ry="3" stroke="url(#svc-digital-grad)"/>
+            <path d="M7 7v8c0 1.7 4 3 9 3s9-1.3 9-3V7" stroke="url(#svc-digital-grad)"/>
+            <path d="M7 15v8c0 1.7 4 3 9 3s9-1.3 9-3v-8" stroke="url(#svc-digital-grad)"/>
+          </svg>
+          <span class="service-num">03</span>
+        </div>
         <h3 class="service-title">Digital Infrastructure</h3>
         <p class="service-body">Tailored to each company's existing systems: <strong>database architecture and integration</strong> across technical and commercial operations data platforms. Biobank, LIMS, sales operations, and reporting infrastructure under ISO 17025 &amp; ISO 9001. Platform-flexible across Agentic AI, Python, R, SAP, Power BI, SharePoint, and others already in your stack. Includes <strong>agentic AI workspace design</strong> where it fits.</p>
         <a href="#partnership" class="service-note" aria-label="See Sense 2026 pilot in Partnership section">
@@ -2795,10 +2863,9 @@
 
     <div class="partner-tabs" role="tablist" aria-label="Partner type">
       <button id="ptab-pilot" class="partner-tab" data-partner-tab="pilot" role="tab" aria-selected="true" aria-controls="partner-pilot">Active Pilot</button>
-      <button id="ptab-p1" class="partner-tab" data-partner-tab="p1" role="tab" aria-selected="false" aria-controls="partner-p1">Design Partner</button>
-      <button id="ptab-p2" class="partner-tab" data-partner-tab="p2" role="tab" aria-selected="false" aria-controls="partner-p2">Co-builder</button>
-      <button id="ptab-p3" class="partner-tab" data-partner-tab="p3" role="tab" aria-selected="false" aria-controls="partner-p3">Project Engineer</button>
-      <button id="ptab-p4" class="partner-tab" data-partner-tab="p4" role="tab" aria-selected="false" aria-controls="partner-p4">Student Researcher</button>
+      <button id="ptab-p1" class="partner-tab" data-partner-tab="p1" role="tab" aria-selected="false" aria-controls="partner-p1">Co-builder</button>
+      <button id="ptab-p2" class="partner-tab" data-partner-tab="p2" role="tab" aria-selected="false" aria-controls="partner-p2">Project Engineer</button>
+      <button id="ptab-p3" class="partner-tab" data-partner-tab="p3" role="tab" aria-selected="false" aria-controls="partner-p3">Student Researcher</button>
     </div>
 
     <div class="partner-content">
@@ -2869,26 +2936,20 @@
 
       <article id="partner-p1" class="service-card partner-panel" role="tabpanel" aria-labelledby="ptab-p1" hidden>
         <div class="service-num">P1</div>
-        <h3 class="service-title">Design Partner</h3>
-        <p class="service-body">R&amp;D or commercial leader in biotech, genomics, diagnostics, or pharma who feels the pain of the workflows I'm building for. You give honest feedback on early prototypes. You get heavily discounted access during build, and your needs shape product direction. Sense 2026 is the first active pilot, with more topics in the pipeline.</p>
+        <h3 class="service-title">Co-builder</h3>
+        <p class="service-body">R&amp;D or commercial leaders in biotech, genomics, diagnostics, or pharma who'd rather build something with someone than navigate alone. Two paths fit: <strong>shape an existing build</strong> (Sense 2026 is the active pilot, with design partner spots open and more topics in the pipeline), or <strong>co-create something new</strong> that complements the practice, around your own thesis about a tool, infrastructure, program, or service in life sciences. Several shapes are possible, from project collaboration to deeper alignment, with hands-on support for partnership development and project structuring along the way.</p>
       </article>
 
       <article id="partner-p2" class="service-card partner-panel" role="tabpanel" aria-labelledby="ptab-p2" hidden>
         <div class="service-num">P2</div>
-        <h3 class="service-title">Co-builder</h3>
-        <p class="service-body">You have your own thesis about a tool, infrastructure project, program, or service in life sciences and you'd rather build it with someone than alone. Maybe a wedge into a workflow I'm not covering. Maybe complementary to one of mine. If we resonate on what's worth building and how, several shapes are possible, from project collaboration to deeper alignment. The practice provides hands-on support for partnership development and project structuring along the way. Early co-builder conversations are starting now, with more openings in the pipeline.</p>
+        <h3 class="service-title">Project Engineer</h3>
+        <p class="service-body">Engineer interested in shipping bounded scope across <strong>agentic AI tooling</strong>, <strong>database architecture and integration</strong>, or operations data platform work (LIMS, SAP, Power BI, SharePoint, or others). Comfortable in Python, R, Docker, or Git workflows. ML or AI background welcome but not required; strong craft in pipelines, schemas, system integration, or curation work is equally valuable. Paid contract engagement, collaboration credit. Domain context (biology, NGS, healthcare data) is a plus. First contracts are forming around active workstreams, with more in the pipeline.</p>
       </article>
 
       <article id="partner-p3" class="service-card partner-panel" role="tabpanel" aria-labelledby="ptab-p3" hidden>
         <div class="service-num">P3</div>
-        <h3 class="service-title">Project Engineer</h3>
-        <p class="service-body">Engineer interested in shipping bounded scope across AI tooling, data architecture, database integration, or operations data platform work (LIMS, SAP, Power BI, SharePoint, or others). ML or AI background welcome but not required. Strong craft in pipelines, schemas, system integration, or curation work is equally valuable. Paid contract engagement, collaboration credit. Domain context (biology, NGS, healthcare data) is a plus. First contracts are forming around active workstreams, with more in the pipeline.</p>
-      </article>
-
-      <article id="partner-p4" class="service-card partner-panel" role="tabpanel" aria-labelledby="ptab-p4" hidden>
-        <div class="service-num">P4</div>
         <h3 class="service-title">Student Researcher</h3>
-        <p class="service-body">Undergrad or grad student in CS, life sciences, or related fields, looking for hands-on experience at the AI and life sciences intersection. Capstone projects, master's thesis topics, summer internships. We define the scope together; you get structured mentorship and a real project to point at. Initial student threads are forming around current projects, with more topics in the pipeline.</p>
+        <p class="service-body">Undergrad or grad student in CS, life sciences, or related fields, looking for hands-on experience at the <strong>agentic AI and life sciences intersection</strong>. Capstone projects, master's thesis topics, summer internships across clinical, environmental, food-safety, or commercial-operations contexts. We define the scope together; you get structured mentorship and a real project to point at. Initial student threads are forming around current projects, with more topics in the pipeline.</p>
       </article>
     </div>
 
