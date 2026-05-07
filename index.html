@@ -613,6 +613,10 @@
     max-width: 680px;
     margin-bottom: 56px;
   }
+  .section-lead strong {
+    color: var(--navy-deep);
+    font-weight: 600;
+  }
 
   .credentials-block {
     margin: -32px 0 56px;
@@ -911,13 +915,119 @@
   .diptych::before {
     content: '';
     position: absolute;
-    top: 14px;
-    bottom: 14px;
+    top: 0;
+    bottom: 0;
     left: 50%;
     width: 1px;
-    background: var(--gold);
-    opacity: 0.22;
+    background: linear-gradient(to bottom,
+      transparent 0%,
+      rgba(201, 169, 97, 0.4) 4%,
+      rgba(201, 169, 97, 0.4) 96%,
+      transparent 100%);
     pointer-events: none;
+  }
+
+  .track-rail {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .track-rail-sci {
+    left: -16px;
+    background: linear-gradient(to bottom,
+      transparent 0%,
+      rgba(201, 169, 97, 0.55) 8%,
+      rgba(201, 169, 97, 0.55) 92%,
+      transparent 100%);
+  }
+  .track-rail-strat {
+    right: -16px;
+    background: linear-gradient(to bottom,
+      transparent 0%,
+      rgba(31, 78, 121, 0.32) 8%,
+      rgba(31, 78, 121, 0.32) 92%,
+      transparent 100%);
+  }
+
+  .dip-era {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin: 22px 0 6px;
+    position: relative;
+    z-index: 2;
+  }
+  .dip-era:first-of-type {
+    margin-top: 0;
+  }
+  .dip-era::before, .dip-era::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent 0%, rgba(201, 169, 97, 0.4) 30%, rgba(201, 169, 97, 0.4) 70%, transparent 100%);
+  }
+  .dip-era-pill {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 6px 16px;
+    background: var(--paper);
+    border: 1px solid rgba(201, 169, 97, 0.35);
+    border-radius: 999px;
+  }
+  .dip-era-title {
+    font-family: var(--serif);
+    font-size: 14px;
+    font-weight: 500;
+    font-style: italic;
+    color: var(--navy);
+    letter-spacing: 0.2px;
+  }
+  .dip-era-range {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.4px;
+  }
+
+  .dip-item[data-year]::before {
+    content: attr(data-year);
+    position: absolute;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gold);
+    background: var(--paper);
+    padding: 3px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(201, 169, 97, 0.45);
+    letter-spacing: 0.6px;
+    white-space: nowrap;
+    z-index: 2;
+  }
+  .dip-item.sci[data-year]::before {
+    top: 26px;
+    right: -16px;
+    transform: translateX(50%);
+  }
+  .dip-item.strat[data-year]::before {
+    top: 26px;
+    left: -16px;
+    transform: translateX(-50%);
+  }
+  .dip-item.both[data-year]::before {
+    top: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--off-white);
+    border-color: rgba(201, 169, 97, 0.55);
   }
 
   .dip-item {
@@ -936,50 +1046,65 @@
     transform: translateY(-1px);
   }
 
-  .dip-item.sci { grid-column: 1; }
-  .dip-item.strat { grid-column: 2; }
+  .dip-item.sci {
+    grid-column: 1;
+    border-left: 3px solid var(--gold);
+    background: linear-gradient(to right, rgba(201, 169, 97, 0.06) 0%, var(--off-white) 60%);
+  }
+  .dip-item.strat {
+    grid-column: 2;
+    border-left: 3px solid var(--navy);
+    background: linear-gradient(to right, rgba(31, 78, 121, 0.06) 0%, var(--off-white) 60%);
+  }
 
   .dip-item.both {
     grid-column: 1 / -1;
-    border: 1px solid rgba(201, 169, 97, 0.55);
-    background: linear-gradient(135deg, var(--off-white) 0%, var(--paper) 55%, var(--off-white) 100%);
+    border: 1px solid var(--border-soft);
+    border-left: 3px solid var(--gold);
+    border-right: 3px solid var(--navy);
+    background: linear-gradient(to right,
+      rgba(201, 169, 97, 0.10) 0%,
+      var(--off-white) 28%,
+      var(--paper) 50%,
+      var(--off-white) 72%,
+      rgba(31, 78, 121, 0.08) 100%);
     box-shadow: 0 1px 2px rgba(201, 169, 97, 0.08), 0 10px 28px rgba(31, 78, 121, 0.05);
     text-align: center;
     padding: 30px 32px;
   }
 
   .dip-item.both:hover {
-    box-shadow: 0 2px 4px rgba(201, 169, 97, 0.10), 0 14px 36px rgba(31, 78, 121, 0.08);
+    box-shadow: 0 2px 4px rgba(201, 169, 97, 0.10), 0 14px 36px rgba(31, 78, 121, 0.10);
   }
 
   .dip-item.both .dip-detail { text-align: left; max-width: 720px; margin: 0 auto; }
 
   .dip-tag {
     display: inline-block;
-    font-size: 10px;
+    font-size: 9.5px;
     letter-spacing: 1.8px;
     text-transform: uppercase;
     color: var(--gold);
     font-weight: 700;
     background: rgba(201, 169, 97, 0.12);
-    padding: 5px 14px;
+    padding: 4px 12px;
     border-radius: 999px;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
   }
 
   .dip-period {
     font-family: var(--serif);
     font-style: italic;
     color: var(--gold);
-    font-size: 13.5px;
+    font-size: 11.5px;
     letter-spacing: 0.4px;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
 
   .dip-org {
     font-family: var(--serif);
     color: var(--navy);
-    font-size: 17px;
+    font-size: 14.5px;
     font-weight: 600;
     margin-bottom: 4px;
     line-height: 1.3;
@@ -989,7 +1114,7 @@
   .dip-org-alt {
     display: inline-block;
     font-family: var(--serif);
-    font-size: 13px;
+    font-size: 11.5px;
     font-weight: 600;
     color: var(--navy);
     letter-spacing: -0.1px;
@@ -998,36 +1123,41 @@
 
   .dip-role {
     color: var(--text-light);
-    font-size: 13px;
+    font-size: 11.5px;
     letter-spacing: 0.3px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
   .dip-detail {
     color: var(--text-medium);
-    font-size: 14.5px;
+    font-size: 12.5px;
     line-height: 1.6;
   }
 
   .dip-location {
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 1.4px;
     text-transform: uppercase;
     color: var(--text-faint);
     font-weight: 500;
-    margin-top: 16px;
-    padding-top: 14px;
+    margin-top: 14px;
+    padding-top: 12px;
     border-top: 1px solid var(--border-soft);
   }
 
   @media (max-width: 720px) {
     .diptych::before { display: none; }
+    .track-rail { display: none; }
+    .dip-item[data-year]::before { display: none; }
     .diptych { grid-template-columns: 1fr; gap: 16px; }
     .dip-item.sci, .dip-item.strat { grid-column: 1; }
     .dip-item.both { padding: 22px 22px; text-align: left; }
     .dip-item.both .dip-detail { text-align: left; }
     .diptych-cols { grid-template-columns: 1fr; gap: 8px; }
     .dip-rail-label { text-align: left; padding-bottom: 6px; }
+    .dip-era { margin: 14px 0 2px; gap: 10px; }
+    .dip-era-pill { padding: 5px 12px; gap: 8px; }
+    .dip-era-title { font-size: 13px; }
   }
 
   /* ====== HOW I WORK ====== */
@@ -1319,6 +1449,336 @@
   @media (max-width: 720px) {
     .about-grid { grid-template-columns: 1fr; gap: 28px; }
     .about-photo { max-width: 240px; margin: 0 auto; }
+  }
+
+  /* ====== Career graph (B): minimal start-year timeline ====== */
+  .career-graph {
+    margin: 0 0 22px;
+    padding: 18px 22px 14px;
+    background: var(--off-white);
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+    box-shadow: 0 1px 2px rgba(31, 78, 121, 0.03), 0 4px 12px rgba(31, 78, 121, 0.03);
+  }
+  .cg-legend {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    margin-bottom: 14px;
+    font-size: 10px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--text-medium);
+    font-weight: 600;
+  }
+  .cg-leg-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .cg-leg-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+
+  .cg-track {
+    position: relative;
+    height: 28px;
+    margin: 8px 0 4px;
+  }
+  .cg-line {
+    position: absolute;
+    top: 50%;
+    left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(to right,
+      transparent 0%,
+      rgba(201, 169, 97, 0.45) 4%,
+      rgba(201, 169, 97, 0.45) 96%,
+      transparent 100%);
+    transform: translateY(-50%);
+  }
+
+  .cg-dot {
+    position: absolute;
+    top: 50%;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid var(--off-white);
+    box-shadow: 0 0 0 1px rgba(31, 78, 121, 0.18);
+    cursor: default;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+  }
+  .cg-dot.cg-dot-sci, .cg-leg-dot.cg-dot-sci {
+    background: var(--gold);
+  }
+  .cg-dot.cg-dot-strat, .cg-leg-dot.cg-dot-strat {
+    background: var(--navy);
+  }
+  .cg-dot.cg-dot-both, .cg-leg-dot.cg-dot-both {
+    background: linear-gradient(90deg, var(--gold) 50%, var(--navy) 50%);
+  }
+  .cg-dot:hover, .cg-dot:focus-visible {
+    transform: translate(-50%, -50%) scale(1.4);
+    box-shadow: 0 0 0 1px rgba(201, 169, 97, 0.45), 0 4px 10px rgba(31, 78, 121, 0.15);
+    z-index: 3;
+  }
+
+  .cg-tip {
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-family: var(--serif);
+    background: var(--paper);
+    padding: 4px 9px;
+    border: 1px solid rgba(201, 169, 97, 0.4);
+    border-radius: 4px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+    text-align: center;
+  }
+  .cg-tip-org {
+    font-size: 9.5px;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--navy-deep);
+    letter-spacing: 0.2px;
+  }
+  .cg-tip-role {
+    font-size: 8.5px;
+    font-style: italic;
+    color: var(--text-medium);
+    letter-spacing: 0.3px;
+  }
+  .cg-dot:hover .cg-tip,
+  .cg-dot:focus-visible .cg-tip {
+    opacity: 1;
+  }
+
+  .cg-axis {
+    position: relative;
+    height: 18px;
+    margin-top: 4px;
+  }
+  .cg-year {
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 10.5px;
+    font-weight: 500;
+    color: var(--gold);
+    letter-spacing: 0.5px;
+  }
+  .cg-now-label {
+    position: absolute;
+    top: -2px;
+    right: 0;
+    transform: translateY(-100%);
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--navy-deep);
+    letter-spacing: 0.5px;
+    background: var(--off-white);
+    padding: 1px 6px 2px;
+    border-radius: 3px;
+  }
+  .cg-now-label::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    right: 4px;
+    width: 1px;
+    height: 6px;
+    background: var(--navy-deep);
+  }
+
+  /* ====== Sticky persona + narrative split (A) ====== */
+  .bg-split {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+
+  .persona-panel {
+    position: sticky;
+    top: 96px;
+    background: var(--off-white);
+    border: 1px solid var(--border-soft);
+    border-radius: 14px;
+    padding: 28px 26px;
+    box-shadow: 0 1px 2px rgba(31, 78, 121, 0.03), 0 6px 18px rgba(31, 78, 121, 0.04);
+  }
+  .persona-portrait {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    background: var(--paper);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 18px;
+    border: 1px solid var(--border-soft);
+  }
+  .persona-portrait img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .persona-name-block {
+    margin-bottom: 20px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .persona-name {
+    font-family: var(--serif);
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--navy);
+    letter-spacing: -0.2px;
+    line-height: 1.25;
+    margin-bottom: 8px;
+  }
+  .persona-role-line {
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .persona-org-line {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 13.5px;
+    color: var(--text-medium);
+  }
+
+  .persona-practice {
+    margin-bottom: 22px;
+    padding: 14px 14px 14px 16px;
+    background: linear-gradient(135deg, rgba(201, 169, 97, 0.08) 0%, rgba(201, 169, 97, 0.02) 100%);
+    border-left: 2px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+  }
+  .persona-practice-period {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .persona-practice p {
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: var(--text-medium);
+    margin: 0;
+  }
+
+  .persona-stats {
+    list-style: none;
+    margin: 0 0 22px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 16px;
+  }
+  .persona-stats li {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .ps-num {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.05;
+    letter-spacing: -0.4px;
+  }
+  .persona-stats li.ps-region .ps-num {
+    font-size: 13px;
+    font-style: italic;
+    line-height: 1.2;
+  }
+  .ps-label {
+    font-size: 10px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  .persona-cred {
+    border-top: 1px solid var(--border-soft);
+    padding-top: 18px;
+  }
+  .pc-row + .pc-row {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px dashed rgba(201, 169, 97, 0.25);
+  }
+  .pc-label {
+    font-size: 10px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .pc-list {
+    font-size: 11.5px;
+    line-height: 1.55;
+    color: var(--text-medium);
+  }
+  .pc-list strong {
+    color: var(--navy-deep);
+    font-weight: 600;
+  }
+  .pc-list div + div { margin-top: 5px; }
+  .pc-list-edu div + div { margin-top: 10px; }
+  .pc-list a {
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(201, 169, 97, 0.35);
+  }
+
+  .narrative-col {
+    min-width: 0; /* prevent grid blow-out */
+  }
+
+  @media (max-width: 980px) {
+    .bg-split {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .persona-panel {
+      position: static;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .career-graph { padding: 18px 16px 14px; margin-bottom: 40px; }
+    .cg-legend { gap: 12px; font-size: 9px; letter-spacing: 1px; }
+    .cg-leg-dot { width: 7px; height: 7px; }
+    .cg-dot { width: 9px; height: 9px; }
+    .cg-year { font-size: 9.5px; }
+    .persona-panel { padding: 22px 20px; }
   }
 
   .dip-item.has-photo {
@@ -2356,48 +2816,97 @@
     <h2 class="section-title">Two tracks, one practice.</h2>
     <div class="section-divider"></div>
     <p class="section-lead">
-      Fifteen years between research benches, regulatory bodies, and commercial leadership. The arc below reads top to bottom (most recent first), scientific work on the left, commercial on the right, both at the centre when one role demanded both.
+      Fifteen years between research benches, regulatory bodies, and commercial leadership. Scientific work spans clinical, environmental, and food-safety domains, with peer-reviewed publications and EU Reference Laboratory studies in genomics and microbiology, <strong>from wet-lab to bioinformatics and agentic AI tooling</strong>. Commercial work covers EMEA market entry, partnerships, pricing, fiscal planning, revenue forecasting, sales direction, and <strong>biobank, LIMS, and SAP data architecture</strong> under ISO 17025 &amp; ISO 9001, leading multidisciplinary teams across sales, project management, lab, and bioinformatics.
     </p>
 
-    <div class="credentials-block">
-      <div class="credentials-row">
-        <span class="credentials-label">Education</span>
-        <ul class="credentials-list">
-          <li><strong>PhD, Public Health</strong> &nbsp;·&nbsp; Seoul National University &nbsp;·&nbsp; 2016</li>
-          <li><strong>MSc, Molecular Medicine and Biopharmaceutical Science</strong> &nbsp;·&nbsp; Seoul National University &nbsp;·&nbsp; 2013</li>
-          <li><strong>BSc, Food and Nutrition</strong> &amp; <strong>BSc, Biology</strong> &nbsp;·&nbsp; Yonsei University &nbsp;·&nbsp; 2011</li>
-        </ul>
-      </div>
-      <div class="credentials-row credentials-row-meta">
-        <span class="credentials-label">Research record</span>
-        <span class="credentials-meta-text">Selected publications and full record on <a href="https://orcid.org/0009-0009-3580-4459" target="_blank" rel="noopener noreferrer">ORCID 0009-0009-3580-4459</a>.</span>
-      </div>
-    </div>
-
-    <div class="diptych-cols" aria-hidden="true">
-      <div class="dip-rail-label">Scientific &amp; technical</div>
-      <div class="dip-rail-label">Commercial &amp; strategic</div>
-    </div>
-
-    <div class="diptych">
-
-      <article class="dip-item both has-photo">
-        <div class="dip-photo">
+    <!-- ===== Sticky persona (A) + narrative chapters ===== -->
+    <div class="bg-split">
+      <aside class="persona-panel">
+        <div class="persona-portrait">
           <img src="images/seungeun-portrait-1.jpg" alt="Seungeun Lee">
         </div>
-        <div class="dip-content">
-          <span class="dip-tag">Both tracks</span>
-          <div class="dip-period">May 2026 – Current</div>
-          <div class="dip-org">Dr. S. Lee Life Sciences</div>
-          <div class="dip-role">Founder &amp; Principal Consultant</div>
-          <p class="dip-detail">Independent advisory across three overlapping areas: commercial strategy and partnerships, technical and scientific advisory including R&amp;D research support, and digital infrastructure tailored to each client's existing systems. Engagements support biotech and the broader R&amp;D community scaling across EMEA and Asia.</p>
-          <div class="dip-location">Nieuw-Vennep, Netherlands</div>
+        <div class="persona-name-block">
+          <div class="persona-name">Seungeun Lee, PhD</div>
+          <div class="persona-role-line">Founder &amp; Principal</div>
+          <div class="persona-org-line">Dr. S. Lee Life Sciences</div>
         </div>
-      </article>
+        <div class="persona-practice">
+          <div class="persona-practice-period">May 2026 – Current</div>
+          <p>Independent advisory across three overlapping areas: commercial strategy and partnerships, technical and scientific advisory including R&amp;D research support, and digital infrastructure tailored to each client's existing systems. Engagements support biotech and the broader R&amp;D community scaling across EMEA and Asia.</p>
+        </div>
+        <div class="persona-cred">
+          <div class="pc-row">
+            <div class="pc-label">Education</div>
+            <div class="pc-list pc-list-edu">
+              <div>
+                <strong>PhD, Public Health</strong><br>
+                Seoul National University &nbsp;·&nbsp; 2016
+              </div>
+              <div>
+                <strong>MSc, Molecular Medicine and Biopharma</strong><br>
+                Seoul National University &nbsp;·&nbsp; 2013
+              </div>
+              <div>
+                <strong>BSc, Food and Nutrition &amp; Biology</strong><br>
+                Yonsei University &nbsp;·&nbsp; 2011
+              </div>
+            </div>
+          </div>
+          <div class="pc-row">
+            <div class="pc-label">Research record</div>
+            <div class="pc-list"><a href="https://orcid.org/0009-0009-3580-4459" target="_blank" rel="noopener noreferrer">ORCID 0009-0009-3580-4459</a></div>
+          </div>
+        </div>
+      </aside>
+
+      <div class="narrative-col">
+        <!-- ===== Career graph (B): minimal start-year timeline ===== -->
+        <div class="career-graph" aria-label="Career timeline 2009 to present, role start years">
+          <div class="cg-legend">
+            <span class="cg-leg-item"><span class="cg-leg-dot cg-dot-sci"></span>Scientific</span>
+            <span class="cg-leg-item"><span class="cg-leg-dot cg-dot-strat"></span>Commercial</span>
+            <span class="cg-leg-item"><span class="cg-leg-dot cg-dot-both"></span>Both</span>
+          </div>
+          <div class="cg-track">
+            <div class="cg-line"></div>
+            <span class="cg-now-label" aria-hidden="true">Now</span>
+            <span class="cg-dot cg-dot-sci" style="left:2.78%;" tabindex="0" aria-label="USDA, Research Assistant"><span class="cg-tip"><span class="cg-tip-org">USDA WHNRC</span><span class="cg-tip-role">Research Assistant</span></span></span>
+            <span class="cg-dot cg-dot-sci" style="left:12.04%;" tabindex="0" aria-label="Genome Research Center SNU Hospital, MSc Researcher"><span class="cg-tip"><span class="cg-tip-org">Genome Research Center, SNU Hospital</span><span class="cg-tip-role">MSc Researcher</span></span></span>
+            <span class="cg-dot cg-dot-sci" style="left:23.15%;" tabindex="0" aria-label="Environmental Health Engineering Lab SNU, PhD Researcher"><span class="cg-tip"><span class="cg-tip-org">Environmental Health Eng. Lab, SNU</span><span class="cg-tip-role">PhD Researcher</span></span></span>
+            <span class="cg-dot cg-dot-sci" style="left:40.28%;" tabindex="0" aria-label="PBL Netherlands, Guest Researcher"><span class="cg-tip"><span class="cg-tip-org">PBL Netherlands</span><span class="cg-tip-role">Guest Researcher</span></span></span>
+            <span class="cg-dot cg-dot-sci" style="left:44.44%;" tabindex="0" aria-label="Wageningen Food Safety Research, Researcher Genomics and Data Scientist"><span class="cg-tip"><span class="cg-tip-org">Wageningen Food Safety Research</span><span class="cg-tip-role">Researcher Genomics &nbsp;·&nbsp; Data Scientist</span></span></span>
+            <span class="cg-dot cg-dot-both" style="left:67.13%;" tabindex="0" aria-label="Macrogen Europe, Senior Project Manager and Head of Project Management"><span class="cg-tip"><span class="cg-tip-org">Macrogen Europe</span><span class="cg-tip-role">Senior PM &nbsp;·&nbsp; Head of Project Management</span></span></span>
+            <span class="cg-dot cg-dot-strat" style="left:95.39%;" tabindex="0" aria-label="Builders Studio, Entrepreneur in Residence"><span class="cg-tip"><span class="cg-tip-org">Builders Studio</span><span class="cg-tip-role">Entrepreneur in Residence</span></span></span>
+            <span class="cg-dot cg-dot-both" style="left:99%;" tabindex="0" aria-label="Dr. S. Lee Life Sciences, Founder and Principal"><span class="cg-tip"><span class="cg-tip-org">Dr. S. Lee Life Sciences</span><span class="cg-tip-role">Founder &amp; Principal</span></span></span>
+          </div>
+          <div class="cg-axis">
+            <span class="cg-year" style="left:0%;">2009</span>
+            <span class="cg-year" style="left:22.22%;">2013</span>
+            <span class="cg-year" style="left:44.44%;">2017</span>
+            <span class="cg-year" style="left:66.67%;">2021</span>
+            <span class="cg-year" style="left:94.44%;">2026</span>
+          </div>
+        </div>
+
+        <div class="diptych-cols" aria-hidden="true">
+          <div class="dip-rail-label">Scientific &amp; technical</div>
+          <div class="dip-rail-label">Commercial &amp; strategic</div>
+        </div>
+
+        <div class="diptych">
+      <div class="track-rail track-rail-sci" aria-hidden="true"></div>
+      <div class="track-rail track-rail-strat" aria-hidden="true"></div>
+
+      <div class="dip-era">
+        <div class="dip-era-pill">
+          <span class="dip-era-title">Commercial Leadership</span>
+          <span class="dip-era-range">2021 – 2026</span>
+        </div>
+      </div>
 
       <article class="dip-item strat">
         <div class="dip-period">Mar 2026 – May 2026</div>
-        <div class="dip-org">Builders</div>
+        <div class="dip-org">Builders Studio</div>
         <div class="dip-role">Entrepreneur in Residence</div>
         <p class="dip-detail">Domain research, ICP definition, and customer development for an early-stage AI SaaS exploration in life sciences. Mapped senior buyer dynamics and market entry mechanisms across R&amp;D and biotech services globally.</p>
         <div class="dip-location">Rotterdam, Netherlands</div>
@@ -2406,13 +2915,20 @@
       <article class="dip-item both">
         <span class="dip-tag">Both tracks</span>
         <div class="dip-period">Feb 2021 – Feb 2026</div>
-        <div class="dip-org">Macrogen Europe B.V.</div>
+        <div class="dip-org">Macrogen Europe</div>
         <div class="dip-role">Senior Project Manager &nbsp;·&nbsp; Head of Project Management</div>
         <p class="dip-detail">EMEA commercialization of scientific innovations. B2B/B2C partnerships, pricing and branding strategy, fiscal planning, revenue forecasting. ISO-compliant systems and LIMS-based documentation. Reporting infrastructure with SAP and Power BI. Multidisciplinary leadership across sales, project management, lab operations, and bioinformatics.</p>
         <div class="dip-location">Amsterdam, Netherlands</div>
       </article>
 
-      <article class="dip-item sci">
+      <div class="dip-era">
+        <div class="dip-era-pill">
+          <span class="dip-era-title">Research &amp; Regulation</span>
+          <span class="dip-era-range">2009 – 2021</span>
+        </div>
+      </div>
+
+      <article class="dip-item sci" data-year="2017">
         <div class="dip-period">Jan 2017 – Jan 2021</div>
         <div class="dip-org">Wageningen Food Safety Research<br><span class="dip-org-alt">Stitching Nederlandse Voedsel- en Warenautoriteit</span></div>
         <div class="dip-role">Researcher Genomics &nbsp;·&nbsp; Data Scientist</div>
@@ -2428,7 +2944,7 @@
         <div class="dip-location">Bilthoven, Netherlands</div>
       </article>
 
-      <article class="dip-item sci">
+      <article class="dip-item sci" data-year="2013">
         <div class="dip-period">Mar 2013 – Feb 2016</div>
         <div class="dip-org">Environmental Health Engineering Lab<br><span class="dip-org-alt">Seoul National University</span></div>
         <div class="dip-role">PhD Researcher, Public Health</div>
@@ -2444,7 +2960,7 @@
         <div class="dip-location">Seoul, Korea</div>
       </article>
 
-      <article class="dip-item sci">
+      <article class="dip-item sci" data-year="2009">
         <div class="dip-period">Jul 2009 – Dec 2009</div>
         <div class="dip-org">Western Human Nutrition Research Center - USDA<br><span class="dip-org-alt">University of California, Davis</span></div>
         <div class="dip-role">Research Assistant</div>
@@ -2452,6 +2968,8 @@
         <div class="dip-location">Davis, USA</div>
       </article>
 
+        </div>
+      </div>
     </div>
   </div>
 </section>
