@@ -745,6 +745,8 @@
     box-shadow: 0 1px 2px rgba(31, 78, 121, 0.03), 0 6px 18px rgba(31, 78, 121, 0.04);
     transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     position: relative;
+    display: flex;
+    flex-direction: column;
   }
 
   .service-card:hover {
@@ -821,54 +823,114 @@
     line-height: 1.6;
   }
 
-  .service-note {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 18px;
-    padding-top: 16px;
-    border-top: 1px solid var(--border-soft);
-    text-decoration: none;
-    color: var(--navy);
-    transition: gap 0.2s ease;
+  .service-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 4px;
+    font-size: 12px;
+    line-height: 1.55;
+    color: var(--text-medium);
+  }
+  .service-list li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 6px;
+  }
+  .service-list li:last-child { margin-bottom: 0; }
+  .service-list strong {
+    color: var(--navy-deep);
+    font-weight: 600;
+  }
+  .service-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+  .service-card-commercial .service-list li::before { background: var(--navy); }
+  .service-card-scientific .service-list li::before { background: var(--gold); }
+  .service-card-digital .service-list li::before {
+    background: linear-gradient(90deg, var(--gold) 50%, var(--navy) 50%);
   }
 
-  .service-note:hover { gap: 14px; }
+  .service-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 18px;
+    border-top: 1px solid var(--border-soft);
+    color: var(--navy);
+    text-decoration: none;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 12.5px;
+    letter-spacing: 0.2px;
+    transition: gap 0.2s ease, color 0.2s ease;
+    width: 100%;
+  }
+  .service-cta:hover {
+    gap: 12px;
+    color: var(--gold);
+  }
+  .service-cta svg {
+    width: 11px;
+    height: 11px;
+    color: var(--gold);
+    flex-shrink: 0;
+    transition: color 0.2s ease;
+  }
+  .service-cta:hover svg { color: var(--navy); }
 
-  .service-note-tag {
-    font-size: 9px;
-    letter-spacing: 1.6px;
+  .service-inline-link {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 10.5px;
+    color: var(--navy);
+    line-height: 1.4;
+    transition: color 0.2s ease, gap 0.2s ease;
+  }
+  .service-inline-text {
+    flex: 1;
+    min-width: 0;
+  }
+  .service-inline-link:hover {
+    color: var(--gold);
+    gap: 8px;
+  }
+  .service-inline-tag {
+    font-family: var(--sans);
+    font-style: normal;
+    font-size: 7.5px;
+    letter-spacing: 1.4px;
     text-transform: uppercase;
     color: var(--gold);
     font-weight: 700;
     background: rgba(201, 169, 97, 0.12);
-    padding: 4px 9px;
+    padding: 2px 6px;
     border-radius: 999px;
     white-space: nowrap;
     flex-shrink: 0;
+    margin-top: 1px;
   }
-
-  .service-note-text {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 12px;
-    color: var(--navy);
-    flex: 1;
-    line-height: 1.4;
-    transition: color 0.2s ease;
-  }
-
-  .service-note:hover .service-note-text { color: var(--gold); }
-
-  .service-note svg {
-    width: 14px;
-    height: 14px;
-    flex-shrink: 0;
+  .service-inline-link svg {
+    width: 9px;
+    height: 9px;
     color: var(--gold);
+    flex-shrink: 0;
     transition: transform 0.2s ease;
   }
-
-  .service-note:hover svg { transform: translateX(2px); }
+  .service-inline-link:hover svg { transform: translateX(2px); }
 
   /* ====== WHY THIS COMBINATION IS RARE ====== */
   .why-rare {
@@ -2744,7 +2806,7 @@
         <a href="#partnership" class="hero-pilot-card" aria-label="Sense 2026 pilot and other partner roles, agentic AI workspace for life-science teams">
           <span class="hero-pilot-tag">
             <span class="hero-pilot-pulse" aria-hidden="true"></span>
-            Active pilot · spots open
+            Active build · spots open
           </span>
           <span class="hero-pilot-offer">Founding-partner pricing</span>
           <h3 class="hero-pilot-name">Sense 2026</h3>
@@ -2813,7 +2875,19 @@
           <span class="service-num">01</span>
         </div>
         <h3 class="service-title">Commercial Strategy &amp; Partnerships</h3>
-        <p class="service-body"><strong>Europe–Asia go-to-market and partnership development</strong> across biotech and diagnostics. <strong>Market sizing, ICP definition, pricing, and positioning</strong>. Channel strategy, stakeholder mapping, and competitive context when relevant. <strong>Sales and operations data analysis</strong> to inform commercial decisions. Workshops and capability programs for commercial teams.</p>
+        <ul class="service-list">
+          <li><strong>Europe&ndash;Asia</strong> go-to-market and partnership development for life-science teams, with B2B/B2C, channel, and distribution strategies</li>
+          <li><strong>Sales-operations data analysis</strong>, <strong>strategic direction</strong> & pricing optimization</li>
+          <li>Market sizing, ICP, <strong>pricing &amp; positioning</strong>, channel and stakeholder strategy</li>
+          <li>Workshops &amp; capability programs</li>
+        </ul>
+        <a class="service-cta" href="https://card.drsleelifesciences.com/" target="_blank" rel="noopener noreferrer">
+          Talk about commercial strategy
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
       </article>
 
       <article class="service-card service-card-scientific">
@@ -2826,7 +2900,19 @@
           <span class="service-num">02</span>
         </div>
         <h3 class="service-title">Technical &amp; Scientific Advisory</h3>
-        <p class="service-body">Short-term R&amp;D project and research support across <strong>clinical, environmental, and food-safety domains</strong>. <strong>NGS workflow design</strong> across in vivo, in vitro, and in silico methods, with method validation, <strong>proficiency testing</strong>, and bioinformatics pipeline architecture (Python, R, Docker). Peer-reviewed manuscripts, technical reports, grant proposals, and regulatory documentation. Partnership development and project structuring for co-builders. Workshops and capability programs for scientific teams.</p>
+        <ul class="service-list">
+          <li><strong>Experimental design &amp; troubleshooting</strong> from <strong>wet-lab to bioinformatics</strong> across clinical, environmental, food-safety: NGS, molecular biology, cell, microbial, animal, field</li>
+          <li>Method validation &amp; <strong>proficiency testing</strong></li>
+          <li><strong>Peer-reviewed manuscripts</strong>, grant proposals &amp; <strong>regulatory documentation</strong></li>
+          <li>Workshops &amp; capability programs</li>
+        </ul>
+        <a class="service-cta" href="https://card.drsleelifesciences.com/" target="_blank" rel="noopener noreferrer">
+          Talk about a research project
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
       </article>
 
       <article class="service-card service-card-digital">
@@ -2845,10 +2931,24 @@
           <span class="service-num">03</span>
         </div>
         <h3 class="service-title">Digital Infrastructure</h3>
-        <p class="service-body">Tailored to each company's existing systems: <strong>database architecture and integration</strong> across technical and commercial operations data platforms. Biobank, LIMS, sales operations, and reporting infrastructure under ISO 17025 &amp; ISO 9001. Platform-flexible across Agentic AI, Python, R, SAP, Power BI, SharePoint, and others already in your stack. Includes <strong>agentic AI workspace design</strong> where it fits.</p>
-        <a href="#partnership" class="service-note" aria-label="See Sense 2026 pilot in Partnership section">
-          <span class="service-note-tag">Active pilot</span>
-          <span class="service-note-text">Sense 2026: technical query to quote in a minute in life science industry</span>
+        <ul class="service-list">
+          <li>
+            <strong>Agentic AI workspace design</strong>
+            <a class="service-inline-link" href="#partnership" aria-label="See Sense 2026 active build in Partnership section">
+              <span class="service-inline-tag">Active build</span>
+              <span class="service-inline-text">Sense 2026: technical query to quote in a minute</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </a>
+          </li>
+          <li><strong>Database architecture &amp; integration</strong>: biobank, LIMS, sales-operations, reporting infrastructure</li>
+          <li><strong>ISO 17025 &amp; ISO 9001</strong> compliant systems</li>
+          <li><strong>Platform-flexible</strong>: Python, R, SAP, Power BI, SharePoint, and others</li>
+        </ul>
+        <a class="service-cta" href="https://card.drsleelifesciences.com/" target="_blank" rel="noopener noreferrer">
+          Talk about your stack
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <line x1="5" y1="12" x2="19" y2="12"/>
             <polyline points="12 5 19 12 12 19"/>
@@ -2904,7 +3004,7 @@
     </p>
 
     <div class="partner-tabs" role="tablist" aria-label="Partner type">
-      <button id="ptab-pilot" class="partner-tab" data-partner-tab="pilot" role="tab" aria-selected="true" aria-controls="partner-pilot">Active Pilot</button>
+      <button id="ptab-pilot" class="partner-tab" data-partner-tab="pilot" role="tab" aria-selected="true" aria-controls="partner-pilot">Active Build</button>
       <button id="ptab-p1" class="partner-tab" data-partner-tab="p1" role="tab" aria-selected="false" aria-controls="partner-p1">Co-builder</button>
       <button id="ptab-p2" class="partner-tab" data-partner-tab="p2" role="tab" aria-selected="false" aria-controls="partner-p2">Project Engineer</button>
       <button id="ptab-p3" class="partner-tab" data-partner-tab="p3" role="tab" aria-selected="false" aria-controls="partner-p3">Student Researcher</button>
@@ -2912,7 +3012,7 @@
 
     <div class="partner-content">
       <article id="partner-pilot" class="featured-pilot partner-panel" role="tabpanel" aria-labelledby="ptab-pilot">
-        <span class="pilot-tag">Active pilot · design partner spots open</span>
+        <span class="pilot-tag">Active build · design partner spots open</span>
         <span class="pilot-offer">Founding-partner pricing</span>
         <h3 class="pilot-name">Sense 2026</h3>
         <p class="pilot-tagline">Query to quote in a minute.</p>
@@ -2979,7 +3079,7 @@
       <article id="partner-p1" class="service-card partner-panel" role="tabpanel" aria-labelledby="ptab-p1" hidden>
         <div class="service-num">P1</div>
         <h3 class="service-title">Co-builder</h3>
-        <p class="service-body">R&amp;D or commercial leaders in biotech, genomics, diagnostics, or pharma who'd rather build something with someone than navigate alone. Two paths fit: <strong>shape an existing build</strong> (Sense 2026 is the active pilot, with design partner spots open and more topics in the pipeline), or <strong>co-create something new</strong> that complements the practice, around your own thesis about a tool, infrastructure, program, or service in life sciences. Several shapes are possible, from project collaboration to deeper alignment, with hands-on support for partnership development and project structuring along the way.</p>
+        <p class="service-body">R&amp;D or commercial leaders in biotech, genomics, diagnostics, or pharma who'd rather build something with someone than navigate alone. Two paths fit: <strong>shape an existing build</strong> (Sense 2026 is the active build, with design partner spots open and more topics in the pipeline), or <strong>co-create something new</strong> that complements the practice, around your own thesis about a tool, infrastructure, program, or service in life sciences. Several shapes are possible, from project collaboration to deeper alignment, with hands-on support for partnership development and project structuring along the way.</p>
       </article>
 
       <article id="partner-p2" class="service-card partner-panel" role="tabpanel" aria-labelledby="ptab-p2" hidden>
