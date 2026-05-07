@@ -24,6 +24,7 @@
     --gold-soft: #D6C9B0;
     --sage: #9BAFA1;
     --sage-soft: #B0BEB3;
+    --accent-warm: #C77E5A;
     --cream: #E8DCC4;
     --off-white: #FAFAF7;
     --paper: #F5F3EE;
@@ -301,7 +302,7 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: var(--gold);
+    background: var(--accent-warm);
     position: relative;
     flex-shrink: 0;
   }
@@ -311,7 +312,7 @@
     position: absolute;
     inset: -4px;
     border-radius: 50%;
-    background: var(--gold);
+    background: var(--accent-warm);
     opacity: 0.4;
     animation: heroPulse 2s ease-out infinite;
   }
@@ -362,7 +363,7 @@
     display: block;
     margin-bottom: 36px;
     padding: 26px 28px;
-    background: rgba(197, 181, 154, 0.10);
+    background: linear-gradient(135deg, rgba(197, 181, 154, 0.20) 0%, rgba(197, 181, 154, 0.05) 60%, rgba(199, 126, 90, 0.04) 100%);
     border: 1px solid rgba(197, 181, 154, 0.40);
     border-radius: 14px;
     text-decoration: none;
@@ -428,7 +429,7 @@
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: var(--gold);
+    background: var(--accent-warm);
     position: relative;
     flex-shrink: 0;
   }
@@ -438,7 +439,7 @@
     position: absolute;
     inset: -3px;
     border-radius: 50%;
-    background: var(--gold);
+    background: var(--accent-warm);
     opacity: 0.45;
     animation: heroPulse 2s ease-out infinite;
   }
@@ -2191,7 +2192,7 @@
 
   /* Featured pilot (Sense 2026) */
   .featured-pilot {
-    background: var(--paper);
+    background: linear-gradient(140deg, var(--off-white) 0%, var(--paper) 55%, rgba(197, 181, 154, 0.10) 100%);
     border: 1px solid rgba(197, 181, 154, 0.55);
     border-radius: 14px;
     padding: 40px 42px;
@@ -2395,6 +2396,13 @@
   @media (max-width: 420px) {
     .pilot-header-title-row {
       flex-wrap: wrap;
+      gap: 14px;
+    }
+    .featured-pilot .pilot-tagline {
+      margin-bottom: 0;
+    }
+    .featured-pilot > .pilot-desc:first-of-type {
+      margin-top: 14px;
     }
   }
 
@@ -2872,7 +2880,7 @@
 
   /* Featured pilot (Sense 2026) on navy */
   .partnership-callout .featured-pilot {
-    background: rgba(255, 255, 255, 0.04);
+    background: linear-gradient(140deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 60%, rgba(199, 126, 90, 0.05) 100%);
     border-color: rgba(197, 181, 154, 0.55);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10), 0 14px 36px rgba(0, 0, 0, 0.18);
   }
