@@ -2429,6 +2429,48 @@
     text-decoration: none;
   }
 
+  /* ====== Scroll-triggered reveal animations ====== */
+  .reveal-init {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    will-change: opacity, transform;
+  }
+  .reveal-init.reveal-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Stagger inside grouped grids */
+  .services-grid > .service-card.reveal-init.reveal-in:nth-child(2) { transition-delay: 90ms; }
+  .services-grid > .service-card.reveal-init.reveal-in:nth-child(3) { transition-delay: 180ms; }
+
+  .engage-timeline > .engage-step.reveal-init.reveal-in:nth-child(2) { transition-delay: 90ms; }
+  .engage-timeline > .engage-step.reveal-init.reveal-in:nth-child(3) { transition-delay: 180ms; }
+  .engage-timeline > .engage-step.reveal-init.reveal-in:nth-child(4) { transition-delay: 270ms; }
+
+  /* Career graph dot sequential animation (B) */
+  .career-graph.cg-anim .cg-dot {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+    transition: opacity 0.45s ease, transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+  }
+  .career-graph.cg-anim .cg-dot.reveal-in {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  .career-graph.cg-anim .cg-dot.reveal-in:hover,
+  .career-graph.cg-anim .cg-dot.reveal-in:focus-visible {
+    transform: translate(-50%, -50%) scale(1.4);
+  }
+  .career-graph.cg-anim .cg-now-label {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  .career-graph.cg-anim .cg-now-label.reveal-in {
+    opacity: 1;
+  }
+
   /* ====== ACCESSIBILITY ====== */
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
@@ -3249,13 +3291,19 @@
     }
   }
 
+  function setHash(name) {
+    var newHash = '#' + name;
+    if (window.location.hash === newHash) return;
+    history.pushState({ tab: name }, '', newHash);
+  }
+
   // Tab clicks
   tabs.forEach(function(tab) {
     tab.addEventListener('click', function(e) {
       e.preventDefault();
       var name = tab.dataset.tab;
       activateTab(name, { scroll: true });
-      history.replaceState(null, '', '#' + name);
+      setHash(name);
     });
   });
 
@@ -3267,7 +3315,7 @@
       link.addEventListener('click', function(e) {
         e.preventDefault();
         activateTab(hash, { scroll: true });
-        history.replaceState(null, '', '#' + hash);
+        setHash(hash);
       });
     }
   });
@@ -3308,6 +3356,58 @@
     tab.addEventListener('click', function() {
       activatePartnerTab(tab.dataset.partnerTab);
     });
+  });
+})();
+
+// Scroll-triggered fade-up reveals + career timeline sequential animation
+(function() {
+  if (!('IntersectionObserver' in window)) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var revealSelectors = [
+    '.section-title',
+    '.section-lead',
+    '.service-card',
+    '.engage-step',
+    '.featured-pilot',
+    '.partner-panel',
+    '.persona-panel',
+    '.dip-era',
+    '.dip-item',
+    '.contact-grid',
+    '.contact-bg-link',
+    '.contact-close',
+    '.career-graph'
+  ];
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('reveal-in');
+      observer.unobserve(entry.target);
+
+      if (entry.target.classList.contains('career-graph')) {
+        var dots = entry.target.querySelectorAll('.cg-dot');
+        dots.forEach(function(dot, idx) {
+          setTimeout(function() { dot.classList.add('reveal-in'); }, 250 + idx * 80);
+        });
+        var nowLabel = entry.target.querySelector('.cg-now-label');
+        if (nowLabel) {
+          setTimeout(function() { nowLabel.classList.add('reveal-in'); }, 250 + dots.length * 80 + 150);
+        }
+      }
+    });
+  }, { rootMargin: '0px 0px -40px 0px', threshold: 0.05 });
+
+  revealSelectors.forEach(function(sel) {
+    document.querySelectorAll(sel).forEach(function(el) {
+      el.classList.add('reveal-init');
+      observer.observe(el);
+    });
+  });
+
+  document.querySelectorAll('.career-graph').forEach(function(el) {
+    el.classList.add('cg-anim');
   });
 })();
 </script>
