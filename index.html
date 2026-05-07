@@ -1400,8 +1400,12 @@
     }
   }
 
+  .practice .section-lead {
+    margin-bottom: 18px;
+  }
+
   .practice-bg-link-wrap {
-    margin-top: 8px;
+    margin-top: 0;
     margin-bottom: 32px;
     display: flex;
     flex-wrap: wrap;
@@ -2225,12 +2229,38 @@
     font-size: 13px;
     color: var(--cream);
     max-width: 620px;
-    margin-bottom: 36px;
+    margin-bottom: 18px;
     line-height: 1.65;
   }
   .contact-lead strong {
     color: var(--gold-soft);
     font-weight: 600;
+  }
+
+  .contact-bg-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--cream);
+    text-decoration: none;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 12.5px;
+    letter-spacing: 0.2px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid rgba(201, 169, 97, 0.5);
+    transition: gap 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    margin-bottom: 28px;
+  }
+  .contact-bg-link:hover {
+    gap: 14px;
+    color: var(--gold-soft);
+    border-bottom-color: var(--gold);
+  }
+  .contact-bg-link svg {
+    width: 12px;
+    height: 12px;
+    color: var(--gold);
   }
 
   .contact-grid {
@@ -2257,11 +2287,11 @@
   .contact-item {
     display: flex;
     align-items: center;
-    gap: 16px;
-    padding: 18px 20px;
+    gap: 12px;
+    padding: 14px 16px;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(232, 220, 196, 0.12);
-    border-radius: 12px;
+    border-radius: 10px;
     text-decoration: none;
     color: var(--off-white);
     transition: all 0.2s ease;
@@ -2274,7 +2304,7 @@
   }
 
   .contact-item-primary {
-    padding: 22px 24px;
+    padding: 18px 20px;
     background: rgba(201, 169, 97, 0.08);
     border-color: rgba(201, 169, 97, 0.30);
   }
@@ -2284,12 +2314,12 @@
     border-color: rgba(201, 169, 97, 0.55);
   }
 
-  .contact-item-primary svg { width: 22px; height: 22px; }
-  .contact-item-primary .contact-value { font-size: 15px; }
+  .contact-item-primary svg { width: 19px; height: 19px; }
+  .contact-item-primary .contact-value { font-size: 13px; }
 
   .contact-item svg {
-    width: 20px;
-    height: 20px;
+    width: 17px;
+    height: 17px;
     flex-shrink: 0;
     color: var(--gold);
   }
@@ -2298,11 +2328,11 @@
     display: flex;
     flex-direction: column;
     min-width: 0;
-    gap: 3px;
+    gap: 2px;
   }
 
   .contact-label {
-    font-size: 10px;
+    font-size: 9px;
     color: var(--gold);
     letter-spacing: 1.6px;
     text-transform: uppercase;
@@ -2310,7 +2340,7 @@
   }
 
   .contact-value {
-    font-size: 14.5px;
+    font-size: 12.5px;
     color: var(--off-white);
     overflow: hidden;
     text-overflow: ellipsis;
@@ -2679,13 +2709,6 @@
     </p>
 
     <div class="practice-bg-link-wrap">
-      <a href="#background" class="practice-bg-link">
-        More about me
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <line x1="5" y1="12" x2="19" y2="12"/>
-          <polyline points="12 5 19 12 12 19"/>
-        </svg>
-      </a>
       <a href="#engage" class="practice-bg-link">
         How engagement works
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -2879,7 +2902,7 @@
     <h2 class="section-title">Two tracks, one practice.</h2>
     <div class="section-divider"></div>
     <p class="section-lead">
-      Fifteen years between research benches, regulatory bodies, and commercial leadership. Scientific work spans clinical, environmental, and food-safety domains, with peer-reviewed publications and EU Reference Laboratory studies in genomics and microbiology, <strong>from wet-lab to bioinformatics and agentic AI tooling</strong>. Commercial work covers EMEA market entry, partnerships, pricing, fiscal planning, revenue forecasting, sales direction, and <strong>biobank, LIMS, and SAP data architecture</strong> under ISO 17025 &amp; ISO 9001, leading multidisciplinary teams across sales, project management, lab, and bioinformatics.
+      Over fifteen years between research benches, regulatory bodies, and commercial leadership. Scientific work spans clinical, environmental, and food-safety domains, with peer-reviewed publications and EU Reference Laboratory studies in genomics and microbiology, <strong>from wet-lab to bioinformatics and agentic AI tooling</strong>. Commercial work covers EMEA market entry, partnerships, pricing, fiscal planning, revenue forecasting, sales direction, and <strong>biobank, LIMS, and SAP data architecture</strong> under ISO 17025 &amp; ISO 9001, leading multidisciplinary teams across sales, project management, lab, and bioinformatics.
     </p>
 
     <!-- ===== Sticky persona (A) + narrative chapters ===== -->
@@ -3050,6 +3073,14 @@
         <p class="contact-lead">
           Every channel <strong>reaches me directly</strong>, with replies usually within <strong>two working days</strong>. Write or speak in <strong>any language</strong>. A real clue to a problem usually carries across whatever language it arrives in.
         </p>
+
+        <a href="#background" class="contact-bg-link">
+          More about me
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
 
         <div class="contact-grid contact-grid-primary">
           <a href="https://calendar.app.google/Dz9ut3khMGarLtYA7" target="_blank" rel="noopener noreferrer" class="contact-item contact-item-primary">
