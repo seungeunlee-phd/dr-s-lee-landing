@@ -406,19 +406,20 @@
   .hero-pilot-offer {
     display: inline-block;
     padding: 3px 10px;
-    background: rgba(201, 169, 97, 0.10);
-    border: 1px solid rgba(201, 169, 97, 0.45);
+    background: var(--gold);
+    border: 1px solid var(--gold);
     border-radius: 999px;
     font-family: var(--serif);
     font-style: italic;
     font-size: 10px;
-    font-weight: 600;
-    color: var(--gold-soft);
+    font-weight: 700;
+    color: var(--navy-deep);
     letter-spacing: 0.3px;
     margin-bottom: 14px;
     position: relative;
     z-index: 1;
     vertical-align: middle;
+    box-shadow: 0 2px 6px rgba(201, 169, 97, 0.30);
   }
 
   .hero-pilot-pulse {
@@ -585,16 +586,20 @@
   }
 
   .btn-primary {
-    background: var(--gold);
-    color: var(--navy-deep);
-    border-color: var(--gold);
+    background: var(--navy);
+    color: var(--off-white);
+    border: 1px solid var(--gold);
+    box-shadow: 0 2px 6px rgba(31, 78, 121, 0.18), 0 10px 26px rgba(31, 78, 121, 0.16);
   }
 
   .btn-primary:hover {
-    background: var(--gold-soft);
+    background: var(--navy-deep);
+    border-color: var(--gold);
     transform: translateY(-1px);
-    box-shadow: 0 6px 18px rgba(201, 169, 97, 0.30);
+    box-shadow: 0 4px 10px rgba(31, 78, 121, 0.28), 0 14px 32px rgba(31, 78, 121, 0.24);
   }
+
+  .btn-primary svg { color: var(--gold); }
 
   .btn-secondary {
     background: transparent;
@@ -2248,19 +2253,20 @@
   .pilot-offer {
     display: inline-block;
     padding: 5px 12px;
-    background: rgba(201, 169, 97, 0.06);
-    border: 1px solid rgba(201, 169, 97, 0.5);
+    background: var(--gold);
+    border: 1px solid var(--gold);
     border-radius: 999px;
     font-family: var(--serif);
     font-style: italic;
-    font-size: 10.5px;
-    font-weight: 600;
-    color: var(--gold-soft);
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--navy-deep);
     letter-spacing: 0.3px;
     margin-bottom: 20px;
     vertical-align: middle;
     position: relative;
     z-index: 1;
+    box-shadow: 0 2px 8px rgba(201, 169, 97, 0.35);
   }
 
   .pilot-name {
@@ -2310,6 +2316,84 @@
     flex-wrap: wrap;
     position: relative;
     z-index: 1;
+  }
+
+  .pilot-header {
+    position: relative;
+    z-index: 1;
+  }
+
+  .pilot-header-title {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .pilot-header-cta {
+    position: absolute;
+    bottom: 4px;
+    right: 28px;
+    z-index: 2;
+    font-size: 9px;
+    padding: 5px 9px;
+    gap: 4px;
+    letter-spacing: 0.2px;
+  }
+  .pilot-header-cta svg {
+    width: 8px;
+    height: 8px;
+  }
+  /* Match Contact "Book a call" card style — gold-tinted, gold border, glow */
+  .partnership-callout .pilot-cta-primary.pilot-header-cta {
+    background: rgba(201, 169, 97, 0.32);
+    color: var(--off-white);
+    border-color: var(--gold);
+    box-shadow: 0 2px 6px rgba(201, 169, 97, 0.15), 0 6px 18px rgba(201, 169, 97, 0.18);
+  }
+  .partnership-callout .pilot-cta-primary.pilot-header-cta:hover {
+    background: rgba(201, 169, 97, 0.45);
+    color: var(--off-white);
+    border-color: var(--gold);
+    box-shadow: 0 4px 10px rgba(201, 169, 97, 0.25), 0 10px 26px rgba(201, 169, 97, 0.28);
+  }
+  .pilot-header-cta svg { color: var(--gold); }
+
+  @media (max-width: 640px) {
+    .pilot-header-title-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .pilot-header-cta {
+      position: static;
+      flex-shrink: 0;
+      font-size: 9px;
+      padding: 5px 9px;
+      gap: 4px;
+      letter-spacing: 0.2px;
+    }
+    .pilot-header-cta svg {
+      width: 8px;
+      height: 8px;
+    }
+    .partnership-callout .pilot-cta-primary.pilot-header-cta {
+      background: rgba(201, 169, 97, 0.32);
+      color: var(--off-white);
+      border-color: var(--gold);
+      box-shadow: 0 2px 5px rgba(201, 169, 97, 0.14), 0 5px 14px rgba(201, 169, 97, 0.16);
+    }
+    .partnership-callout .pilot-cta-primary.pilot-header-cta:hover {
+      background: rgba(201, 169, 97, 0.45);
+      color: var(--off-white);
+      border-color: var(--gold);
+      box-shadow: 0 3px 8px rgba(201, 169, 97, 0.22), 0 8px 22px rgba(201, 169, 97, 0.25);
+    }
+  }
+
+  @media (max-width: 420px) {
+    .pilot-header-title-row {
+      flex-wrap: wrap;
+    }
   }
 
   .pilot-cta {
@@ -2594,13 +2678,15 @@
 
   .contact-item-primary {
     padding: 18px 20px;
-    background: rgba(201, 169, 97, 0.08);
-    border-color: rgba(201, 169, 97, 0.30);
+    background: rgba(201, 169, 97, 0.32);
+    border-color: var(--gold);
+    box-shadow: 0 3px 8px rgba(201, 169, 97, 0.18), 0 12px 32px rgba(201, 169, 97, 0.20);
   }
 
   .contact-item-primary:hover {
-    background: rgba(201, 169, 97, 0.13);
-    border-color: rgba(201, 169, 97, 0.55);
+    background: rgba(201, 169, 97, 0.45);
+    border-color: var(--gold);
+    box-shadow: 0 6px 14px rgba(201, 169, 97, 0.28), 0 18px 42px rgba(201, 169, 97, 0.30);
   }
 
   .contact-item-primary svg { width: 19px; height: 19px; }
@@ -3204,10 +3290,25 @@
 
     <div class="partner-content">
       <article id="partner-pilot" class="featured-pilot partner-panel" role="tabpanel" aria-labelledby="ptab-pilot">
-        <span class="pilot-tag">Active build · design partner spots open</span>
-        <span class="pilot-offer">Founding-partner pricing</span>
-        <h3 class="pilot-name">Sense 2026</h3>
-        <p class="pilot-tagline">Query to quote in a minute.</p>
+        <div class="pilot-header">
+          <div class="pilot-header-badges">
+            <span class="pilot-tag">Active build · design partner spots open</span>
+            <span class="pilot-offer">Founding-partner pricing</span>
+          </div>
+          <div class="pilot-header-title-row">
+            <div class="pilot-header-title">
+              <h3 class="pilot-name">Sense 2026</h3>
+              <p class="pilot-tagline">Query to quote in a minute.</p>
+            </div>
+            <a class="pilot-cta pilot-cta-primary pilot-header-cta" href="https://card.drsleelifesciences.com/" target="_blank" rel="noopener noreferrer">
+              Let's swap notes on Sense
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </a>
+          </div>
+        </div>
         <p class="pilot-desc">Today, a customer's technical question routes through a senior expert and waits two or three days for a reply. <strong>Sense is an agentic AI workspace that brings that down to minutes</strong>. Agents handle routing, drafting, and source-checking inside a workspace shaped to your team's flows. Your team asks in their native language; replies come as drafts with cited sources from your own documents, <strong>in whichever format the moment calls for</strong> (technical report, proposal, email reply, and others). Send after a quick review. <strong>Designed around your domain's taxonomy, in the words your team actually uses</strong>: each reply quietly trains the workspace, so the next colleague gets the answer instantly.</p>
         <p class="pilot-desc">Your data stays on your server, no outbound data. <strong>Sense reads from the platforms you already use, no disruption to current operations</strong>. Single self-contained install, free to evaluate, with a tailored advisor file backing the workflows that matter. <strong>Ready to build into your stack and tune to your team's flows</strong>; data architecture and indexing can be designed alongside when needed. Design partner spots are open for a <strong>4-week build phase plus a 30-day trial program</strong>. Bring one real workflow and test it against your hardest week.</p>
 
@@ -3254,15 +3355,6 @@
           </svg>
         </div>
 
-        <div class="pilot-ctas">
-          <a class="pilot-cta pilot-cta-primary" href="https://card.drsleelifesciences.com/" target="_blank" rel="noopener noreferrer">
-            Let's swap notes on Sense
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="5" y1="12" x2="19" y2="12"/>
-              <polyline points="12 5 19 12 12 19"/>
-            </svg>
-          </a>
-        </div>
       </article>
 
       <article id="partner-p1" class="service-card partner-panel" role="tabpanel" aria-labelledby="ptab-p1" hidden>
