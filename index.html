@@ -2161,8 +2161,12 @@
     padding: 32px 26px;
   }
 
+  .partnership-callout .service-title {
+    font-size: 14.5px;
+  }
+
   .partnership-callout .service-body {
-    font-size: 13.5px;
+    font-size: 12.5px;
     line-height: 1.65;
   }
 
@@ -2261,7 +2265,7 @@
 
   .pilot-name {
     font-family: var(--serif);
-    font-size: clamp(18px, 2vw, 22px);
+    font-size: clamp(16px, 1.7vw, 19px);
     color: var(--navy);
     font-weight: 600;
     margin-bottom: 6px;
@@ -2275,14 +2279,14 @@
     font-family: var(--serif);
     font-style: italic;
     color: var(--gold);
-    font-size: clamp(13px, 1.3vw, 15px);
+    font-size: clamp(12px, 1.15vw, 13.5px);
     margin-bottom: 20px;
     position: relative;
     z-index: 1;
   }
 
   .pilot-desc {
-    font-size: 13px;
+    font-size: 12px;
     color: var(--text-medium);
     line-height: 1.65;
     margin-bottom: 12px;
@@ -2311,11 +2315,11 @@
   .pilot-cta {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 13px 22px;
-    border-radius: 10px;
+    gap: 7px;
+    padding: 10px 18px;
+    border-radius: 8px;
     font-family: var(--sans);
-    font-size: 13.5px;
+    font-size: 12px;
     font-weight: 500;
     letter-spacing: 0.3px;
     text-decoration: none;
@@ -2346,8 +2350,8 @@
   }
 
   .pilot-cta svg {
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
   }
 
   @media (max-width: 540px) {
@@ -2795,7 +2799,7 @@
 
   .partnership-callout .pilot-desc {
     color: var(--cream);
-    font-size: 13.5px;
+    font-size: 12.5px;
     line-height: 1.65;
   }
 
@@ -2843,6 +2847,26 @@
   }
 
   .partnership-callout .service-body {
+    color: var(--cream);
+  }
+
+  /* Partner panel icons + CTAs on dark navy background */
+  .partnership-callout .partner-panel .service-icon {
+    color: var(--gold);
+  }
+  .partnership-callout .partner-panel .service-cta {
+    color: var(--cream);
+    border-top-color: rgba(232, 220, 196, 0.18);
+    margin-top: 22px;
+    font-size: 11.5px;
+  }
+  .partnership-callout .partner-panel .service-cta:hover {
+    color: var(--gold);
+  }
+  .partnership-callout .partner-panel .service-cta svg {
+    color: var(--gold);
+  }
+  .partnership-callout .partner-panel .service-cta:hover svg {
     color: var(--cream);
   }
 
@@ -3253,21 +3277,59 @@
       </article>
 
       <article id="partner-p1" class="service-card partner-panel" role="tabpanel" aria-labelledby="ptab-p1" hidden>
-        <div class="service-num">P1</div>
+        <div class="service-mark">
+          <svg class="service-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="5" y="5" width="13" height="13" rx="1.5"/>
+            <rect x="14" y="14" width="13" height="13" rx="1.5"/>
+          </svg>
+        </div>
         <h3 class="service-title">Co-builder</h3>
         <p class="service-body">R&amp;D or commercial leaders in biotech, genomics, diagnostics, or pharma who'd rather build something with someone than navigate alone. Two paths fit: <strong>shape an existing build</strong> (Sense 2026 is the active build, with design partner spots open and more topics in the pipeline), or <strong>co-create something new</strong> that complements the practice, around your own thesis about a tool, infrastructure, program, or service in life sciences. Several shapes are possible, from project collaboration to deeper alignment, with hands-on support for partnership development and project structuring along the way.</p>
+        <a class="service-cta" href="https://card.drsleelifesciences.com/" target="_blank" rel="noopener noreferrer">
+          Open a co-build thread
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
       </article>
 
       <article id="partner-p2" class="service-card partner-panel" role="tabpanel" aria-labelledby="ptab-p2" hidden>
-        <div class="service-num">P2</div>
+        <div class="service-mark">
+          <svg class="service-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="11 9 5 16 11 23"/>
+            <polyline points="21 9 27 16 21 23"/>
+            <line x1="14.5" y1="25.5" x2="17.5" y2="6.5"/>
+          </svg>
+        </div>
         <h3 class="service-title">Project Engineer</h3>
         <p class="service-body">Engineer interested in shipping bounded scope across <strong>agentic AI tooling</strong>, <strong>database architecture and integration</strong>, or operations data platform work (LIMS, SAP, Power BI, SharePoint, or others). Comfortable in Python, R, Docker, or Git workflows. ML or AI background welcome but not required; strong craft in pipelines, schemas, system integration, or curation work is equally valuable. Paid contract engagement, collaboration credit. Domain context (biology, NGS, healthcare data) is a plus. First contracts are forming around active workstreams, with more in the pipeline.</p>
+        <a class="service-cta" href="https://card.drsleelifesciences.com/" target="_blank" rel="noopener noreferrer">
+          Pitch a project scope
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
       </article>
 
       <article id="partner-p3" class="service-card partner-panel" role="tabpanel" aria-labelledby="ptab-p3" hidden>
-        <div class="service-num">P3</div>
+        <div class="service-mark">
+          <svg class="service-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M16 6 L4 12 L16 18 L28 12 Z"/>
+            <path d="M9 14.5 V20 C9 21.5 12 23 16 23 C20 23 23 21.5 23 20 V14.5"/>
+            <line x1="28" y1="12" x2="28" y2="19"/>
+          </svg>
+        </div>
         <h3 class="service-title">Student Researcher</h3>
         <p class="service-body">Undergrad or grad student in CS, life sciences, or related fields, looking for hands-on experience at the <strong>agentic AI and life sciences intersection</strong>. Capstone projects, master's thesis topics, summer internships across clinical, environmental, food-safety, or commercial-operations contexts. We define the scope together; you get structured mentorship and a real project to point at. Initial student threads are forming around current projects, with more topics in the pipeline.</p>
+        <a class="service-cta" href="https://card.drsleelifesciences.com/" target="_blank" rel="noopener noreferrer">
+          Bring a thesis or capstone idea
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
       </article>
     </div>
 
