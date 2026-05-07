@@ -1353,7 +1353,173 @@
     .process-step:last-child { border-bottom: none; }
   }
 
-  /* Engagement process, minimal horizontal timeline */
+  /* Minimal engage timeline (mirrors career-graph pattern) */
+  .engage-mini {
+    margin: 0 0 40px;
+    padding: 16px 22px 14px;
+    max-width: 680px;
+    background: var(--off-white);
+    border: 1px solid var(--border-soft);
+    border-radius: 10px;
+    box-shadow: 0 1px 2px rgba(31, 78, 121, 0.03), 0 3px 10px rgba(31, 78, 121, 0.03);
+  }
+  .engage-mini-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+  .engage-mini-eyebrow {
+    font-family: var(--sans);
+    font-size: 8.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+  }
+  .engage-mini-headline {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 9.5px;
+    color: var(--navy-deep);
+    letter-spacing: 0.2px;
+  }
+  .engage-mini-arrow {
+    color: var(--gold);
+    font-style: normal;
+    margin: 0 4px;
+    font-weight: 600;
+  }
+  .engage-mini-track {
+    position: relative;
+    height: 22px;
+    margin: 4px 0 2px;
+  }
+  .engage-mini-line {
+    position: absolute;
+    top: 50%;
+    left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(to right,
+      transparent 0%,
+      rgba(201, 169, 97, 0.45) 4%,
+      rgba(201, 169, 97, 0.45) 96%,
+      transparent 100%);
+    transform: translateY(-50%);
+  }
+  .engage-mini-dot {
+    position: absolute;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--gold);
+    transform: translate(-50%, -50%);
+    border: 2px solid var(--off-white);
+    box-shadow: 0 0 0 1px rgba(31, 78, 121, 0.18);
+    cursor: default;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+  }
+  .engage-mini-dot:hover, .engage-mini-dot:focus-visible {
+    transform: translate(-50%, -50%) scale(1.4);
+    box-shadow: 0 0 0 1px rgba(201, 169, 97, 0.45), 0 4px 10px rgba(31, 78, 121, 0.15);
+    z-index: 3;
+  }
+  .engage-mini-tip {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 220px;
+    font-family: var(--serif);
+    background: var(--paper);
+    padding: 7px 10px;
+    border: 1px solid rgba(201, 169, 97, 0.4);
+    border-radius: 5px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    text-align: left;
+    white-space: normal;
+    z-index: 4;
+  }
+  .engage-mini-dot:hover .engage-mini-tip,
+  .engage-mini-dot:focus-visible .engage-mini-tip {
+    opacity: 1;
+  }
+  .emt-step {
+    font-family: var(--sans);
+    font-size: 6.5px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .emt-duration {
+    font-family: var(--sans);
+    font-size: 8.5px;
+    font-weight: 700;
+    color: var(--navy-deep);
+    letter-spacing: 0.2px;
+  }
+  .emt-detail {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 7.5px;
+    line-height: 1.5;
+    color: var(--navy-deep);
+  }
+  .emt-detail strong {
+    font-style: normal;
+    color: var(--navy-deep);
+    font-weight: 600;
+  }
+  .engage-mini-axis {
+    position: relative;
+    height: 20px;
+    margin-top: 4px;
+  }
+  .engage-mini-label {
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gold);
+    letter-spacing: 0.4px;
+  }
+  .engage-mini-note {
+    margin-top: 10px;
+    font-size: 8.5px;
+    color: var(--text-light);
+    font-style: italic;
+    text-align: center;
+  }
+  @media (max-width: 720px) {
+    .engage-mini { padding: 14px 16px 12px; }
+    .engage-mini-headline { font-size: 11px; }
+    .engage-mini-tip { width: 170px; }
+    .emt-detail { font-size: 9.5px; }
+    .engage-mini-track .engage-mini-dot:nth-of-type(1) .engage-mini-tip {
+      left: 0;
+      transform: translateX(0);
+    }
+    .engage-mini-track .engage-mini-dot:nth-of-type(3) .engage-mini-tip {
+      left: auto;
+      right: 0;
+      transform: translateX(0);
+    }
+  }
+
+  /* Legacy engagement process timeline (no longer used) */
   .engage-timeline {
     list-style: none;
     padding: 0;
@@ -1706,6 +1872,18 @@
   .cg-dot:hover .cg-tip,
   .cg-dot:focus-visible .cg-tip {
     opacity: 1;
+  }
+
+  @media (max-width: 720px) {
+    .cg-dot.cg-dot-edge-left .cg-tip {
+      left: 0;
+      transform: translateX(0);
+    }
+    .cg-dot.cg-dot-edge-right .cg-tip {
+      left: auto;
+      right: 0;
+      transform: translateX(0);
+    }
   }
 
   .cg-axis {
@@ -2854,17 +3032,44 @@
     <h2 class="section-title">Research questions. Technical execution. Commercial decisions.</h2>
     <div class="section-divider"></div>
     <p class="section-lead">
-      <strong>Bench-level technical depth</strong> across in vitro, in vivo, and in silico, with bioinformatics, LIMS, and database work across technical and commercial operations data platforms. Paired with <strong>commercial leadership</strong> and <strong>Europe–Asia operating fluency</strong>, engagements support teams scaling across EMEA and Asia: from short-term R&amp;D research through commercial decisions and into scale-up, on one thread without restarting context. Scoped to deliverables, with fractional advisory where it fits.
+      Bench-credible scientific depth <strong>from wet-lab to bioinformatics</strong>, with database architecture and <strong>agentic AI workspace design</strong> across technical and commercial operations data platforms. Paired with commercial leadership and <strong>Europe–Asia operating fluency</strong>, engagements support life-science teams scaling across EMEA and Asia. From discovery through alignment to delivery, on one thread, scoped to deliverables. Fractional advisory or project-based, where it fits.
     </p>
 
-    <div class="practice-bg-link-wrap">
-      <a href="#engage" class="practice-bg-link">
-        How engagement works
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <line x1="12" y1="5" x2="12" y2="19"/>
-          <polyline points="19 12 12 19 5 12"/>
-        </svg>
-      </a>
+    <!-- Minimal engagement timeline -->
+    <div class="engage-mini" id="engage">
+      <div class="engage-mini-head">
+        <span class="engage-mini-eyebrow">How to engage</span>
+      </div>
+      <div class="engage-mini-track">
+        <div class="engage-mini-line"></div>
+        <span class="engage-mini-dot" style="left:10%" tabindex="0" aria-label="Discovery: 30 minutes to 1 hour. Free initial conversation to check fit.">
+          <span class="engage-mini-tip">
+            <span class="emt-step">01 &middot; Discovery</span>
+            <span class="emt-duration">30 min &ndash; 1 hr</span>
+            <span class="emt-detail">Free initial conversation to understand the situation and check fit.</span>
+          </span>
+        </span>
+        <span class="engage-mini-dot" style="left:50%" tabindex="0" aria-label="Alignment: at your pace. Written scope, deliverables, timeline, and fees before work begins.">
+          <span class="engage-mini-tip">
+            <span class="emt-step">02 &middot; Alignment</span>
+            <span class="emt-duration">At your pace</span>
+            <span class="emt-detail">Written scope, deliverables, timeline, and fees before any work begins.</span>
+          </span>
+        </span>
+        <span class="engage-mini-dot" style="left:90%" tabindex="0" aria-label="Delivery: project to ongoing. Fractional advisory or project-based deep dive.">
+          <span class="engage-mini-tip">
+            <span class="emt-step">03 &middot; Delivery</span>
+            <span class="emt-duration">Project to ongoing</span>
+            <span class="emt-detail"><strong>Fractional advisory</strong> (weekly/bi-weekly) or <strong>project-based deep dive</strong>, async with structured checkpoints.</span>
+          </span>
+        </span>
+      </div>
+      <div class="engage-mini-axis">
+        <span class="engage-mini-label" style="left:10%">Discovery</span>
+        <span class="engage-mini-label" style="left:50%">Alignment</span>
+        <span class="engage-mini-label" style="left:90%">Delivery</span>
+      </div>
+      <p class="engage-mini-note">NDA available on request before and after discovery.</p>
     </div>
 
     <div class="services-grid">
@@ -2961,38 +3166,6 @@
 
     </div>
 
-    <!-- HOW TO ENGAGE (compact subsection) -->
-    <div class="engage-block" id="engage">
-      <div class="subsection-eyebrow">How to engage</div>
-      <h3 class="subsection-title">Discovery, alignment, delivery.</h3>
-
-      <ol class="engage-timeline">
-        <li class="engage-step">
-          <div class="step-duration">30 min – 1 hr</div>
-          <div class="step-marker" aria-hidden="true"></div>
-          <div class="step-label">Discovery call</div>
-          <div class="step-detail">Free initial conversation to understand the situation and check fit.</div>
-        </li>
-        <li class="engage-step">
-          <div class="step-duration">At your pace</div>
-          <div class="step-marker" aria-hidden="true"></div>
-          <div class="step-label">Scoped proposal / Alignment</div>
-          <div class="step-detail">Written scope, deliverables, timeline, and fees before any work begins.</div>
-        </li>
-        <li class="engage-step">
-          <div class="step-duration">Project to ongoing</div>
-          <div class="step-marker" aria-hidden="true"></div>
-          <div class="step-label">Delivery</div>
-          <div class="step-detail">Async-friendly rhythm with structured checkpoints, in one of two formats:</div>
-          <ul class="step-formats" aria-label="Delivery formats">
-            <li class="step-format"><span class="step-format-name">Fractional advisory</span><span class="step-format-desc">Defined cadence (weekly or bi-weekly) for leadership teams.</span></li>
-            <li class="step-format"><span class="step-format-name">Project-based deep dive</span><span class="step-format-desc">Due diligence, ISO/LIMS audit, R&amp;D research support, or capability assessment for a specific decision.</span></li>
-          </ul>
-        </li>
-      </ol>
-
-      <p class="nda-note">NDA available on request before and after discovery.</p>
-    </div>
   </div>
 </section>
 
@@ -3162,14 +3335,14 @@
           <div class="cg-track">
             <div class="cg-line"></div>
             <span class="cg-now-label" aria-hidden="true">Now</span>
-            <span class="cg-dot cg-dot-sci" style="left:2.78%;" tabindex="0" aria-label="USDA, Research Assistant"><span class="cg-tip"><span class="cg-tip-org">USDA WHNRC</span><span class="cg-tip-role">Research Assistant</span></span></span>
+            <span class="cg-dot cg-dot-sci cg-dot-edge-left" style="left:2.78%;" tabindex="0" aria-label="USDA, Research Assistant"><span class="cg-tip"><span class="cg-tip-org">USDA WHNRC</span><span class="cg-tip-role">Research Assistant</span></span></span>
             <span class="cg-dot cg-dot-sci" style="left:12.04%;" tabindex="0" aria-label="Genome Research Center SNU Hospital, MSc Researcher"><span class="cg-tip"><span class="cg-tip-org">Genome Research Center, SNU Hospital</span><span class="cg-tip-role">MSc Researcher</span></span></span>
             <span class="cg-dot cg-dot-sci" style="left:23.15%;" tabindex="0" aria-label="Environmental Health Engineering Lab SNU, PhD Researcher"><span class="cg-tip"><span class="cg-tip-org">Environmental Health Eng. Lab, SNU</span><span class="cg-tip-role">PhD Researcher</span></span></span>
             <span class="cg-dot cg-dot-sci" style="left:40.28%;" tabindex="0" aria-label="PBL Netherlands, Guest Researcher"><span class="cg-tip"><span class="cg-tip-org">PBL Netherlands</span><span class="cg-tip-role">Guest Researcher</span></span></span>
             <span class="cg-dot cg-dot-sci" style="left:44.44%;" tabindex="0" aria-label="Wageningen Food Safety Research, Researcher Genomics and Data Scientist"><span class="cg-tip"><span class="cg-tip-org">Wageningen Food Safety Research</span><span class="cg-tip-role">Researcher Genomics &nbsp;·&nbsp; Data Scientist</span></span></span>
             <span class="cg-dot cg-dot-both" style="left:67.13%;" tabindex="0" aria-label="Macrogen Europe, Senior Project Manager and Head of Project Management"><span class="cg-tip"><span class="cg-tip-org">Macrogen Europe</span><span class="cg-tip-role">Senior PM &nbsp;·&nbsp; Head of Project Management</span></span></span>
-            <span class="cg-dot cg-dot-strat" style="left:95.39%;" tabindex="0" aria-label="Builders Studio, Entrepreneur in Residence"><span class="cg-tip"><span class="cg-tip-org">Builders Studio</span><span class="cg-tip-role">Entrepreneur in Residence</span></span></span>
-            <span class="cg-dot cg-dot-both" style="left:99%;" tabindex="0" aria-label="Dr. S. Lee Life Sciences, Founder and Principal"><span class="cg-tip"><span class="cg-tip-org">Dr. S. Lee Life Sciences</span><span class="cg-tip-role">Founder &amp; Principal</span></span></span>
+            <span class="cg-dot cg-dot-strat cg-dot-edge-right" style="left:95.39%;" tabindex="0" aria-label="Builders Studio, Entrepreneur in Residence"><span class="cg-tip"><span class="cg-tip-org">Builders Studio</span><span class="cg-tip-role">Entrepreneur in Residence</span></span></span>
+            <span class="cg-dot cg-dot-both cg-dot-edge-right" style="left:99%;" tabindex="0" aria-label="Dr. S. Lee Life Sciences, Founder and Principal"><span class="cg-tip"><span class="cg-tip-org">Dr. S. Lee Life Sciences</span><span class="cg-tip-role">Founder &amp; Principal</span></span></span>
           </div>
           <div class="cg-axis">
             <span class="cg-year" style="left:0%;">2009</span>
