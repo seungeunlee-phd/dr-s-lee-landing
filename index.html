@@ -614,6 +614,73 @@
     margin-bottom: 56px;
   }
 
+  .credentials-block {
+    margin: -32px 0 56px;
+    padding: 22px 26px;
+    background: rgba(201, 169, 97, 0.06);
+    border-left: 2px solid var(--gold);
+    border-radius: 2px;
+    max-width: 760px;
+  }
+  .credentials-row {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 18px;
+    align-items: baseline;
+  }
+  .credentials-row + .credentials-row {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(201, 169, 97, 0.18);
+  }
+  .credentials-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .credentials-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .credentials-list li {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--text-medium);
+    margin: 0;
+  }
+  .credentials-list li + li {
+    margin-top: 6px;
+  }
+  .credentials-list strong {
+    color: var(--navy-deep);
+    font-weight: 600;
+  }
+  .credentials-meta-text {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text-medium);
+    letter-spacing: 0.01em;
+  }
+  .credentials-meta-text a {
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(201, 169, 97, 0.35);
+    transition: border-color 0.2s ease;
+  }
+  .credentials-meta-text a:hover {
+    border-bottom-color: var(--gold);
+  }
+  @media (max-width: 640px) {
+    .credentials-block { padding: 18px 20px; }
+    .credentials-row {
+      grid-template-columns: 1fr;
+      gap: 6px;
+    }
+  }
+
   .section-divider {
     width: 48px;
     height: 1px;
@@ -2281,6 +2348,21 @@
       Fifteen years between research benches, regulatory bodies, and commercial leadership. The arc below reads top to bottom (most recent first), scientific work on the left, commercial on the right, both at the centre when one role demanded both.
     </p>
 
+    <div class="credentials-block">
+      <div class="credentials-row">
+        <span class="credentials-label">Education</span>
+        <ul class="credentials-list">
+          <li><strong>PhD, Public Health</strong> &nbsp;·&nbsp; Seoul National University &nbsp;·&nbsp; 2016</li>
+          <li><strong>MSc, Molecular Medicine and Biopharmaceutical Science</strong> &nbsp;·&nbsp; Seoul National University &nbsp;·&nbsp; 2013</li>
+          <li><strong>BSc, Food and Nutrition</strong> &amp; <strong>BSc, Biology</strong> &nbsp;·&nbsp; Yonsei University &nbsp;·&nbsp; 2011</li>
+        </ul>
+      </div>
+      <div class="credentials-row credentials-row-meta">
+        <span class="credentials-label">Research record</span>
+        <span class="credentials-meta-text">Selected publications and full record on <a href="https://orcid.org/0009-0009-3580-4459" target="_blank" rel="noopener noreferrer">ORCID 0009-0009-3580-4459</a>.</span>
+      </div>
+    </div>
+
     <div class="diptych-cols" aria-hidden="true">
       <div class="dip-rail-label">Scientific &amp; technical</div>
       <div class="dip-rail-label">Commercial &amp; strategic</div>
@@ -2321,9 +2403,9 @@
 
       <article class="dip-item sci">
         <div class="dip-period">Jan 2017 – Jan 2021</div>
-        <div class="dip-org">WFSR / NVWA</div>
+        <div class="dip-org">Wageningen Food Safety Research (Stitching Nederlandse Voedsel- en Warenautoriteit)</div>
         <div class="dip-role">Researcher Genomics &nbsp;·&nbsp; Data Scientist</div>
-        <p class="dip-detail">Genomic surveillance of food-borne pathogenic microbes using Illumina and Nanopore sequencing, with Python, R, Docker, and Git workflows. EU Reference Laboratory inter-laboratory studies and proficiency-test evaluations on Shiga toxin–producing <em>E. coli</em>, <em>Listeria monocytogenes</em>, and pathogenic <em>E. coli</em>. Biobank database infrastructure on LIMS, RDBMS, and Jupyter.</p>
+        <p class="dip-detail">Genomic surveillance of food-borne pathogenic microbes using Illumina and Nanopore sequencing, with Python, R, Docker, and Git workflows. EU Reference Laboratory inter-laboratory studies and proficiency-test evaluations on Shiga toxin–producing and pathogenic <em>E. coli</em>, and <em>Listeria monocytogenes</em>. Biobank database infrastructure on LIMS, RDBMS, and Jupyter.</p>
         <div class="dip-location">Wageningen, Netherlands</div>
       </article>
 
@@ -2337,7 +2419,7 @@
 
       <article class="dip-item sci">
         <div class="dip-period">Mar 2013 – Feb 2016</div>
-        <div class="dip-org">Seoul National University, Environmental Health Engineering Lab</div>
+        <div class="dip-org">Environmental Health Engineering Lab, Seoul National University</div>
         <div class="dip-role">PhD Researcher, Public Health</div>
         <p class="dip-detail">Built a laboratory from the ground up to optimize in vitro and in silico workflows. Refined NGS data with bioinformatics tools to identify environmental pathogens and improve microbial molecular identification.</p>
         <div class="dip-location">Seoul, Korea</div>
@@ -2347,7 +2429,7 @@
         <div class="dip-period">Mar 2011 – Feb 2013</div>
         <div class="dip-org">Genome Research Center for Diabetes and Endocrine Disease, Seoul National University Hospital</div>
         <div class="dip-role">MSc Student Researcher, Molecular Medicine and Biopharmaceutical Science</div>
-        <p class="dip-detail">Molecular and clinical research on diabetes and endocrine disease. Cell culture, differentiation, and drug treatments. qPCR, bioluminescent assays, immunoblotting, and protein extraction. Cloning workflows including DNA fragment design, insertion, and digestion.</p>
+        <p class="dip-detail">Molecular and clinical research on diabetes and endocrine disease. Cell culture, differentiation, and drug treatments. Animal handling for in vivo studies. qPCR, bioluminescent assays, immunoblotting, and protein extraction. Cloning workflows including DNA fragment design, insertion, and digestion.</p>
         <div class="dip-location">Seoul, Korea</div>
       </article>
 
