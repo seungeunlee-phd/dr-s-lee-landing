@@ -3259,6 +3259,29 @@
     color: var(--off-white);
   }
 
+  /* Inline hand-off link inside .pilot-desc — carries the user guide's "tell us what you'd like to see" voice into the partnership card */
+  .partnership-callout .pilot-desc a.pilot-contact-link {
+    color: #E29472;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(226, 148, 114, 0.45);
+    padding-bottom: 1px;
+    white-space: nowrap;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .partnership-callout .pilot-desc a.pilot-contact-link:hover {
+    color: #F2B194;
+    border-bottom-color: #F2B194;
+  }
+  .partnership-callout .pilot-desc a.pilot-contact-link .pilot-contact-arrow {
+    display: inline-block;
+    margin-left: 3px;
+    transition: transform 0.15s;
+  }
+  .partnership-callout .pilot-desc a.pilot-contact-link:hover .pilot-contact-arrow {
+    transform: translateX(2px);
+  }
+
   .partnership-callout .pilot-cta-primary {
     background: var(--gold);
     color: var(--navy-deep);
@@ -3738,7 +3761,7 @@
 
         <section class="partnership-five-cap" aria-label="Five capabilities Sense 2026 brings that a chat tool doesn't">
           <h4 class="p5c-eyebrow">Five things <strong>Sense 2026 does</strong> that chat doesn't</h4>
-          <p class="p5c-subline">Priced per organisation, not per seat.</p>
+          <p class="p5c-subline">Built for <strong>inquiry-to-quote</strong> and <strong>R&amp;D technical assessment</strong> workflows.</p>
           <div class="p5c-grid">
 
             <article class="p5c-card">
@@ -3811,9 +3834,9 @@
           </div>
         </section>
 
-        <p class="pilot-desc">Today, a customer's technical question routes through a senior expert and waits two or three days for a reply. <strong>Sense is an agentic AI workspace that brings that down to minutes</strong>. Agents handle routing, drafting, and source-checking inside a workspace shaped to your team's flows. Your team asks in their native language; replies come as drafts with cited sources from your own documents, <strong>in whichever format the moment calls for</strong> (technical report, proposal, email reply, and others). Send after a quick review. <strong>Designed around your domain's taxonomy, in the words your team actually uses</strong>: each reply quietly trains the workspace, so the next colleague gets the answer instantly.</p>
-        <p class="pilot-desc">Your data stays on your server, no outbound data. <strong>Sense reads from the platforms you already use, no disruption to current operations</strong>. Single self-contained install, free to evaluate, with a tailored advisor file backing the workflows that matter. <strong>Ready to build into your stack and tune to your team's flows</strong>; data architecture and indexing can be designed alongside when needed.</p>
-        <p class="pilot-desc">Open to teams ready to explore Sense at their own rhythm. You start with a <strong>shared sandbox</strong> so your team has time to sit around Sense together, explore at their own pace, and imagine what their workflow could look like inside it. A short feature request form tells us what works for you, and from there we move directly into <strong>customised build and deployment alignment, in steps</strong>. <strong>No separate pilot scope, no upfront commitment</strong>. Bring your team's hardest workflow when the time feels right.</p>
+        <p class="pilot-desc">Today a technical question (customer inquiry, internal R&amp;D assessment, feasibility check) routes through a senior expert and waits two or three days for a reply. <strong>Sense 2026 turns that wait into minutes</strong>: the same inquiry stays in the same workspace across days, hand-offs, and reviewers. Designed around <strong>your sub-domain's taxonomy</strong>, in the words your team actually uses. An inquiry that hits your <strong>risk threshold auto-routes for senior review</strong>; a missing field trips your block list before a draft ever leaves.</p>
+        <p class="pilot-desc"><strong>Three-tier configuration:</strong> your catalogue, pricing, and approval rules stay tuneable by your team; reliability cut-offs and methodology toggles, dialled inquiry by inquiry; deeper structure (classifier, risk patterns, scoring weights) <strong>architected with us via your advisor file</strong>. Pricing is <strong>flat per organisation, not per seat</strong>. Free to evaluate.</p>
+        <p class="pilot-desc">Open to teams ready to explore Sense at their own rhythm. The <strong>shared sandbox</strong> is a brainstorming canvas, not the final shape of your platform: your team sits around Sense, explores at their own pace, and tells us what clicks (or doesn't). We <strong>build tailored solutions</strong> and love a good back-and-forth on the tailoring direction. From there: <strong>customised build and deployment, in steps</strong>. Bring your team's hardest workflow when the time feels right, and <a class="pilot-contact-link" href="#contact">reach out<span class="pilot-contact-arrow" aria-hidden="true">&rarr;</span></a> to tell us what you'd like to see.</p>
 
         <div class="pilot-visual">
           <svg viewBox="0 0 600 316" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="How Sense 2026 runs an inquiry: reads internal platforms and curated external sources, then runs five steps from intake through deliver. Every parameter is either customer-tunable or advisor-architected. Sense Library, Library snapshot, and Activity log run alongside. Local LLM by default; external LLMs optional via anonymized bridge.">
@@ -3918,32 +3941,32 @@
             <!-- Connecting line through 5 step nodes -->
             <line x1="50" y1="145" x2="550" y2="145" stroke="#C5B59A" stroke-width="1.2" stroke-opacity="0.40" stroke-dasharray="4 3"/>
 
-            <!-- 5 STEP NODES -->
-            <g font-family="Georgia, serif">
+            <!-- 5 STEP NODES - digits use Inter (lining figures by default) + dominant-baseline="central" so 3/4/5/7/9 don't drop below the circle midline like Georgia's old-style figures -->
+            <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif" font-variant-numeric="lining-nums tabular-nums">
               <!-- Step 1: Intake (smaller end node) -->
               <circle cx="50" cy="145" r="13" fill="#2C4A6B" stroke="#C5B59A" stroke-width="1.4"/>
-              <text x="50" y="149" text-anchor="middle" font-size="10" font-weight="500" fill="#D8C8A8">1</text>
-              <text x="50" y="175" text-anchor="middle" font-size="9" fill="#EFEAD9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">Intake</text>
+              <text x="50" y="145" text-anchor="middle" dominant-baseline="central" font-size="10" font-weight="500" fill="#D8C8A8">1</text>
+              <text x="50" y="175" text-anchor="middle" font-size="9" fill="#EFEAD9">Intake</text>
 
               <!-- Step 2: SEARCH (emphasis) -->
               <circle cx="180" cy="145" r="16" fill="#2C4A6B" stroke="#D8C8A8" stroke-width="2.2"/>
-              <text x="180" y="149" text-anchor="middle" font-size="11" font-weight="500" fill="#D8C8A8">2</text>
-              <text x="180" y="178" text-anchor="middle" font-size="9.5" font-weight="700" letter-spacing="0.6" fill="#D8C8A8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">SEARCH</text>
+              <text x="180" y="145" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="500" fill="#D8C8A8">2</text>
+              <text x="180" y="178" text-anchor="middle" font-size="9.5" font-weight="700" letter-spacing="0.6" fill="#D8C8A8">SEARCH</text>
 
               <!-- Step 3: FILTER (emphasis) -->
               <circle cx="300" cy="145" r="16" fill="#2C4A6B" stroke="#D8C8A8" stroke-width="2.2"/>
-              <text x="300" y="149" text-anchor="middle" font-size="11" font-weight="500" fill="#D8C8A8">3</text>
-              <text x="300" y="178" text-anchor="middle" font-size="9.5" font-weight="700" letter-spacing="0.6" fill="#D8C8A8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">FILTER</text>
+              <text x="300" y="145" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="500" fill="#D8C8A8">3</text>
+              <text x="300" y="178" text-anchor="middle" font-size="9.5" font-weight="700" letter-spacing="0.6" fill="#D8C8A8">FILTER</text>
 
               <!-- Step 4: DRAFT (emphasis) -->
               <circle cx="420" cy="145" r="16" fill="#2C4A6B" stroke="#D8C8A8" stroke-width="2.2"/>
-              <text x="420" y="149" text-anchor="middle" font-size="11" font-weight="500" fill="#D8C8A8">4</text>
-              <text x="420" y="178" text-anchor="middle" font-size="9.5" font-weight="700" letter-spacing="0.6" fill="#D8C8A8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">DRAFT</text>
+              <text x="420" y="145" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="500" fill="#D8C8A8">4</text>
+              <text x="420" y="178" text-anchor="middle" font-size="9.5" font-weight="700" letter-spacing="0.6" fill="#D8C8A8">DRAFT</text>
 
               <!-- Step 5: Deliver (smaller end node) -->
               <circle cx="550" cy="145" r="13" fill="#2C4A6B" stroke="#C5B59A" stroke-width="1.4"/>
-              <text x="550" y="149" text-anchor="middle" font-size="10" font-weight="500" fill="#D8C8A8">5</text>
-              <text x="550" y="175" text-anchor="middle" font-size="9" fill="#EFEAD9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">Deliver</text>
+              <text x="550" y="145" text-anchor="middle" dominant-baseline="central" font-size="10" font-weight="500" fill="#D8C8A8">5</text>
+              <text x="550" y="175" text-anchor="middle" font-size="9" fill="#EFEAD9">Deliver</text>
             </g>
 
             <!-- Draft quality pills with icons below DRAFT - Best hit (check) / Audit rationale (doc) / Risk tags (warning) -->
