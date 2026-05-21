@@ -2330,25 +2330,23 @@
   }
 
   .pilot-visual {
-    margin: 6px 0 30px;
-    padding: 24px 28px;
-    background: var(--off-white);
-    border: 1px solid var(--border-soft);
-    border-radius: 10px;
+    margin: 18px 0 30px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
     position: relative;
     z-index: 1;
-    max-width: 656px;
   }
 
   .pilot-visual svg {
     width: 100%;
     height: auto;
     display: block;
-    max-width: 600px;
   }
 
   @media (max-width: 540px) {
-    .pilot-visual { padding: 20px 18px; }
+    .pilot-visual { margin: 12px 0 22px; }
   }
 
   .featured-pilot::before {
@@ -2579,6 +2577,12 @@
     line-height: 1.3;
     letter-spacing: 0.02em;
     text-shadow: 0 1px 1px rgba(168, 94, 61, 0.28);
+  }
+  .demo-coffee-icon {
+    display: inline-block;
+    vertical-align: -3px;
+    margin-left: 3px;
+    opacity: 0.95;
   }
 
   @media (max-width: 720px) {
@@ -3697,7 +3701,7 @@
                   <polyline points="12 5 19 12 12 19"/>
                 </svg>
               </span>
-              <p class="partnership-demo-footer">Take a 2-week spin. No rush. <span aria-hidden="true">&#x2615;</span></p>
+              <p class="partnership-demo-footer">Take a 2-week spin. No rush. <svg class="demo-coffee-icon" viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6 L3 12 Q3 13.5 4.5 13.5 L10 13.5 Q11.5 13.5 11.5 12 L11.5 6 Z"/><path d="M11.5 7.5 Q14 7.5 14 9.5 Q14 11.5 11.5 11.5"/><path d="M5.5 4 Q6.5 2.5 5.5 1"/><path d="M8.5 4 Q9.5 2.5 8.5 1"/></svg></p>
             </a>
 
             <svg class="partnership-journey-svg" viewBox="0 0 380 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sense 2026 journey: Demo about 2 weeks, Build 4 to 8 weeks, Live ongoing">
@@ -3812,45 +3816,214 @@
         <p class="pilot-desc">Open to teams ready to explore Sense at their own rhythm. You start with a <strong>shared sandbox</strong> so your team has time to sit around Sense together, explore at their own pace, and imagine what their workflow could look like inside it. A short feature request form tells us what works for you, and from there we move directly into <strong>customised build and deployment alignment, in steps</strong>. <strong>No separate pilot scope, no upfront commitment</strong>. Bring your team's hardest workflow when the time feels right.</p>
 
         <div class="pilot-visual">
-          <svg viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Where your data lives: inside your server, with external LLMs, connectors, and literature sources off by default">
-            <text x="0" y="16" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10" letter-spacing="1.8" font-weight="700" fill="#C5B59A">WHERE YOUR DATA LIVES</text>
+          <svg viewBox="0 0 600 316" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="How Sense 2026 runs an inquiry: reads internal platforms and curated external sources, then runs five steps from intake through deliver. Every parameter is either customer-tunable or advisor-architected. Sense Library, Library snapshot, and Activity log run alongside. Local LLM by default; external LLMs optional via anonymized bridge.">
 
-            <rect x="0" y="38" width="270" height="110" rx="6" fill="#FAFAF7" stroke="#3A4A60" stroke-opacity="0.4" stroke-width="1.2"/>
-            <text x="18" y="60" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10" letter-spacing="1.8" font-weight="700" fill="#3A4A60">YOUR SERVER</text>
+            <!-- TITLE -->
+            <text x="0" y="14" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10" letter-spacing="1.8" font-weight="700" fill="#D8C8A8">HOW SENSE 2026 RUNS AN INQUIRY</text>
 
-            <circle cx="30" cy="92" r="3.5" fill="#C5B59A"/>
-            <text x="42" y="96" font-family="Georgia, serif" font-size="13" fill="#3A4A60">Data</text>
+            <!-- SOURCE PLANES - group labels (coral for internal, gold for external, matching the home accent palette) -->
+            <text x="155" y="50" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="7.8" font-weight="700" letter-spacing="1.6" fill="#E29472">INTERNAL &middot; YOUR PLATFORMS</text>
+            <text x="450" y="50" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="7.8" font-weight="700" letter-spacing="1.6" fill="#D8C8A8">EXTERNAL &middot; CURATED + PUBLIC &middot; opt-in</text>
 
-            <circle cx="98" cy="92" r="3.5" fill="#C5B59A"/>
-            <text x="110" y="96" font-family="Georgia, serif" font-size="13" fill="#3A4A60">AI models</text>
+            <!-- INTERNAL pills - translucent coral tint (matches journey nodes + capability icons) -->
+            <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="8.2" fill="#FAFAF7">
+              <g transform="translate(15, 58)"><rect width="86" height="18" rx="9" fill="rgba(226, 148, 114, 0.16)" stroke="#E29472" stroke-opacity="0.75" stroke-width="0.9"/><text x="43" y="12" text-anchor="middle">Past projects</text></g>
+              <g transform="translate(112, 58)"><rect width="86" height="18" rx="9" fill="rgba(226, 148, 114, 0.16)" stroke="#E29472" stroke-opacity="0.75" stroke-width="0.9"/><text x="43" y="12" text-anchor="middle">Similar inquiries</text></g>
+              <g transform="translate(209, 58)"><rect width="86" height="18" rx="9" fill="rgba(226, 148, 114, 0.16)" stroke="#E29472" stroke-opacity="0.75" stroke-width="0.9"/><text x="43" y="12" text-anchor="middle">In-house recipes</text></g>
+            </g>
 
-            <circle cx="206" cy="92" r="3.5" fill="#C5B59A"/>
-            <text x="218" y="96" font-family="Georgia, serif" font-size="13" fill="#3A4A60">Audit</text>
+            <!-- EXTERNAL pills - translucent paper tint with gold stroke (matches capability card chrome) -->
+            <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="8.2" fill="#FAFAF7">
+              <g transform="translate(310, 58)"><rect width="86" height="18" rx="9" fill="rgba(232, 220, 196, 0.16)" stroke="#D8C8A8" stroke-opacity="0.70" stroke-width="0.9"/><text x="43" y="12" text-anchor="middle">Sense Library</text></g>
+              <g transform="translate(407, 58)"><rect width="86" height="18" rx="9" fill="rgba(232, 220, 196, 0.16)" stroke="#D8C8A8" stroke-opacity="0.70" stroke-width="0.9"/><text x="43" y="12" text-anchor="middle">Literature</text></g>
+              <g transform="translate(504, 58)"><rect width="86" height="18" rx="9" fill="rgba(232, 220, 196, 0.16)" stroke="#D8C8A8" stroke-opacity="0.70" stroke-width="0.9"/><text x="43" y="12" text-anchor="middle">Vendor notes</text></g>
+            </g>
 
-            <text x="18" y="130" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" font-style="italic" fill="#5A5A54">Sense lives here. Your data never leaves.</text>
+            <!-- Caption -->
+            <text x="300" y="92" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="7.5" letter-spacing="1.2" fill="#C5B59A">READS, NEVER REPLACED &middot; YOUR WALLS STAY UP</text>
 
-            <line x1="270" y1="90" x2="330" y2="90" stroke="#8B8B83" stroke-opacity="0.5" stroke-width="1" stroke-dasharray="3 3"/>
-            <text x="278" y="84" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="9" font-style="italic" fill="#8B8B83">opt-in</text>
+            <!-- Arrow marker for input/output format flows -->
+            <defs>
+              <marker id="ai-arrow" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5" markerHeight="5" orient="auto">
+                <path d="M 0 0 L 7 4 L 0 8 z" fill="#C5B59A" opacity="0.75"/>
+              </marker>
+            </defs>
 
-            <rect x="330" y="42" width="260" height="140" rx="6" fill="none" stroke="#8B8B83" stroke-opacity="0.45" stroke-dasharray="4 3" stroke-width="1"/>
-            <text x="348" y="58" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="9" letter-spacing="1.8" font-weight="700" fill="#8B8B83">EXTERNAL</text>
+            <!-- Converging lines from 6 source pills down to SEARCH node (cx=180, cy=145) - coral for internal, gold for external -->
+            <g stroke="#E29472" stroke-width="0.8" fill="none" opacity="0.45">
+              <path d="M 58 78 Q 58 110 180 145"/>
+              <path d="M 155 78 Q 155 110 180 145"/>
+              <path d="M 252 78 Q 252 110 180 145"/>
+            </g>
+            <g stroke="#D8C8A8" stroke-width="0.8" fill="none" opacity="0.45">
+              <path d="M 353 78 Q 353 110 180 145"/>
+              <path d="M 450 78 Q 450 110 180 145"/>
+              <path d="M 547 78 Q 547 110 180 145"/>
+            </g>
 
-            <text x="348" y="76" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="8" letter-spacing="1.2" font-weight="600" fill="#8B8B83">LLMS</text>
-            <text x="348" y="90" font-family="Georgia, serif" font-size="10.5" fill="#5A5A54">ChatGPT · Claude · Gemini · Copilot</text>
+            <!-- INPUT FORMATS: stacked icons (email, PDF, doc) left of Intake -->
+            <text x="0" y="113" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="5.5" font-weight="700" letter-spacing="0.8" fill="#C5B59A">YOUR FORMATS &middot; IN</text>
+            <g stroke="#C5B59A" stroke-opacity="0.70" fill="none" stroke-width="0.85">
+              <g transform="translate(2, 119)">
+                <rect x="0" y="0" width="11" height="8" rx="0.8" fill="rgba(232,220,196,0.08)"/>
+                <polyline points="0.5,1 5.5,5 10.5,1" stroke-linejoin="round"/>
+              </g>
+              <g transform="translate(2, 135)">
+                <path d="M0,0 L7,0 L10,3 L10,11 L0,11 Z" fill="rgba(232,220,196,0.08)"/>
+                <path d="M7,0 L7,3 L10,3" stroke-width="0.6"/>
+              </g>
+              <g transform="translate(2, 152)">
+                <rect x="0" y="0" width="10" height="11" rx="0.5" fill="rgba(232,220,196,0.08)"/>
+                <line x1="2" y1="3" x2="8" y2="3" stroke-width="0.55"/>
+                <line x1="2" y1="5.5" x2="8" y2="5.5" stroke-width="0.55"/>
+                <line x1="2" y1="8" x2="6.5" y2="8" stroke-width="0.55"/>
+              </g>
+            </g>
+            <text x="6" y="143" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="4" font-weight="700" fill="#D8C8A8" text-anchor="middle">PDF</text>
 
-            <text x="348" y="106" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="8" letter-spacing="1.2" font-weight="600" fill="#8B8B83">CONNECTORS</text>
-            <text x="348" y="120" font-family="Georgia, serif" font-size="10.5" fill="#5A5A54">Gmail · Slack · Drive · SharePoint · Jira</text>
+            <!-- Arrows from input icons into Intake -->
+            <g stroke="#C5B59A" stroke-opacity="0.55" stroke-width="0.8" fill="none">
+              <path d="M 14 123 L 37 142" marker-end="url(#ai-arrow)"/>
+              <path d="M 14 140 L 37 145" marker-end="url(#ai-arrow)"/>
+              <path d="M 14 157 L 37 148" marker-end="url(#ai-arrow)"/>
+            </g>
 
-            <text x="348" y="136" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="8" letter-spacing="1.2" font-weight="600" fill="#8B8B83">LITERATURE</text>
-            <text x="348" y="150" font-family="Georgia, serif" font-size="10.5" fill="#5A5A54">PubMed · Europe PMC · bioRxiv</text>
+            <!-- OUTPUT FORMATS: stacked icons (email reply, PDF report, doc proposal) right of Deliver -->
+            <text x="600" y="113" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="5.5" font-weight="700" letter-spacing="0.8" fill="#C5B59A">YOUR FORMATS &middot; OUT</text>
+            <g stroke="#C5B59A" stroke-opacity="0.70" fill="none" stroke-width="0.85">
+              <g transform="translate(587, 119)">
+                <rect x="0" y="0" width="11" height="8" rx="0.8" fill="rgba(232,220,196,0.08)"/>
+                <polyline points="0.5,1 5.5,5 10.5,1" stroke-linejoin="round"/>
+              </g>
+              <g transform="translate(587, 135)">
+                <path d="M0,0 L7,0 L10,3 L10,11 L0,11 Z" fill="rgba(232,220,196,0.08)"/>
+                <path d="M7,0 L7,3 L10,3" stroke-width="0.6"/>
+              </g>
+              <g transform="translate(587, 152)">
+                <rect x="0" y="0" width="10" height="11" rx="0.5" fill="rgba(232,220,196,0.08)"/>
+                <line x1="2" y1="3" x2="8" y2="3" stroke-width="0.55"/>
+                <line x1="2" y1="5.5" x2="8" y2="5.5" stroke-width="0.55"/>
+                <line x1="2" y1="8" x2="6.5" y2="8" stroke-width="0.55"/>
+              </g>
+            </g>
+            <text x="592" y="143" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="4" font-weight="700" fill="#D8C8A8" text-anchor="middle">PDF</text>
 
-            <text x="348" y="170" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="8.5" font-style="italic" fill="#8B8B83">+ others, open to discuss</text>
+            <!-- Arrows from Deliver out to output icons -->
+            <g stroke="#C5B59A" stroke-opacity="0.55" stroke-width="0.8" fill="none">
+              <path d="M 563 142 L 586 123" marker-end="url(#ai-arrow)"/>
+              <path d="M 563 145 L 586 140" marker-end="url(#ai-arrow)"/>
+              <path d="M 563 148 L 586 157" marker-end="url(#ai-arrow)"/>
+            </g>
 
-            <text x="348" y="196" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="9" font-style="italic" fill="#8B8B83">Off by default · admin-enabled</text>
+            <!-- Connecting line through 5 step nodes -->
+            <line x1="50" y1="145" x2="550" y2="145" stroke="#C5B59A" stroke-width="1.2" stroke-opacity="0.40" stroke-dasharray="4 3"/>
 
-            <line x1="0" y1="210" x2="590" y2="210" stroke="#EFEAD9" stroke-width="1"/>
+            <!-- 5 STEP NODES -->
+            <g font-family="Georgia, serif">
+              <!-- Step 1: Intake (smaller end node) -->
+              <circle cx="50" cy="145" r="13" fill="#2C4A6B" stroke="#C5B59A" stroke-width="1.4"/>
+              <text x="50" y="149" text-anchor="middle" font-size="10" font-weight="500" fill="#D8C8A8">1</text>
+              <text x="50" y="175" text-anchor="middle" font-size="9" fill="#EFEAD9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">Intake</text>
 
-            <text x="0" y="230" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" font-style="italic" fill="#5A5A54">No vendor cloud. No outbound data. No SaaS account to compromise.</text>
+              <!-- Step 2: SEARCH (emphasis) -->
+              <circle cx="180" cy="145" r="16" fill="#2C4A6B" stroke="#D8C8A8" stroke-width="2.2"/>
+              <text x="180" y="149" text-anchor="middle" font-size="11" font-weight="500" fill="#D8C8A8">2</text>
+              <text x="180" y="178" text-anchor="middle" font-size="9.5" font-weight="700" letter-spacing="0.6" fill="#D8C8A8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">SEARCH</text>
+
+              <!-- Step 3: FILTER (emphasis) -->
+              <circle cx="300" cy="145" r="16" fill="#2C4A6B" stroke="#D8C8A8" stroke-width="2.2"/>
+              <text x="300" y="149" text-anchor="middle" font-size="11" font-weight="500" fill="#D8C8A8">3</text>
+              <text x="300" y="178" text-anchor="middle" font-size="9.5" font-weight="700" letter-spacing="0.6" fill="#D8C8A8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">FILTER</text>
+
+              <!-- Step 4: DRAFT (emphasis) -->
+              <circle cx="420" cy="145" r="16" fill="#2C4A6B" stroke="#D8C8A8" stroke-width="2.2"/>
+              <text x="420" y="149" text-anchor="middle" font-size="11" font-weight="500" fill="#D8C8A8">4</text>
+              <text x="420" y="178" text-anchor="middle" font-size="9.5" font-weight="700" letter-spacing="0.6" fill="#D8C8A8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">DRAFT</text>
+
+              <!-- Step 5: Deliver (smaller end node) -->
+              <circle cx="550" cy="145" r="13" fill="#2C4A6B" stroke="#C5B59A" stroke-width="1.4"/>
+              <text x="550" y="149" text-anchor="middle" font-size="10" font-weight="500" fill="#D8C8A8">5</text>
+              <text x="550" y="175" text-anchor="middle" font-size="9" fill="#EFEAD9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">Deliver</text>
+            </g>
+
+            <!-- Draft quality pills with icons below DRAFT - Best hit (check) / Audit rationale (doc) / Risk tags (warning) -->
+            <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="7.2" font-weight="700" letter-spacing="0.4">
+              <!-- BEST HIT - coral check icon -->
+              <g transform="translate(286, 195)">
+                <rect width="72" height="16" rx="2.5" fill="rgba(245, 243, 238, 0.10)" stroke="#8E8A82" stroke-opacity="0.55" stroke-width="0.8"/>
+                <polyline points="5,9 8,12 14,5" fill="none" stroke="#E29472" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <text x="20" y="11" text-anchor="start" fill="#EFEAD9">BEST HIT</text>
+              </g>
+              <!-- AUDIT RATIONALE - paper/gold doc icon -->
+              <g transform="translate(363, 195)">
+                <rect width="108" height="16" rx="2.5" fill="rgba(245, 243, 238, 0.10)" stroke="#8E8A82" stroke-opacity="0.55" stroke-width="0.8"/>
+                <g transform="translate(5, 3.5)" stroke="#D8C8A8" stroke-width="0.9" fill="none">
+                  <rect x="0" y="0" width="7" height="9" rx="0.5"/>
+                  <line x1="1.5" y1="2.2" x2="5.5" y2="2.2"/>
+                  <line x1="1.5" y1="4" x2="5.5" y2="4"/>
+                  <line x1="1.5" y1="5.8" x2="4" y2="5.8"/>
+                </g>
+                <text x="18" y="11" text-anchor="start" fill="#EFEAD9">AUDIT RATIONALE</text>
+              </g>
+              <!-- RISK TAGS - coral warning triangle icon -->
+              <g transform="translate(476, 195)">
+                <rect width="78" height="16" rx="2.5" fill="rgba(245, 243, 238, 0.10)" stroke="#8E8A82" stroke-opacity="0.55" stroke-width="0.8"/>
+                <g transform="translate(4, 3)" stroke="#E29472" stroke-width="1.2" fill="none" stroke-linejoin="round" stroke-linecap="round">
+                  <path d="M 5.5,0.5 L 10.5,9.5 L 0.5,9.5 Z"/>
+                  <line x1="5.5" y1="3.5" x2="5.5" y2="6.5"/>
+                  <circle cx="5.5" cy="8.2" r="0.6" fill="#E29472" stroke="none"/>
+                </g>
+                <text x="20" y="11" text-anchor="start" fill="#EFEAD9">RISK TAGS</text>
+              </g>
+            </g>
+
+            <!-- Parameter-tier philosophy: sits between DRAFT pills and divider, with breathing room above. Coral = customer tier, gold-bright = advisor tier; small inline dots add visual rhythm -->
+            <text x="0" y="239" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="8.5" fill="#A89479">Every parameter has its tier: <tspan fill="#E29472" font-size="6">&#9679;</tspan> <tspan fill="#E29472" font-weight="700">tunable by your team</tspan> <tspan fill="#C5B59A">for autonomy</tspan>, or <tspan fill="#D8C8A8" font-size="6">&#9679;</tspan> <tspan fill="#D8C8A8" font-weight="700">architected with the advisor</tspan> <tspan fill="#C5B59A">for reliable structure</tspan>.</text>
+
+            <!-- Divider -->
+            <line x1="0" y1="248" x2="600" y2="248" stroke="#EFEAD9" stroke-opacity="0.20" stroke-width="1"/>
+
+            <!-- Sovereignty kicker (1 line, fills the diagram width) -->
+            <text x="0" y="266" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="9.5" fill="#EFEAD9">Sense lives on your server. <tspan font-weight="600">Local LLM</tspan> by default. <tspan font-weight="600">External LLMs</tspan> (ChatGPT, Claude, Gemini, Copilot) optional via anonymized bridge.</text>
+
+            <!-- + ALONGSIDE: continuous meta-processes (warmer gold tint to distinguish from DRAFT pills above) -->
+            <text x="0" y="293" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="6.5" font-weight="700" letter-spacing="0.9" fill="#D8C8A8">+ ALONGSIDE</text>
+            <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+              <!-- Sense Library (3-book shelf icon) - 2-line pill: name + italic benefit -->
+              <g transform="translate(72, 280)">
+                <rect width="132" height="26" rx="3" fill="rgba(216, 200, 168, 0.10)" stroke="#D8C8A8" stroke-opacity="0.60" stroke-width="0.8"/>
+                <g transform="translate(6, 9)" stroke="#D8C8A8" stroke-width="0.9" fill="none">
+                  <rect x="0" y="0" width="2.5" height="8" rx="0.3"/>
+                  <rect x="3.5" y="0" width="2.5" height="8" rx="0.3"/>
+                  <rect x="7" y="1" width="2.5" height="7" rx="0.3"/>
+                </g>
+                <text x="20" y="12" font-size="7.2" font-weight="700" letter-spacing="0.4" fill="#EFEAD9">Sense Library</text>
+                <text x="20" y="22" font-family="Georgia, serif" font-size="7" font-style="italic" fill="#C5B59A">expert-curated &middot; grows over time</text>
+              </g>
+              <!-- Library snapshot (bar-chart icon) -->
+              <g transform="translate(214, 280)">
+                <rect width="152" height="26" rx="3" fill="rgba(216, 200, 168, 0.10)" stroke="#D8C8A8" stroke-opacity="0.60" stroke-width="0.8"/>
+                <g transform="translate(6, 9)" stroke="#D8C8A8" stroke-width="0.9" fill="none">
+                  <line x1="0" y1="8" x2="11" y2="8"/>
+                  <line x1="1.5" y1="8" x2="1.5" y2="5"/>
+                  <line x1="5" y1="8" x2="5" y2="3"/>
+                  <line x1="8.5" y1="8" x2="8.5" y2="1"/>
+                </g>
+                <text x="20" y="12" font-size="7.2" font-weight="700" letter-spacing="0.4" fill="#EFEAD9">Library snapshot</text>
+                <text x="20" y="22" font-family="Georgia, serif" font-size="7" font-style="italic" fill="#C5B59A">Gap radar &rarr; Portfolio scan</text>
+              </g>
+              <!-- Activity log (clock icon) -->
+              <g transform="translate(376, 280)">
+                <rect width="124" height="26" rx="3" fill="rgba(216, 200, 168, 0.10)" stroke="#D8C8A8" stroke-opacity="0.60" stroke-width="0.8"/>
+                <g transform="translate(6, 9)" stroke="#D8C8A8" stroke-width="0.9" fill="none">
+                  <circle cx="4" cy="4" r="3.5"/>
+                  <line x1="4" y1="4" x2="4" y2="1.8" stroke-linecap="round"/>
+                  <line x1="4" y1="4" x2="5.7" y2="5" stroke-linecap="round"/>
+                </g>
+                <text x="20" y="12" font-size="7.2" font-weight="700" letter-spacing="0.4" fill="#EFEAD9">Activity log</text>
+                <text x="20" y="22" font-family="Georgia, serif" font-size="7" font-style="italic" fill="#C5B59A">easy progress monitoring</text>
+              </g>
+            </g>
           </svg>
         </div>
 
