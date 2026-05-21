@@ -2493,23 +2493,6 @@
     height: auto;
     display: block;
   }
-  @media (max-width: 720px) {
-    .partnership-demo-row {
-      flex-direction: column;
-      align-items: stretch;
-      gap: 18px;
-      margin-top: 16px;
-    }
-    .partnership-demo-card {
-      flex: 0 0 auto;
-      max-width: none;
-    }
-    .partnership-journey-svg {
-      max-width: 100%;
-      align-self: center;
-    }
-  }
-
   .partnership-demo-card {
     display: block;
     flex: 0 0 280px;
@@ -2599,7 +2582,20 @@
   }
 
   @media (max-width: 720px) {
-    .partnership-demo-card { max-width: none; }
+    .partnership-demo-row {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 18px;
+      margin-top: 16px;
+    }
+    .partnership-demo-card {
+      flex: 0 0 auto;
+      max-width: none;
+    }
+    .partnership-journey-svg {
+      max-width: 100%;
+      align-self: center;
+    }
   }
 
   /* Old swap-notes corner badge - kept for any other panels still using it,
