@@ -398,8 +398,8 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    font-size: 10px;
-    letter-spacing: 1.8px;
+    font-size: 9px;
+    letter-spacing: 1.6px;
     text-transform: uppercase;
     color: var(--gold);
     font-weight: 700;
@@ -433,7 +433,7 @@
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: var(--accent-warm);
+    background: #22C55E;
     position: relative;
     flex-shrink: 0;
   }
@@ -443,14 +443,14 @@
     position: absolute;
     inset: -3px;
     border-radius: 50%;
-    background: var(--accent-warm);
+    background: #22C55E;
     opacity: 0.45;
     animation: heroPulse 2s ease-out infinite;
   }
 
   .hero-pilot-name {
     font-family: var(--serif);
-    font-size: 17px;
+    font-size: 15.5px;
     font-weight: 600;
     color: var(--off-white);
     margin-bottom: 4px;
@@ -462,9 +462,8 @@
 
   .hero-pilot-tagline {
     font-family: var(--serif);
-    font-style: italic;
     color: #E29472;
-    font-size: 12px;
+    font-size: 11px;
     margin-bottom: 12px;
     position: relative;
     z-index: 1;
@@ -472,7 +471,7 @@
 
   .hero-pilot-desc {
     color: var(--cream);
-    font-size: 11.5px;
+    font-size: 10.5px;
     line-height: 1.6;
     margin-bottom: 12px;
     position: relative;
@@ -484,7 +483,7 @@
     font-style: italic;
     color: var(--cream);
     opacity: 0.8;
-    font-size: 10.5px;
+    font-size: 9.5px;
     line-height: 1.5;
     margin-bottom: 14px;
     position: relative;
@@ -496,7 +495,7 @@
     align-items: center;
     gap: 6px;
     color: var(--gold);
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 500;
     letter-spacing: 0.4px;
     border-bottom: 1px solid rgba(197, 181, 154, 0.5);
@@ -518,7 +517,75 @@
 
   @media (max-width: 540px) {
     .hero-pilot-card { padding: 22px 22px; }
-    .hero-pilot-name { font-size: 16px; }
+    .hero-pilot-name { font-size: 14.5px; }
+  }
+
+  /* Your journey with Sense 2026 - 3-step strip embedded inside the pilot card,
+     sitting between the tagline and the descriptive paragraph */
+  .hero-journey-steps {
+    list-style: none;
+    margin: 0 0 18px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-journey-step {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+    line-height: 1.2;
+  }
+  .hero-journey-pill {
+    display: inline-flex;
+    align-items: baseline;
+    justify-content: flex-start;
+    gap: 8px;
+    background: #E29472;
+    color: var(--off-white);
+    padding: 5px 12px;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(168, 94, 61, 0.30);
+    flex-shrink: 0;
+    min-width: 108px;
+    box-sizing: border-box;
+  }
+  .hero-journey-num {
+    font-family: var(--sans);
+    font-size: 8.5px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: rgba(250, 250, 247, 0.72);
+  }
+  .hero-journey-label {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    color: var(--off-white);
+  }
+  .hero-journey-dur {
+    font-family: var(--sans);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+    color: #8B8B83;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 540px) {
+    .hero-journey-steps { margin-bottom: 16px; }
+    .hero-journey-step { gap: 8px; }
+    .hero-journey-pill { padding: 4px 10px; gap: 6px; min-width: 96px; }
+    .hero-journey-num { font-size: 8px; }
+    .hero-journey-label { font-size: 11px; }
+    .hero-journey-dur { font-size: 8.5px; letter-spacing: 1.1px; }
   }
 
   /* Hero middle row: on desktop, hero-text becomes a 2-col grid with pilot card spanning rows on the right */
@@ -564,6 +631,12 @@
       justify-self: start;
       margin-left: -72px;
     }
+    .hero-journey-pill { min-width: 100px; padding: 4px 10px; gap: 6px; }
+    .hero-journey-num { font-size: 8px; }
+    .hero-journey-label { font-size: 11.5px; }
+    .hero-journey-dur { font-size: 8.5px; letter-spacing: 1.1px; }
+    .hero-journey-step { gap: 8px; }
+    .hero-journey-steps { gap: 5px; margin-bottom: 14px; }
 
     .hero-pilot-tag { margin-bottom: 12px; }
     .hero-pilot-tagline { margin-bottom: 14px; }
@@ -3180,12 +3253,35 @@
         <a href="#partnership" class="hero-pilot-card" aria-label="Sense 2026 active build and other partner roles, agentic AI workspace for life-science teams">
           <span class="hero-pilot-tag">
             <span class="hero-pilot-pulse" aria-hidden="true"></span>
-            Active build · spots open
+            Demo live &middot; 2-week tour
           </span>
           <h3 class="hero-pilot-name">Sense 2026</h3>
-          <p class="hero-pilot-tagline">Query to quote in a minute.</p>
-          <p class="hero-pilot-desc">An agentic AI workspace by a life-sciences scientist, designed around your domain's taxonomy and team's language. From days to minutes, reading from your existing platforms, tailored to your stack, not one-size-fits-all.</p>
-          <p class="hero-pilot-also">Sense 2026 is one shape. Other scoped projects and partner roles also open.</p>
+          <p class="hero-pilot-tagline">Drafts arrive fast. The send stays yours.</p>
+          <ol class="hero-journey-steps" aria-label="Your journey with Sense 2026">
+            <li class="hero-journey-step">
+              <span class="hero-journey-pill">
+                <span class="hero-journey-num">Step 1</span>
+                <span class="hero-journey-label">Demo</span>
+              </span>
+              <span class="hero-journey-dur">~2 wks</span>
+            </li>
+            <li class="hero-journey-step">
+              <span class="hero-journey-pill">
+                <span class="hero-journey-num">Step 2</span>
+                <span class="hero-journey-label">Build</span>
+              </span>
+              <span class="hero-journey-dur">4&ndash;8 wks</span>
+            </li>
+            <li class="hero-journey-step">
+              <span class="hero-journey-pill">
+                <span class="hero-journey-num">Step 3</span>
+                <span class="hero-journey-label">Live</span>
+              </span>
+              <span class="hero-journey-dur">ongoing</span>
+            </li>
+          </ol>
+          <p class="hero-pilot-desc">An agentic AI workspace by a life-sciences scientist. <strong>Lives on your server</strong>, routes through your team's stages, drafts with <strong>cited sources</strong>. Tailored to your domain's taxonomy and team's language.</p>
+          <p class="hero-pilot-also">Sense 2026 is one shape, <strong>not one-size-fits-all</strong>. Other scoped projects + partner roles also open.</p>
           <span class="hero-pilot-link">
             Find a fit
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
