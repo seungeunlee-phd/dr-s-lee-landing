@@ -2349,6 +2349,26 @@
     .pilot-visual { margin: 12px 0 22px; }
   }
 
+  /* COMPOUNDING CURVE - Slide 09 of the User Guide expressed as a rising
+     curve with 4 milestone markers + chips. Sits between the long pilot
+     descriptions and the workflow pilot-visual. Capped at ~560px so the
+     cards and gaps stay tight on wider viewports. */
+  .pilot-compounding {
+    margin: 22px auto 28px;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+  }
+  .pilot-compounding svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  @media (max-width: 540px) {
+    .pilot-compounding { margin: 14px auto 20px; max-width: 100%; }
+  }
+
   .featured-pilot::before {
     content: '';
     position: absolute;
@@ -3711,7 +3731,7 @@
           <div class="pilot-header-title-row">
             <div class="pilot-header-title">
               <h3 class="pilot-name">Sense 2026</h3>
-              <p class="pilot-tagline">Drafts arrive fast. The send stays yours.</p>
+              <p class="pilot-tagline">Drafts arrive fast. Your intelligence compounds.</p>
             </div>
           </div>
           <div class="partnership-demo-row">
@@ -3761,7 +3781,7 @@
 
         <section class="partnership-five-cap" aria-label="Five capabilities Sense 2026 brings that a chat tool doesn't">
           <h4 class="p5c-eyebrow">Five things <strong>Sense 2026 does</strong> that chat doesn't</h4>
-          <p class="p5c-subline">Built for <strong>inquiry-to-quote</strong> and <strong>R&amp;D technical assessment</strong> workflows.</p>
+          <p class="p5c-subline">Built for life-sciences workflows where <strong>technical and business judgment converge</strong>: <strong>inquiry-to-quote</strong>, <strong>R&amp;D technical assessment</strong>, and beyond.</p>
           <div class="p5c-grid">
 
             <article class="p5c-card">
@@ -3834,9 +3854,89 @@
           </div>
         </section>
 
-        <p class="pilot-desc">Today a technical question (customer inquiry, internal R&amp;D assessment, feasibility check) routes through a senior expert and waits two or three days for a reply. <strong>Sense 2026 turns that wait into minutes</strong>: the same inquiry stays in the same workspace across days, hand-offs, and reviewers. Designed around <strong>your sub-domain's taxonomy</strong>, in the words your team actually uses. An inquiry that hits your <strong>risk threshold auto-routes for senior review</strong>; a missing field trips your block list before a draft ever leaves.</p>
-        <p class="pilot-desc"><strong>Three-tier configuration:</strong> your catalogue, pricing, and approval rules stay tuneable by your team; reliability cut-offs and methodology toggles, dialled inquiry by inquiry; deeper structure (classifier, risk patterns, scoring weights) <strong>architected with us via your advisor file</strong>. Pricing is <strong>flat per organisation, not per seat</strong>. Free to evaluate.</p>
-        <p class="pilot-desc">Open to teams ready to explore Sense at their own rhythm. The <strong>shared sandbox</strong> is a brainstorming canvas, not the final shape of your platform: your team sits around Sense, explores at their own pace, and tells us what clicks (or doesn't). We <strong>build tailored solutions</strong> and love a good back-and-forth on the tailoring direction. From there: <strong>customised build and deployment, in steps</strong>. Bring your team's hardest workflow when the time feels right, and <a class="pilot-contact-link" href="#contact">reach out<span class="pilot-contact-arrow" aria-hidden="true">&rarr;</span></a> to tell us what you'd like to see.</p>
+        <p class="pilot-desc">Today a technical question (customer inquiry, internal R&amp;D assessment, feasibility check) routes through a senior expert and waits two or three days for a reply. <strong>Sense 2026 turns that wait into minutes</strong>: one inquiry stays in one workspace across days, hand-offs, and reviewers. It runs on <strong>an ontology your AI agents act on</strong>, shaped to your sub-domain's taxonomy and your team's vocabulary. An inquiry past your <strong>risk threshold auto-routes for senior review</strong>; a missing field trips your block list before a draft leaves. Where general AI hands you a guess, <strong>every Sense answer carries its source and reliability tier</strong>. Year by year, <strong>your intelligence compounds</strong>.</p>
+
+        <div class="pilot-compounding">
+          <svg viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Your intelligence compounds: Day 0 your connectors live on your server, Month 3 your operational memory accumulates, Month 6 new hires onboard via your audit trail, Year 2 your knowledge compounds into capital">
+
+            <!-- TITLE -->
+            <text x="0" y="14" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10" letter-spacing="1.8" font-weight="700" fill="#D8C8A8">YOUR OWN INTELLIGENCE COMPOUNDS &middot; DAY 0 &rarr; YEAR 2</text>
+
+            <!-- Y axis -->
+            <line x1="30" y1="38" x2="30" y2="172" stroke="#C5B59A" stroke-opacity="0.30" stroke-width="1"/>
+            <text x="26" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="6.5" letter-spacing="1.0" font-weight="700" fill="#8B8B83" text-anchor="end">VALUE</text>
+
+            <!-- X axis -->
+            <line x1="30" y1="172" x2="580" y2="172" stroke="#C5B59A" stroke-opacity="0.30" stroke-width="1"/>
+            <text x="595" y="182" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="6.5" letter-spacing="1.0" font-weight="700" fill="#8B8B83" text-anchor="end">TIME &rarr;</text>
+
+            <!-- Subtle fill under curve -->
+            <path d="M 60,150 C 120,150 175,144 220,125 C 285,107 325,98 380,90 C 450,62 505,46 555,40 L 555,172 L 60,172 Z" fill="rgba(226, 148, 114, 0.08)"/>
+
+            <!-- Compounding curve -->
+            <path d="M 60,150 C 120,150 175,144 220,125 C 285,107 325,98 380,90 C 450,62 505,46 555,40" stroke="#E29472" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+            <!-- Marker 1: DAY 0 -->
+            <circle cx="80" cy="148" r="6" fill="#1F3450" stroke="#E29472" stroke-width="2"/>
+            <text x="80" y="192" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="9" letter-spacing="0.8" font-weight="700" fill="#FAFAF7" text-anchor="middle">DAY 0</text>
+            <text x="80" y="207" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="8" fill="#FAFAF7" text-anchor="middle">YOUR connectors live,</text>
+            <text x="80" y="217" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="8" fill="#FAFAF7" text-anchor="middle">on your server</text>
+            <g transform="translate(30, 228)">
+              <rect width="100" height="13" rx="6.5" fill="rgba(232, 220, 196, 0.10)" stroke="#D8C8A8" stroke-opacity="0.55" stroke-width="0.7"/>
+              <text x="50" y="9.4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="6.5" font-weight="600" letter-spacing="0.4" fill="#D8C8A8" text-anchor="middle">Sovereignty</text>
+            </g>
+            <g transform="translate(30, 245)">
+              <rect width="100" height="13" rx="6.5" fill="rgba(232, 220, 196, 0.10)" stroke="#D8C8A8" stroke-opacity="0.55" stroke-width="0.7"/>
+              <text x="50" y="9.4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="6.5" font-weight="600" letter-spacing="0.4" fill="#D8C8A8" text-anchor="middle">Self-governance</text>
+            </g>
+
+            <!-- Marker 2: MONTH 3 -->
+            <circle cx="220" cy="125" r="6" fill="#1F3450" stroke="#E29472" stroke-width="2"/>
+            <text x="220" y="192" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="9" letter-spacing="0.8" font-weight="700" fill="#FAFAF7" text-anchor="middle">MONTH 3</text>
+            <text x="220" y="207" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="8" fill="#FAFAF7" text-anchor="middle">YOUR operational</text>
+            <text x="220" y="217" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="8" fill="#FAFAF7" text-anchor="middle">memory accumulates</text>
+            <g transform="translate(170, 228)">
+              <rect width="100" height="13" rx="6.5" fill="rgba(232, 220, 196, 0.10)" stroke="#D8C8A8" stroke-opacity="0.55" stroke-width="0.7"/>
+              <text x="50" y="9.4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="6.5" font-weight="600" letter-spacing="0.4" fill="#D8C8A8" text-anchor="middle">Asset growth</text>
+            </g>
+            <g transform="translate(170, 245)">
+              <rect width="100" height="13" rx="6.5" fill="rgba(232, 220, 196, 0.10)" stroke="#D8C8A8" stroke-opacity="0.55" stroke-width="0.7"/>
+              <text x="50" y="9.4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="6.5" font-weight="600" letter-spacing="0.4" fill="#D8C8A8" text-anchor="middle">Anchor past records</text>
+            </g>
+
+            <!-- Marker 3: MONTH 6 -->
+            <circle cx="380" cy="90" r="6" fill="#1F3450" stroke="#E29472" stroke-width="2"/>
+            <text x="380" y="192" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="9" letter-spacing="0.8" font-weight="700" fill="#FAFAF7" text-anchor="middle">MONTH 6</text>
+            <text x="380" y="207" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="8" fill="#FAFAF7" text-anchor="middle">New hires onboard via</text>
+            <text x="380" y="217" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="8" fill="#FAFAF7" text-anchor="middle">YOUR audit trail</text>
+            <g transform="translate(330, 228)">
+              <rect width="100" height="13" rx="6.5" fill="rgba(232, 220, 196, 0.10)" stroke="#D8C8A8" stroke-opacity="0.55" stroke-width="0.7"/>
+              <text x="50" y="9.4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="6.5" font-weight="600" letter-spacing="0.4" fill="#D8C8A8" text-anchor="middle">Auditable governance</text>
+            </g>
+            <g transform="translate(330, 245)">
+              <rect width="100" height="13" rx="6.5" fill="rgba(232, 220, 196, 0.10)" stroke="#D8C8A8" stroke-opacity="0.55" stroke-width="0.7"/>
+              <text x="50" y="9.4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="6.5" font-weight="600" letter-spacing="0.4" fill="#D8C8A8" text-anchor="middle">Faster onboarding</text>
+            </g>
+
+            <!-- Marker 4: YEAR 2 -->
+            <circle cx="540" cy="42" r="6" fill="#1F3450" stroke="#E29472" stroke-width="2"/>
+            <text x="540" y="192" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="9" letter-spacing="0.8" font-weight="700" fill="#FAFAF7" text-anchor="middle">YEAR 2</text>
+            <text x="540" y="207" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="8" fill="#FAFAF7" text-anchor="middle">YOUR knowledge</text>
+            <text x="540" y="217" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="8" fill="#FAFAF7" text-anchor="middle">compounds into capital</text>
+            <g transform="translate(490, 228)">
+              <rect width="100" height="13" rx="6.5" fill="rgba(232, 220, 196, 0.10)" stroke="#D8C8A8" stroke-opacity="0.55" stroke-width="0.7"/>
+              <text x="50" y="9.4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="6.5" font-weight="600" letter-spacing="0.4" fill="#D8C8A8" text-anchor="middle">Strategic foresight</text>
+            </g>
+            <g transform="translate(490, 245)">
+              <rect width="100" height="13" rx="6.5" fill="rgba(232, 220, 196, 0.10)" stroke="#D8C8A8" stroke-opacity="0.55" stroke-width="0.7"/>
+              <text x="50" y="9.4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="6.5" font-weight="600" letter-spacing="0.4" fill="#D8C8A8" text-anchor="middle">Knowledge capital</text>
+            </g>
+
+          </svg>
+        </div>
+
+        <p class="pilot-desc"><strong>What compounds is what you tune.</strong> Where many platforms keep configuration on the vendor side, <strong>all three layers stay with your team</strong>: catalogue, pricing, and approval rules tuneable in-house; reliability cut-offs and methodology toggles dialled inquiry by inquiry; deeper structure (classifier, risk patterns, scoring weights) <strong>architected with us via your advisor file</strong>. Pricing is <strong>flat per organisation, not per seat</strong>. Evaluation is free.</p>
+        <p class="pilot-desc">Open to teams ready to explore Sense at their own pace. <strong>You don't need to fit the prototype.</strong> The <strong>shared sandbox</strong> is a brainstorming canvas, not the final shape of your platform: your team sits around Sense, explores, and tells us what clicks (or doesn't). We <strong>build tailored solutions</strong> through back-and-forth, then <strong>deploy in steps</strong>. Bring your hardest workflow when the time feels right, and <a class="pilot-contact-link" href="#contact">reach out<span class="pilot-contact-arrow" aria-hidden="true">&rarr;</span></a> to tell us where to start.</p>
 
         <div class="pilot-visual">
           <svg viewBox="0 0 600 327" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="How Sense 2026 runs an inquiry: reads internal platforms and curated external sources, then runs five steps from intake through deliver. Every parameter is either customer-tunable or advisor-architected. Sense Library, Library snapshot, and Activity log run alongside. Sense lives on your server. Local LLM by default; external LLMs (ChatGPT, Claude, Gemini) optional per feature, via secured API connection. Same connection runs live integrations: Gmail, Google Drive, JSM, PubMed, Git library, verified daily through real use. More rolling out.">
