@@ -653,6 +653,7 @@
   /* Subtle scroll cue below hero CTAs — signals that the Practice areas sit just below the hero */
   .hero-scroll-link {
     display: inline-flex;
+    width: fit-content;
     align-items: center;
     gap: 6px;
     color: var(--cream);
@@ -4652,7 +4653,8 @@
       else hero.setAttribute('hidden', '');
     }
     if (opts && opts.scroll) {
-      var target = (name === 'practice') ? hero : document.getElementById(name);
+      // Nav clicks always land on the section content, not the hero — the hero sits above and is available by scrolling up
+      var target = document.getElementById(name);
       if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
