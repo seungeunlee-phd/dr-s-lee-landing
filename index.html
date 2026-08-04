@@ -3413,6 +3413,27 @@
     transform: translateX(2px);
   }
 
+  /* Background section-lead link — mirrors the partnership-callout link pattern (subtle warm border + hover arrow) on the cream .about background */
+  .about .section-lead a {
+    text-decoration: none;
+    border-bottom: 1px solid rgba(168, 94, 61, 0.35);
+    padding-bottom: 1px;
+    transition: border-color 0.15s ease;
+  }
+  .about .section-lead a:hover {
+    border-bottom-color: rgba(168, 94, 61, 0.7);
+  }
+  .about .section-lead a::after {
+    content: '→';
+    display: inline-block;
+    margin-left: 4px;
+    font-size: 0.9em;
+    transition: transform 0.15s ease;
+  }
+  .about .section-lead a:hover::after {
+    transform: translateX(2px);
+  }
+
   /* Partner panel icons + CTAs on dark navy background */
   .partnership-callout .partner-panel .service-icon {
     color: var(--gold);
