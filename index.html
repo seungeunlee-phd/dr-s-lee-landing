@@ -3518,24 +3518,28 @@
     color: #D4C4A8;
   }
 
-  /* Background section-lead link — mirrors the partnership-callout link pattern (subtle warm border + hover arrow) on the cream .about background */
-  .about .section-lead a {
+  /* Background and Practice section-lead links — mirrors the partnership-callout link pattern (subtle warm border + hover arrow) on the cream light backgrounds */
+  .about .section-lead a,
+  .practice .section-lead a {
     text-decoration: none;
     border-bottom: 1px solid rgba(168, 94, 61, 0.35);
     padding-bottom: 1px;
     transition: border-color 0.15s ease;
   }
-  .about .section-lead a:hover {
+  .about .section-lead a:hover,
+  .practice .section-lead a:hover {
     border-bottom-color: rgba(168, 94, 61, 0.7);
   }
-  .about .section-lead a::after {
+  .about .section-lead a::after,
+  .practice .section-lead a::after {
     content: '→';
     display: inline-block;
     margin-left: 4px;
     font-size: 0.9em;
     transition: transform 0.15s ease;
   }
-  .about .section-lead a:hover::after {
+  .about .section-lead a:hover::after,
+  .practice .section-lead a:hover::after {
     transform: translateX(2px);
   }
 
@@ -3759,7 +3763,7 @@
     <h2 class="section-title">Research questions. Technical execution. Commercial decisions.</h2>
     <div class="section-divider"></div>
     <p class="section-lead">
-      Bench-credible scientific depth <strong>from wet-lab to bioinformatics</strong>, with database architecture and <strong>agentic AI workspace design</strong> across technical and commercial operations data platforms. Paired with commercial leadership and <strong>Europe–Asia operating fluency</strong>, engagements support life-science teams scaling across EMEA and Asia. From discovery through alignment to delivery, on one thread, scoped to deliverables. Fractional advisory or project-based, where it fits.
+      Bench-credible scientific depth <a href="#background"><strong>from wet-lab to bioinformatics</strong></a>, with database architecture and <strong>agentic AI workspace design</strong> across technical and commercial operations data platforms. Paired with commercial leadership and <strong>Europe–Asia operating fluency</strong>, engagements support life-science teams scaling across EMEA and Asia. From discovery through alignment to delivery, on one thread, scoped to deliverables. Fractional advisory or project-based, where it fits.
     </p>
 
     <!-- Minimal engagement timeline -->
