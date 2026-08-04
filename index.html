@@ -696,6 +696,38 @@
 
   .btn svg { width: 14px; height: 14px; }
 
+  /* Hero light-bg override for btn-secondary */
+  .hero .btn-secondary {
+    color: var(--navy);
+    border-color: rgba(44, 74, 107, 0.30);
+    background: transparent;
+  }
+  .hero .btn-secondary:hover {
+    border-color: var(--navy);
+    background: rgba(44, 74, 107, 0.05);
+  }
+  .hero .btn-secondary svg { color: var(--navy); }
+
+  /* Practice-to-Partnership pointer note */
+  .practice-partnership-note {
+    margin-top: 40px;
+    text-align: center;
+    font-family: var(--sans);
+    font-size: 13.5px;
+    color: var(--text-light);
+  }
+  .practice-partnership-note a {
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(44, 74, 107, 0.3);
+    transition: border-color 0.2s ease, gap 0.2s ease;
+    margin-left: 4px;
+  }
+  .practice-partnership-note a:hover {
+    border-bottom-color: var(--navy);
+  }
+
   /* ====== SECTIONS ====== */
   section.standard {
     padding: 88px 24px 104px;
@@ -3572,6 +3604,13 @@
               <polyline points="12 5 19 12 12 19"/>
             </svg>
           </a>
+          <a class="btn btn-secondary" href="#partnership">
+            See partnership types
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
         </div>
       </div>
     </div>
@@ -3721,6 +3760,8 @@
       </article>
 
     </div>
+
+    <p class="practice-partnership-note">Prefer a specific collaboration model? <a href="#partnership">See Partnership types &rarr;</a></p>
 
   </div>
 </section>
