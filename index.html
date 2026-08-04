@@ -3401,6 +3401,18 @@
     border-bottom-color: #F2B194;
   }
 
+  /* Section-lead link only — arrow marker signals navigation, since warm-terracotta bolds sit right next to it */
+  .partnership-callout .section-lead a::after {
+    content: '→';
+    display: inline-block;
+    margin-left: 4px;
+    font-size: 0.9em;
+    transition: transform 0.15s ease;
+  }
+  .partnership-callout .section-lead a:hover::after {
+    transform: translateX(2px);
+  }
+
   /* Partner panel icons + CTAs on dark navy background */
   .partnership-callout .partner-panel .service-icon {
     color: var(--gold);
@@ -4208,7 +4220,7 @@
 <!-- ====== PARTNERSHIP ====== -->
 <section id="partnership" class="standard partnership-callout" role="tabpanel" aria-labelledby="tab-partnership" hidden>
   <div class="section-inner">
-    <div class="eyebrow">Building together</div>
+    <div class="eyebrow">Working together</div>
     <h2 class="section-title">Different ways in.</h2>
     <div class="section-divider"></div>
     <p class="section-lead">
