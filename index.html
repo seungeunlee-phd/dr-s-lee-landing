@@ -3442,10 +3442,9 @@
     transform: translateX(2px);
   }
 
-  /* Service lead line — italic serif value sentence sitting between title and body, warm accent for immediate scannability */
+  /* Service lead line — serif value sentence sitting between title and body, warm accent for immediate scannability */
   .partnership-callout .partner-panel .service-lead-line {
     font-family: var(--serif);
-    font-style: italic;
     font-size: 15px;
     line-height: 1.45;
     color: #E29472;
@@ -3484,6 +3483,33 @@
   /* Per-tab accent — Senior Advisory uses the default gold treatment (no colour override needed since gold is already the base). Class is here so the CSS anchors the intent for future per-tab overrides. */
   .partnership-callout .partner-panel-advisor .meta-pill-label {
     color: var(--gold);
+  }
+
+  /* Per-tab accent — Co-builder (warm terracotta) */
+  .partnership-callout .partner-panel-cobuilder .service-icon,
+  .partnership-callout .partner-panel-cobuilder .service-cta svg {
+    color: #E29472;
+  }
+  .partnership-callout .partner-panel-cobuilder .service-cta:hover {
+    color: #E29472;
+  }
+
+  /* Per-tab accent — Project Engineer (sage) */
+  .partnership-callout .partner-panel-engineer .service-icon,
+  .partnership-callout .partner-panel-engineer .service-cta svg {
+    color: #9BAFA1;
+  }
+  .partnership-callout .partner-panel-engineer .service-cta:hover {
+    color: #9BAFA1;
+  }
+
+  /* Per-tab accent — Student Researcher (warm cream) */
+  .partnership-callout .partner-panel-student .service-icon,
+  .partnership-callout .partner-panel-student .service-cta svg {
+    color: #D4C4A8;
+  }
+  .partnership-callout .partner-panel-student .service-cta:hover {
+    color: #D4C4A8;
   }
 
   /* Background section-lead link — mirrors the partnership-callout link pattern (subtle warm border + hover arrow) on the cream .about background */
@@ -4349,7 +4375,7 @@
         </a>
       </article>
 
-      <article id="partner-p1" class="service-card partner-panel" role="tabpanel" aria-labelledby="ptab-p1" hidden>
+      <article id="partner-p1" class="service-card partner-panel partner-panel-cobuilder" role="tabpanel" aria-labelledby="ptab-p1" hidden>
         <div class="service-mark">
           <svg class="service-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <rect x="5" y="5" width="13" height="13" rx="1.5"/>
@@ -4357,7 +4383,13 @@
           </svg>
         </div>
         <h3 class="service-title">Co-builder</h3>
+        <p class="service-lead-line">A build partner for the thread you're shaping.</p>
         <p class="service-body">R&amp;D or commercial leaders in biotech, genomics, diagnostics, or pharma who'd rather build something with someone than navigate alone. Two paths fit: <strong>shape an existing build</strong> (<a href="#sense-2026">Sense 2026</a> is the active build, currently open for exploring teams and more topics in the pipeline), or <strong>co-create something new</strong> that complements the practice, around your own thesis about a tool, infrastructure, program, or service in life sciences. Several shapes are possible, from project collaboration to deeper alignment, with hands-on support for partnership development and project structuring along the way.</p>
+        <div class="service-meta-pills">
+          <span class="meta-pill">Product &amp; platform co-building</span>
+          <span class="meta-pill">Partnership development</span>
+          <span class="meta-pill">Project scoping &amp; structuring</span>
+        </div>
         <a class="service-cta" href="https://card.drsleelifesciences.com/" target="_blank" rel="noopener noreferrer">
           Open a co-build thread
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -4367,7 +4399,7 @@
         </a>
       </article>
 
-      <article id="partner-p2" class="service-card partner-panel" role="tabpanel" aria-labelledby="ptab-p2" hidden>
+      <article id="partner-p2" class="service-card partner-panel partner-panel-engineer" role="tabpanel" aria-labelledby="ptab-p2" hidden>
         <div class="service-mark">
           <svg class="service-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <polyline points="11 9 5 16 11 23"/>
@@ -4376,7 +4408,13 @@
           </svg>
         </div>
         <h3 class="service-title">Project Engineer</h3>
+        <p class="service-lead-line">Bounded engineering scopes, paid and credited.</p>
         <p class="service-body">Engineer interested in shipping bounded scope across <strong>agentic AI tooling</strong> (active build: <a href="#sense-2026">Sense 2026</a>), <strong>database architecture and integration</strong>, or operations data platform work (LIMS, SAP, Power BI, SharePoint, or others). Comfortable in Python, R, Docker, or Git workflows. ML or AI background welcome but not required; strong craft in pipelines, schemas, system integration, or curation work is equally valuable. Paid contract engagement, collaboration credit. Domain context (biology, NGS, healthcare data) is a plus. First contracts are forming around active workstreams, with more in the pipeline.</p>
+        <div class="service-meta-pills">
+          <span class="meta-pill">Agentic AI &amp; LLM tooling</span>
+          <span class="meta-pill">Database &amp; data platform integration</span>
+          <span class="meta-pill">Life-sciences data pipelines</span>
+        </div>
         <a class="service-cta" href="https://card.drsleelifesciences.com/" target="_blank" rel="noopener noreferrer">
           Pitch a project scope
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -4386,7 +4424,7 @@
         </a>
       </article>
 
-      <article id="partner-p3" class="service-card partner-panel" role="tabpanel" aria-labelledby="ptab-p3" hidden>
+      <article id="partner-p3" class="service-card partner-panel partner-panel-student" role="tabpanel" aria-labelledby="ptab-p3" hidden>
         <div class="service-mark">
           <svg class="service-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M16 6 L4 12 L16 18 L28 12 Z"/>
@@ -4395,7 +4433,13 @@
           </svg>
         </div>
         <h3 class="service-title">Student Researcher</h3>
+        <p class="service-lead-line">Mentored projects at the AI &times; life-sciences edge.</p>
         <p class="service-body">Undergrad or grad student in CS, life sciences, or related fields, looking for hands-on experience at the <strong>agentic AI and life sciences intersection</strong>. Capstone projects, master's thesis topics, summer internships across clinical, environmental, food-safety, or commercial-operations contexts. We define the scope together; you get structured mentorship and a real project to point at. Initial student threads are forming around current projects, with more topics in the pipeline.</p>
+        <div class="service-meta-pills">
+          <span class="meta-pill">Capstone &amp; thesis projects</span>
+          <span class="meta-pill">Agentic AI &times; life-sciences research</span>
+          <span class="meta-pill">Structured mentorship</span>
+        </div>
         <a class="service-cta" href="https://card.drsleelifesciences.com/" target="_blank" rel="noopener noreferrer">
           Bring a thesis or capstone idea
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
