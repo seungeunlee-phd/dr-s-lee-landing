@@ -3442,6 +3442,50 @@
     transform: translateX(2px);
   }
 
+  /* Service lead line — italic serif value sentence sitting between title and body, warm accent for immediate scannability */
+  .partnership-callout .partner-panel .service-lead-line {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.45;
+    color: #E29472;
+    margin: 6px 0 18px;
+    letter-spacing: 0.1px;
+  }
+
+  /* At-a-glance metadata pills — Format / Scope / Best for chips shown below the body */
+  .partnership-callout .partner-panel .service-meta-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 22px 0 26px;
+  }
+  .partnership-callout .partner-panel .meta-pill {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 7px 14px;
+    background: rgba(232, 220, 196, 0.05);
+    border: 1px solid rgba(232, 220, 196, 0.18);
+    border-radius: 999px;
+    font-size: 11.5px;
+    color: var(--cream);
+    letter-spacing: 0.15px;
+  }
+  .partnership-callout .partner-panel .meta-pill-label {
+    font-family: var(--sans);
+    font-size: 9.5px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  /* Per-tab accent — Senior Advisory uses the default gold treatment (no colour override needed since gold is already the base). Class is here so the CSS anchors the intent for future per-tab overrides. */
+  .partnership-callout .partner-panel-advisor .meta-pill-label {
+    color: var(--gold);
+  }
+
   /* Background section-lead link — mirrors the partnership-callout link pattern (subtle warm border + hover arrow) on the cream .about background */
   .about .section-lead a {
     text-decoration: none;
@@ -4278,7 +4322,7 @@
     </div>
 
     <div class="partner-content">
-      <article id="partner-advisor" class="service-card partner-panel" role="tabpanel" aria-labelledby="ptab-advisor">
+      <article id="partner-advisor" class="service-card partner-panel partner-panel-advisor" role="tabpanel" aria-labelledby="ptab-advisor">
         <div class="service-mark">
           <svg class="service-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <circle cx="16" cy="16" r="11"/>
@@ -4287,7 +4331,13 @@
           </svg>
         </div>
         <h3 class="service-title">Senior Advisory</h3>
+        <p class="service-lead-line">Commercial or scientific verification/validation, flexibly scoped.</p>
         <p class="service-body">Consulting firms, expert networks, and research organizations engaging a senior advisor for <strong>commercial or scientific verification/validation</strong> on flexibly scoped engagements. The three practice areas travel with the engagement: <strong>commercial strategy</strong> (Europe–Asia market entry, ICP and stakeholder validation, pricing and positioning input), <strong>technical and scientific advisory</strong> (across clinical, environmental, food-safety and adjacent life-sciences briefings, method and workflow validation, regulatory landscape), and <strong>digital infrastructure</strong> (data platform architecture, LIMS and biobank systems, agentic AI adoption).</p>
+        <div class="service-meta-pills">
+          <span class="meta-pill"><span class="meta-pill-label">Format</span> Direct or subcontract</span>
+          <span class="meta-pill"><span class="meta-pill-label">Scope</span> 1-hour call to full project</span>
+          <span class="meta-pill"><span class="meta-pill-label">Best for</span> Consulting firms &middot; Expert networks &middot; Research orgs</span>
+        </div>
         <a class="service-cta" href="https://card.drsleelifesciences.com/" target="_blank" rel="noopener noreferrer">
           Scope an advisory engagement
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
