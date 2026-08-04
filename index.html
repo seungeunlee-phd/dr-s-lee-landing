@@ -2207,6 +2207,19 @@
   }
   .pc-list div + div { margin-top: 5px; }
   .pc-list-edu div + div { margin-top: 10px; }
+  .pc-list-badges {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .pc-list-badges img {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+  }
   .pc-list a {
     color: var(--gold);
     text-decoration: none;
@@ -4260,6 +4273,13 @@
           <div class="pc-row">
             <div class="pc-label">Research record</div>
             <div class="pc-list"><a href="https://orcid.org/0009-0009-3580-4459" target="_blank" rel="noopener noreferrer">ORCID 0009-0009-3580-4459</a></div>
+          </div>
+          <div class="pc-row">
+            <div class="pc-label">Certifications</div>
+            <div class="pc-list pc-list-badges">
+              <img src="images/prince2-foundation.png" alt="PRINCE2 7 Foundation Certified">
+              <img src="images/prince2-practitioner.png" alt="PRINCE2 7 Practitioner Certified">
+            </div>
           </div>
         </div>
       </aside>
