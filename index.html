@@ -140,16 +140,17 @@
     display: none;
   }
 
-  [role="tabpanel"][hidden] {
+  /* Tab panels hidden by class instead of the [hidden] attribute — raw-HTML readers and AI summarisers that skip [hidden] content still see every tab panel's markup in the DOM */
+  .tab-hidden {
     display: none !important;
   }
 
   /* Tab content fade-in */
-  main > [role="tabpanel"]:not([hidden]) {
+  main > [role="tabpanel"]:not(.tab-hidden) {
     animation: tabFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .partner-panel:not([hidden]) {
+  .partner-panel:not(.tab-hidden) {
     animation: tabFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
@@ -159,8 +160,8 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    main > [role="tabpanel"]:not([hidden]),
-    .partner-panel:not([hidden]) {
+    main > [role="tabpanel"]:not(.tab-hidden),
+    .partner-panel:not(.tab-hidden) {
       animation: none;
     }
   }
@@ -3619,9 +3620,7 @@
     margin-bottom: 0;
   }
 
-  .partner-panel[hidden] {
-    display: none !important;
-  }
+  /* .partner-panel hiding handled by the global .tab-hidden rule at the top of the stylesheet */
 
   @media (max-width: 540px) {
     .partner-tabs {
@@ -3906,7 +3905,7 @@
 </section>
 
 <!-- ====== SENSE 2026 ====== -->
-<section id="sense-2026" class="standard sense2026 partnership-callout" role="tabpanel" aria-labelledby="tab-sense-2026" hidden>
+<section id="sense-2026" class="standard sense2026 partnership-callout tab-hidden" role="tabpanel" aria-labelledby="tab-sense-2026">
   <div class="section-inner">
       <article class="featured-pilot">
         <div class="pilot-header">
@@ -4341,7 +4340,7 @@
 </section>
 
 <!-- ====== PARTNERSHIP ====== -->
-<section id="partnership" class="standard partnership-callout" role="tabpanel" aria-labelledby="tab-partnership" hidden>
+<section id="partnership" class="standard partnership-callout tab-hidden" role="tabpanel" aria-labelledby="tab-partnership">
   <div class="section-inner">
     <div class="eyebrow">Working together</div>
     <h2 class="section-title">Different ways in.</h2>
@@ -4385,7 +4384,7 @@
         </a>
       </article>
 
-      <article id="partner-p1" class="service-card partner-panel partner-panel-cobuilder" role="tabpanel" aria-labelledby="ptab-p1" hidden>
+      <article id="partner-p1" class="service-card partner-panel partner-panel-cobuilder tab-hidden" role="tabpanel" aria-labelledby="ptab-p1">
         <div class="service-mark">
           <svg class="service-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <rect x="5" y="5" width="13" height="13" rx="1.5"/>
@@ -4404,7 +4403,7 @@
         </a>
       </article>
 
-      <article id="partner-p2" class="service-card partner-panel partner-panel-engineer" role="tabpanel" aria-labelledby="ptab-p2" hidden>
+      <article id="partner-p2" class="service-card partner-panel partner-panel-engineer tab-hidden" role="tabpanel" aria-labelledby="ptab-p2">
         <div class="service-mark">
           <svg class="service-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <polyline points="11 9 5 16 11 23"/>
@@ -4424,7 +4423,7 @@
         </a>
       </article>
 
-      <article id="partner-p3" class="service-card partner-panel partner-panel-student" role="tabpanel" aria-labelledby="ptab-p3" hidden>
+      <article id="partner-p3" class="service-card partner-panel partner-panel-student tab-hidden" role="tabpanel" aria-labelledby="ptab-p3">
         <div class="service-mark">
           <svg class="service-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M16 6 L4 12 L16 18 L28 12 Z"/>
@@ -4449,7 +4448,7 @@
 </section>
 
 <!-- ====== BACKGROUND (Where I've operated) ====== -->
-<section id="background" class="standard about" role="tabpanel" aria-labelledby="tab-background" hidden>
+<section id="background" class="standard about tab-hidden" role="tabpanel" aria-labelledby="tab-background">
   <div class="section-inner">
     <div class="eyebrow">Where I've operated</div>
     <h2 class="section-title">Two tracks, one practice.</h2>
@@ -4622,7 +4621,7 @@
 </section>
 
 <!-- ====== CONTACT ====== -->
-<section id="contact" class="contact" role="tabpanel" aria-labelledby="tab-contact" hidden>
+<section id="contact" class="contact tab-hidden" role="tabpanel" aria-labelledby="tab-contact">
   <div class="contact-inner">
     <div class="eyebrow">Let's talk</div>
     <div class="contact-header">
@@ -4734,14 +4733,14 @@
     tabIds.forEach(function(id) {
       var panel = document.getElementById(id);
       if (!panel) return;
-      if (id === name) panel.removeAttribute('hidden');
-      else panel.setAttribute('hidden', '');
+      if (id === name) panel.classList.remove('tab-hidden');
+      else panel.classList.add('tab-hidden');
     });
     // Hero is visible only on the Practice tab
     var hero = document.querySelector('.hero');
     if (hero) {
-      if (name === 'practice') hero.removeAttribute('hidden');
-      else hero.setAttribute('hidden', '');
+      if (name === 'practice') hero.classList.remove('tab-hidden');
+      else hero.classList.add('tab-hidden');
     }
     if (opts && opts.scroll) {
       // Nav clicks always land on the section content, not the hero — the hero sits above and is available by scrolling up
@@ -4806,8 +4805,8 @@
     });
     partnerPanels.forEach(function(panel) {
       var match = panel.id === 'partner-' + name;
-      if (match) panel.removeAttribute('hidden');
-      else panel.setAttribute('hidden', '');
+      if (match) panel.classList.remove('tab-hidden');
+      else panel.classList.add('tab-hidden');
     });
   }
 
