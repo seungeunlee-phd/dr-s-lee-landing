@@ -2739,7 +2739,7 @@
     .p5c-card:nth-child(5) { grid-column: 1 / span 2; }
   }
 
-  /* Advisory-scoped variant of the p5c grid — sits inside the Senior Advisory partner-panel and carries the cool sub-identity (charcoal-blue eyebrow, icons, and card tints) instead of the p5c default warm-gold + terracotta */
+  /* Advisory-scoped variant of the p5c grid — sits inside the Senior Advisory partner-panel and carries the cool sub-identity (charcoal-blue eyebrow, icons, and card tints) instead of the p5c default warm-gold + terracotta. Also runs a tighter card size than the default p5c so the grid stays scannable within the panel without dominating it. */
   .advisory-five-cap {
     margin: 0 0 24px;
   }
@@ -2748,14 +2748,28 @@
   }
   .advisory-five-cap .p5c-icon {
     color: #5F7A8F;
+    width: 18px;
+    height: 18px;
+    margin-bottom: 7px;
   }
   .advisory-five-cap .p5c-card {
     background: rgba(139, 155, 174, 0.06);
     border-color: rgba(139, 155, 174, 0.28);
+    padding: 10px 10px 10px;
   }
   .advisory-five-cap .p5c-card:hover {
     background: rgba(139, 155, 174, 0.12);
     border-color: rgba(139, 155, 174, 0.42);
+  }
+  .advisory-five-cap .p5c-name {
+    font-size: 9.5px;
+    letter-spacing: 1.1px;
+    margin: 0 0 5px;
+    min-height: 20px;
+  }
+  .advisory-five-cap .p5c-essence {
+    font-size: 10px;
+    line-height: 1.4;
   }
   .advisory-five-cap .p5c-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -4455,7 +4469,7 @@
                 <path d="M8 12l2 2 6-6"/>
               </svg>
               <h5 class="p5c-name">Verification + validation</h5>
-              <p class="p5c-essence">Native in domain. Flexible communication across sectors and regions. Fit-for-purpose read by a senior.</p>
+              <p class="p5c-essence">Native domain. Cross-sector fluency. Senior fit-for-purpose read.</p>
             </article>
 
             <article class="p5c-card">
@@ -4465,7 +4479,7 @@
                 <line x1="3" y1="12" x2="21" y2="12"/>
               </svg>
               <h5 class="p5c-name">Cross-region depth</h5>
-              <p class="p5c-essence">Fifteen years across EMEA and Korea networks. Reads local context from both. Both directions.</p>
+              <p class="p5c-essence">Fifteen years EMEA-Korea networks. Local context. Both directions.</p>
             </article>
 
             <article class="p5c-card">
@@ -4477,7 +4491,7 @@
                 <line x1="14" y1="13.5" x2="17" y2="16.5"/>
               </svg>
               <h5 class="p5c-name">Bench-commercial breadth</h5>
-              <p class="p5c-essence">Reads as research, reads as business. Wet-lab to commercial across the chain. Three practice areas travel.</p>
+              <p class="p5c-essence">Research + business reads. Wet-lab to commercial. Three practice areas travel.</p>
             </article>
 
           </div>
