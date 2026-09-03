@@ -3538,7 +3538,7 @@
     z-index: 1;
   }
 
-  /* Practice offerings block — replaces the dense inline paragraph that used to enumerate three offerings with nested parentheticals. Each offering gets a short title, a one-line detail, and its own cluster of meta-pills right below, so the reader can scan the three areas and see the relevant tags grouped with the offering they belong to. */
+  /* Practice offerings block — replaces the dense inline paragraph that used to enumerate three offerings with nested parentheticals. Uses numbered 01/02/03 markers (echoing the hero card's numbered journey pattern) instead of a border-left rule, so this block reads visually distinct from the card-style Selected engagements below it. Each offering gets a short title, a one-line detail, and its own cluster of meta-pills right below, so the reader can scan the three areas and see the relevant tags grouped with the offering they belong to. */
   .partnership-callout .partner-panel .advisory-offerings {
     margin: 8px 0 28px;
   }
@@ -3549,7 +3549,7 @@
     letter-spacing: 1.8px;
     text-transform: uppercase;
     color: #5F7A8F;
-    margin: 0 0 14px;
+    margin: 0 0 16px;
     line-height: 1.4;
   }
   .partnership-callout .partner-panel .advisory-offerings-list {
@@ -3558,13 +3558,29 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 20px;
+    counter-reset: advisory-offering;
   }
   .partnership-callout .partner-panel .advisory-offering {
-    border-left: 2px solid rgba(139, 155, 174, 0.32);
-    padding: 4px 0 4px 14px;
+    counter-increment: advisory-offering;
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    column-gap: 14px;
+    row-gap: 0;
+    padding: 0;
+  }
+  .partnership-callout .partner-panel .advisory-offering::before {
+    content: counter(advisory-offering, decimal-leading-zero);
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    color: #5F7A8F;
+    padding-top: 3px;
+    grid-row: 1 / span 3;
   }
   .partnership-callout .partner-panel .advisory-offering-name {
+    grid-column: 2;
     font-family: var(--sans);
     font-size: 13px;
     font-weight: 600;
@@ -3573,6 +3589,7 @@
     letter-spacing: 0.02em;
   }
   .partnership-callout .partner-panel .advisory-offering-detail {
+    grid-column: 2;
     font-family: var(--sans);
     font-size: 12.5px;
     color: rgba(232, 220, 196, 0.75);
@@ -3580,6 +3597,7 @@
     margin: 0 0 10px;
   }
   .partnership-callout .partner-panel .advisory-offering-pills {
+    grid-column: 2;
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
