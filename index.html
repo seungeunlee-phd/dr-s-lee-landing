@@ -946,6 +946,25 @@
     border-bottom-color: var(--navy);
   }
 
+  /* Background CTA sitting between the section lead and the partnership note — sibling to practice-partnership-note but points readers to the practitioner background page, pulled up close to the lead so it reads as an immediate follow-through rather than a separate block */
+  .practice-bg-note {
+    margin: -12px 0 6px;
+    text-align: left;
+    font-family: var(--sans);
+    font-size: 11.5px;
+    color: var(--text-light);
+  }
+  .practice-bg-note a {
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(44, 74, 107, 0.3);
+    transition: border-color 0.2s ease;
+  }
+  .practice-bg-note a:hover {
+    border-bottom-color: var(--navy);
+  }
+
   /* ====== SECTIONS ====== */
   section.standard {
     padding: 88px 24px 104px;
@@ -3635,21 +3654,6 @@
     transform: translateX(2px);
   }
 
-  /* Full-sentence variant: when the link wraps an entire section-lead sentence (Practice), the default per-phrase border-bottom would run across the whole sentence — too heavy. Drop the border, keep the trailing arrow marker so the link still reads as clickable at the end of the sentence, and let the inner text carry its own colour (strongs stay warm, plain text stays --text-medium). */
-  .practice .section-lead a.section-lead-fullsentence {
-    color: inherit;
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-  .practice .section-lead a.section-lead-fullsentence::after {
-    color: var(--text-emphasis);
-    opacity: 0.7;
-    margin-left: 6px;
-  }
-  .practice .section-lead a.section-lead-fullsentence:hover::after {
-    opacity: 1;
-  }
-
   /* Partner panel icons + CTAs on dark navy background */
   .partnership-callout .partner-panel .service-icon {
     color: var(--gold);
@@ -3910,8 +3914,10 @@
     <h2 class="section-title">Research questions. Technical execution. Commercial decisions.</h2>
     <div class="section-divider"></div>
     <p class="section-lead">
-      <a href="#background" class="section-lead-fullsentence">Bench-credible scientific depth <strong>from wet-lab to bioinformatics</strong>, commercial leadership across EMEA and Asia, and <strong>agentic AI workspace design</strong> across technical and commercial operations data platforms.</a> Delivered as <strong>senior verification and validation</strong> on advisory mandates, often for consulting firms, expert networks, and other partners. <strong>Professional paths across EMEA and Asia</strong>, with trusted life-science networks across Europe and Korea. Fractional advisory or project-based, where it fits.
+      Bench-credible scientific depth <strong>from wet-lab to bioinformatics</strong>, commercial leadership across EMEA and Asia, and <strong>agentic AI workspace design</strong> across technical and commercial operations data platforms. Delivered as <strong>senior verification and validation</strong> on advisory mandates, often for consulting firms, expert networks, and other partners. <strong>Professional paths across EMEA and Asia</strong>, with trusted life-science networks across Europe and Korea. Fractional advisory or project-based, where it fits.
     </p>
+
+    <p class="practice-bg-note"><a href="#background">About the practitioner &rarr;</a></p>
 
     <p class="practice-partnership-note">Any of these can take the partnership shape that fits. NDA on request. <a href="#partnership">Explore partnership &rarr;</a></p>
 
