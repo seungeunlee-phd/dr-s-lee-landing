@@ -707,15 +707,15 @@
     .hero-pilot-name { font-size: 14.5px; }
   }
 
-  /* Your journey with Sense 2026 - 3-step strip embedded inside the pilot card,
-     sitting between the tagline and the descriptive paragraph */
+  /* Your journey with Sense 2026 — 3-step strip embedded inside the pilot card, sits between the tagline and the descriptive paragraph. Horizontal chip row so the whole card stays short. */
   .hero-journey-steps {
     list-style: none;
-    margin: 0 0 18px;
+    margin: 0 0 14px;
     padding: 0;
     display: flex;
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
     gap: 6px;
     position: relative;
     z-index: 1;
@@ -723,7 +723,6 @@
   .hero-journey-step {
     display: flex;
     align-items: center;
-    gap: 10px;
     padding: 0;
     line-height: 1.2;
   }
@@ -731,14 +730,13 @@
     display: inline-flex;
     align-items: baseline;
     justify-content: flex-start;
-    gap: 8px;
+    gap: 6px;
     background: #E29472;
     color: var(--off-white);
-    padding: 5px 12px;
-    border-radius: 6px;
+    padding: 3px 9px;
+    border-radius: 5px;
     box-shadow: 0 1px 2px rgba(168, 94, 61, 0.30);
     flex-shrink: 0;
-    min-width: 108px;
     box-sizing: border-box;
   }
   .hero-journey-num {
@@ -756,23 +754,11 @@
     letter-spacing: 0.2px;
     color: var(--off-white);
   }
-  .hero-journey-dur {
-    font-family: var(--sans);
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 1.3px;
-    text-transform: uppercase;
-    color: #8B8B83;
-    flex-shrink: 0;
-  }
-
   @media (max-width: 540px) {
-    .hero-journey-steps { margin-bottom: 16px; }
-    .hero-journey-step { gap: 8px; }
-    .hero-journey-pill { padding: 4px 10px; gap: 6px; min-width: 96px; }
-    .hero-journey-num { font-size: 8px; }
-    .hero-journey-label { font-size: 11px; }
-    .hero-journey-dur { font-size: 8.5px; letter-spacing: 1.1px; }
+    .hero-journey-steps { margin-bottom: 14px; gap: 5px; }
+    .hero-journey-pill { padding: 3px 8px; gap: 5px; }
+    .hero-journey-num { font-size: 7.5px; }
+    .hero-journey-label { font-size: 10.5px; }
   }
 
   /* Hero middle row: on desktop, hero-text is a flex row — left column (hero-text-column) keeps natural vertical spacing between its children, right column (hero-side-cards) sits alongside with a fixed width. Flex avoids the grid's row-stretch behaviour that was distributing extra space between the left items. */
@@ -791,15 +777,15 @@
 
     .hero-text .hero-sub {
       max-width: none;
-      line-height: 1.4;
-      margin-bottom: 4px;
+      line-height: 1.55;
+      margin-bottom: 14px;
     }
     .hero-text h1.hero-title {
-      margin-bottom: 14px;
+      margin-bottom: 22px;
     }
     .hero-text .hero-sig {
-      margin-top: 2px;
-      margin-bottom: 14px;
+      margin-top: 18px;
+      margin-bottom: 24px;
     }
 
     .hero-side-cards {
@@ -816,11 +802,9 @@
       max-width: none;
       padding: 20px 18px;
     }
-    .hero-journey-pill { min-width: 100px; padding: 4px 10px; gap: 6px; }
-    .hero-journey-num { font-size: 8px; }
-    .hero-journey-label { font-size: 11.5px; }
-    .hero-journey-dur { font-size: 8.5px; letter-spacing: 1.1px; }
-    .hero-journey-step { gap: 8px; }
+    .hero-journey-pill { padding: 3px 9px; gap: 5px; }
+    .hero-journey-num { font-size: 7.5px; }
+    .hero-journey-label { font-size: 10.5px; }
     .hero-journey-steps { gap: 5px; margin-bottom: 14px; }
 
     .hero-pilot-tag { margin-bottom: 12px; }
@@ -3969,21 +3953,18 @@
                 <span class="hero-journey-num">Step 1</span>
                 <span class="hero-journey-label">Demo</span>
               </span>
-              <span class="hero-journey-dur">~2 wks</span>
             </li>
             <li class="hero-journey-step">
               <span class="hero-journey-pill">
                 <span class="hero-journey-num">Step 2</span>
                 <span class="hero-journey-label">Build</span>
               </span>
-              <span class="hero-journey-dur">4&ndash;8 wks</span>
             </li>
             <li class="hero-journey-step">
               <span class="hero-journey-pill">
                 <span class="hero-journey-num">Step 3</span>
                 <span class="hero-journey-label">Live</span>
               </span>
-              <span class="hero-journey-dur">ongoing</span>
             </li>
           </ol>
           <p class="hero-pilot-desc">An agentic AI workspace by a life-sciences scientist. <strong>Lives on your server</strong>, routes through your team's stages, drafts with <strong>cited sources</strong>. Tailored to your domain's taxonomy and team's language.</p>
