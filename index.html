@@ -2816,6 +2816,10 @@
       grid-row: 2;
       margin: 0;
     }
+    /* Prevent awkward mid-sentence wrap: force the last sentence onto its own line so the closing period never orphans a single word (e.g. "read." / "directions." / "launch."). */
+    .advisory-five-cap .p5c-essence .p5c-sent-last {
+      display: block;
+    }
   }
 
   /* Old swap-notes corner badge - kept for any other panels still using it,
@@ -4654,7 +4658,7 @@
                 <path d="M8 12l2 2 6-6"/>
               </svg>
               <h5 class="p5c-name">Verification + validation</h5>
-              <p class="p5c-essence">Native domain. Cross-sector fluency. Senior fit-for-purpose read.</p>
+              <p class="p5c-essence">Native domain. Cross-sector fluency. <span class="p5c-sent-last">Senior fit-for-purpose read.</span></p>
             </article>
 
             <article class="p5c-card">
@@ -4664,7 +4668,7 @@
                 <line x1="3" y1="12" x2="21" y2="12"/>
               </svg>
               <h5 class="p5c-name">Cross-region depth</h5>
-              <p class="p5c-essence">Fifteen years EMEA-Korea networks. Local context. Both directions.</p>
+              <p class="p5c-essence">Fifteen years EMEA-Korea networks. Local context. <span class="p5c-sent-last">Both directions.</span></p>
             </article>
 
             <article class="p5c-card">
@@ -4674,7 +4678,7 @@
                 <path d="M6.5 15 Q12 4 17.5 15"/>
               </svg>
               <h5 class="p5c-name">Bench-commercial breadth</h5>
-              <p class="p5c-essence">Research + business reads. Bench to boardroom. Lab to launch.</p>
+              <p class="p5c-essence">Research + business reads. Bench to boardroom. <span class="p5c-sent-last">Lab to launch.</span></p>
             </article>
 
           </div>
