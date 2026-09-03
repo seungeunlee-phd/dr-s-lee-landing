@@ -564,6 +564,15 @@
     transform: translateX(2px);
   }
 
+  /* Advisory-card chips call out the three practice areas (Commercial / Scientific / Digital) instead of Sense 2026's process stages, so use a gold pill on navy text — Senior Advisory's own accent — to signal a different content type from the flagship terracotta step chips. */
+  .hero-advisory-card .hero-journey-pill {
+    background: var(--gold);
+    box-shadow: 0 1px 2px rgba(197, 181, 154, 0.35);
+  }
+  .hero-advisory-card .hero-journey-label {
+    color: var(--navy-deep);
+  }
+
   .hero-pilot-card:hover {
     background: rgba(197, 181, 154, 0.16);
     border-color: rgba(197, 181, 154, 0.65);
@@ -3947,23 +3956,20 @@
             Active
           </span>
           <h3 class="hero-advisory-name">Senior Advisory</h3>
-          <ol class="hero-journey-steps" aria-label="Advisory engagement flow">
+          <ol class="hero-journey-steps" aria-label="Practice areas covered by every advisory engagement">
             <li class="hero-journey-step">
               <span class="hero-journey-pill">
-                <span class="hero-journey-num">Step 1</span>
-                <span class="hero-journey-label">Discover</span>
+                <span class="hero-journey-label">Commercial</span>
               </span>
             </li>
             <li class="hero-journey-step">
               <span class="hero-journey-pill">
-                <span class="hero-journey-num">Step 2</span>
-                <span class="hero-journey-label">Align</span>
+                <span class="hero-journey-label">Scientific</span>
               </span>
             </li>
             <li class="hero-journey-step">
               <span class="hero-journey-pill">
-                <span class="hero-journey-num">Step 3</span>
-                <span class="hero-journey-label">Deliver</span>
+                <span class="hero-journey-label">Digital</span>
               </span>
             </li>
           </ol>
