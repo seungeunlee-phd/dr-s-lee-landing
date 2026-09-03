@@ -3547,12 +3547,12 @@
     letter-spacing: 0.1px;
   }
 
-  /* At-a-glance metadata pills — Format / Scope / Best for chips shown below the body */
+  /* At-a-glance metadata pills — topic-keyword chips shown below the body */
   .partnership-callout .partner-panel .service-meta-pills {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin: 18px 0 12px;
+    margin: 14px 0 10px;
   }
   .partnership-callout .partner-panel .meta-pill {
     display: inline-flex;
@@ -3607,10 +3607,10 @@
     color: #D4C4A8;
   }
 
-  /* Selected engagements — portfolio-style list of anonymised past/current work, sits INSIDE a partner-panel card (currently only Senior Advisory) so it's tied to that shape's active tab and hides with it when other tabs are picked. Sized down accordingly. */
+  /* Selected engagements — portfolio-style list of anonymised past/current work, sits INSIDE a partner-panel card (currently only Senior Advisory) so it's tied to that shape's active tab and hides with it when other tabs are picked. Sized down accordingly and placed ABOVE the pill row so the concrete work example lands first in the reader's eye. */
   .partnership-callout .partner-panel .selected-engagements {
-    margin-top: 20px;
-    padding-top: 20px;
+    margin-top: 16px;
+    padding-top: 16px;
     border-top: 1px solid rgba(232, 220, 196, 0.12);
   }
   .partnership-callout .partner-panel .selected-engagements-title {
@@ -3618,7 +3618,7 @@
     font-size: 13.5px;
     font-weight: 500;
     color: var(--off-white);
-    margin-bottom: 14px;
+    margin-bottom: 10px;
     letter-spacing: -0.05px;
   }
   .partnership-callout .partner-panel .selected-engagements-note {
@@ -4516,21 +4516,21 @@
         <h3 class="service-title">Senior Advisory</h3>
         <p class="service-lead-line">A senior second read, right-sized to your scope.</p>
         <p class="service-body">Currently engaged as senior advisor with consulting firms, expert networks, and research organizations for <strong>commercial or scientific verification/validation</strong> on flexibly scoped engagements. The three practice areas travel with the engagement: <strong>commercial strategy</strong> (Europe–Asia market entry, ICP and stakeholder validation, pricing and positioning input), <strong>technical and scientific advisory</strong> (across clinical, environmental, food-safety and adjacent life-sciences briefings, method and workflow validation, regulatory landscape), and <strong>digital infrastructure</strong> (data platform architecture, LIMS and biobank systems, agentic AI adoption).</p>
+        <div class="selected-engagements">
+          <h4 class="selected-engagements-title">Selected engagements <span class="selected-engagements-note">(Anonymised per standard confidentiality)</span></h4>
+          <div class="selected-engagements-list">
+            <div class="selected-engagement">
+              <div class="selected-engagement-meta">Consulting subcontract &middot; Korea &middot; Healthcare</div>
+              <div class="selected-engagement-body">Stakeholder research validation &amp; survey dissemination &middot; Native Korean delivery</div>
+            </div>
+          </div>
+        </div>
         <div class="service-meta-pills">
           <span class="meta-pill">Market research &amp; intelligence</span>
           <span class="meta-pill">ICP &amp; stakeholder mapping</span>
           <span class="meta-pill">Method, workflow &amp; assay validation</span>
           <span class="meta-pill">Regulatory strategy &amp; compliance</span>
           <span class="meta-pill">Agentic AI &amp; LLM adoption</span>
-        </div>
-        <div class="selected-engagements">
-          <h4 class="selected-engagements-title">Selected engagements <span class="selected-engagements-note">(Anonymised per standard confidentiality)</span></h4>
-          <div class="selected-engagements-list">
-            <div class="selected-engagement">
-              <div class="selected-engagement-meta">Consulting subcontract &middot; Korea &middot; Healthcare</div>
-              <div class="selected-engagement-body">Stakeholder research validation &amp; survey dissemination</div>
-            </div>
-          </div>
         </div>
         <a class="service-cta" href="https://card.drsleelifesciences.com/" target="_blank" rel="noopener noreferrer">
           Scope an advisory engagement
