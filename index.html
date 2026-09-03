@@ -3607,9 +3607,11 @@
     color: #D4C4A8;
   }
 
-  /* Selected engagements — portfolio-style list of anonymised past/current work, sits INSIDE a partner-panel card (currently only Senior Advisory) so it's tied to that shape's active tab and hides with it when other tabs are picked. Sized down accordingly and placed ABOVE the pill row so the concrete work example lands first in the reader's eye. Separation from the body above is space + the header's own typography, no divider line. */
+  /* Selected engagements — portfolio-style list of anonymised past/current work, sits INSIDE a partner-panel card (currently only Senior Advisory) so it's tied to that shape's active tab and hides with it when other tabs are picked. Sized down accordingly and placed ABOVE the pill row so the concrete work example lands first in the reader's eye. Left gold bar (matches Senior Advisory's tab accent) anchors the whole block as a distinct portfolio surface within the card. */
   .partnership-callout .partner-panel .selected-engagements {
     margin-top: 24px;
+    padding-left: 14px;
+    border-left: 3px solid var(--gold);
   }
   .partnership-callout .partner-panel .selected-engagements-title {
     font-family: var(--serif);
@@ -3633,15 +3635,15 @@
     gap: 10px;
   }
   .partnership-callout .partner-panel .selected-engagement {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.09);
+    border: 1px solid rgba(255, 255, 255, 0.38);
     border-radius: 6px;
-    padding: 12px 14px;
+    padding: 15px 16px;
     transition: border-color 0.15s ease, background 0.15s ease;
   }
   .partnership-callout .partner-panel .selected-engagement:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.13);
+    border-color: rgba(255, 255, 255, 0.5);
   }
   .partnership-callout .partner-panel .selected-engagement-meta {
     font-family: var(--sans);
