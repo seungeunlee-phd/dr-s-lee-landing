@@ -3660,38 +3660,57 @@
     line-height: 1.4;
   }
   .partnership-callout .partner-panel .advisory-formats-list {
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    column-gap: 18px;
-    row-gap: 9px;
-    margin: 0 0 12px;
+    margin: 0 0 16px;
+    padding: 0;
+    border-top: 1px solid rgba(165, 191, 216, 0.14);
   }
   .partnership-callout .partner-panel .advisory-format {
-    display: contents;
+    display: grid;
+    grid-template-columns: 132px 1fr;
+    column-gap: 20px;
+    align-items: baseline;
+    padding: 11px 0;
+    border-bottom: 1px solid rgba(165, 191, 216, 0.14);
   }
   .partnership-callout .partner-panel .advisory-format-time {
     font-family: var(--sans);
-    font-size: 11.5px;
+    font-size: 10px;
     color: #A5BFD8;
-    font-weight: 500;
-    letter-spacing: 0.02em;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
     white-space: nowrap;
-    padding-top: 1px;
   }
   .partnership-callout .partner-panel .advisory-format-desc {
     font-family: var(--sans);
     font-size: 12.5px;
-    color: rgba(232, 220, 196, 0.82);
+    color: rgba(232, 220, 196, 0.9);
     line-height: 1.5;
-    margin: 0;
   }
   .partnership-callout .partner-panel .advisory-formats-note {
     font-family: var(--sans);
     font-size: 11.5px;
-    color: rgba(232, 220, 196, 0.68);
-    font-style: italic;
+    color: rgba(232, 220, 196, 0.7);
     margin: 0;
     line-height: 1.5;
+    letter-spacing: 0.1px;
+  }
+  .partnership-callout .partner-panel .advisory-formats-note-label {
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #A5BFD8;
+    margin-right: 8px;
+  }
+  @media (max-width: 480px) {
+    .partnership-callout .partner-panel .advisory-format {
+      grid-template-columns: 1fr;
+      row-gap: 4px;
+    }
+    .partnership-callout .partner-panel .advisory-format-time {
+      font-size: 9.5px;
+    }
   }
 
   /* Per-tab accent — Co-builder (warm terracotta) */
@@ -4691,25 +4710,25 @@
 
         <div class="advisory-formats">
           <h4 class="advisory-formats-title">Engagement shapes</h4>
-          <dl class="advisory-formats-list">
+          <div class="advisory-formats-list">
             <div class="advisory-format">
-              <dt class="advisory-format-time">30 min &ndash; 1 hr</dt>
-              <dd class="advisory-format-desc">Free discovery call &middot; goals, fit, direction</dd>
+              <span class="advisory-format-time">30 min &ndash; 1 hr</span>
+              <span class="advisory-format-desc">Discovery call &middot; goals, fit, direction</span>
             </div>
             <div class="advisory-format">
-              <dt class="advisory-format-time">A few hours</dt>
-              <dd class="advisory-format-desc">Targeted review &middot; briefing, deck, or code read</dd>
+              <span class="advisory-format-time">A few hours</span>
+              <span class="advisory-format-desc">Targeted review &middot; briefing, deck, or code read</span>
             </div>
             <div class="advisory-format">
-              <dt class="advisory-format-time">Weeks to months</dt>
-              <dd class="advisory-format-desc">Project mandate with defined scope and deliverables</dd>
+              <span class="advisory-format-time">Weeks to months</span>
+              <span class="advisory-format-desc">Project mandate with defined scope and deliverables</span>
             </div>
             <div class="advisory-format">
-              <dt class="advisory-format-time">Months to years</dt>
-              <dd class="advisory-format-desc">Retainer or ongoing partnership</dd>
+              <span class="advisory-format-time">Months to years</span>
+              <span class="advisory-format-desc">Retainer or ongoing partnership</span>
             </div>
-          </dl>
-          <p class="advisory-formats-note">Subcontract via consulting firm or direct contract with client. NDA on request.</p>
+          </div>
+          <p class="advisory-formats-note"><span class="advisory-formats-note-label">Contract</span> Subcontract via consulting firm, or direct with client. NDA on request.</p>
         </div>
 
         <div class="selected-engagements">
