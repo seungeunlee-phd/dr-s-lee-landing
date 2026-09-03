@@ -2784,7 +2784,12 @@
     .advisory-five-cap .p5c-card:nth-child(3) { grid-column: 1 / span 2; }
   }
   @media (max-width: 480px) {
-    .advisory-five-cap .p5c-grid { grid-template-columns: 1fr; }
+    .advisory-five-cap .p5c-grid {
+      grid-template-columns: 1fr;
+      max-width: 340px;
+      margin-left: auto;
+      margin-right: auto;
+    }
     .advisory-five-cap .p5c-card:nth-child(3) { grid-column: auto; }
     /* Compact mobile: icon inline with title, essence spans below, so each card takes less vertical room in the single-column stack */
     .advisory-five-cap .p5c-card {
