@@ -3542,13 +3542,6 @@
   .partnership-callout .partner-panel .advisory-offerings {
     margin: 8px 0 28px;
   }
-  .partnership-callout .partner-panel .advisory-offerings-head {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 12px;
-    margin: 0 0 14px;
-  }
   .partnership-callout .partner-panel .advisory-offerings-title {
     font-family: var(--sans);
     font-size: 10px;
@@ -3556,21 +3549,28 @@
     letter-spacing: 1.8px;
     text-transform: uppercase;
     color: #5F7A8F;
-    margin: 0;
+    margin: 0 0 14px;
     line-height: 1.4;
   }
-  .partnership-callout .partner-panel .advisory-offerings-link {
-    font-family: var(--sans);
-    font-size: 11px;
-    color: rgba(232, 220, 196, 0.75);
+  .partnership-callout .partner-panel .advisory-offerings-title a {
+    color: inherit;
     text-decoration: none;
-    border-bottom: 1px solid rgba(232, 220, 196, 0.25);
-    padding-bottom: 1px;
-    transition: color 0.15s ease, border-color 0.15s ease;
+    transition: color 0.15s ease;
   }
-  .partnership-callout .partner-panel .advisory-offerings-link:hover {
-    color: var(--cream);
-    border-bottom-color: rgba(232, 220, 196, 0.6);
+  .partnership-callout .partner-panel .advisory-offerings-title a::after {
+    content: '\2192';
+    display: inline-block;
+    margin-left: 8px;
+    font-size: 11px;
+    opacity: 0.7;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+  }
+  .partnership-callout .partner-panel .advisory-offerings-title a:hover {
+    color: #8B9BAE;
+  }
+  .partnership-callout .partner-panel .advisory-offerings-title a:hover::after {
+    opacity: 1;
+    transform: translateX(2px);
   }
   .partnership-callout .partner-panel .advisory-offerings-list {
     list-style: none;
@@ -4585,10 +4585,7 @@
         <p class="service-body"><strong>On mandate</strong> with <strong>consulting firms</strong>, <strong>expert networks</strong>, and <strong>research organizations</strong>, flexibly scoped.</p>
 
         <div class="advisory-offerings">
-          <div class="advisory-offerings-head">
-            <h4 class="advisory-offerings-title">Advisory scope</h4>
-            <a class="advisory-offerings-link" href="#practice">See practice for details &rarr;</a>
-          </div>
+          <h4 class="advisory-offerings-title"><a href="#practice">Advisory scope</a></h4>
           <ol class="advisory-offerings-list">
             <li class="advisory-offering">
               <h5 class="advisory-offering-name">Commercial strategy</h5>
