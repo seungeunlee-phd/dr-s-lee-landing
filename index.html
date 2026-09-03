@@ -2747,10 +2747,10 @@
     margin: 0 0 24px;
   }
   .advisory-five-cap .p5c-eyebrow {
-    color: #5F7A8F;
+    color: #A5BFD8;
   }
   .advisory-five-cap .p5c-icon {
-    color: #5F7A8F;
+    color: #A5BFD8;
     width: 18px;
     height: 18px;
     margin-bottom: 7px;
@@ -3505,13 +3505,13 @@
   /* Per-tab accent — Senior Advisory carries the same cool sub-identity as the hero advisory card: charcoal-blue icon and meta labels, sapphire-blue CTA hover, subtle blue-grey wash and top-right glow on the card so the tab reads as one continuous surface with the hero card, not the flat warm-gold treatment the other tabs use. */
   .partnership-callout .partner-panel-advisor .service-icon,
   .partnership-callout .partner-panel-advisor .service-cta svg {
-    color: #5F7A8F;
+    color: #A5BFD8;
   }
   .partnership-callout .partner-panel-advisor .service-cta:hover {
     color: #3B82F6;
   }
   .partnership-callout .partner-panel-advisor .meta-pill-label {
-    color: #5F7A8F;
+    color: #A5BFD8;
   }
   .partnership-callout .partner-panel-advisor {
     background: linear-gradient(135deg, rgba(139, 155, 174, 0.10) 0%, rgba(139, 155, 174, 0.03) 60%, rgba(95, 122, 143, 0.02) 100%);
@@ -3548,7 +3548,7 @@
     font-weight: 700;
     letter-spacing: 1.8px;
     text-transform: uppercase;
-    color: #5F7A8F;
+    color: #A5BFD8;
     margin: 0 0 14px;
     line-height: 1.4;
   }
@@ -3595,7 +3595,7 @@
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 1.8px;
-    color: #5F7A8F;
+    color: #A5BFD8;
     padding-top: 3px;
     grid-row: 1 / span 2;
   }
@@ -3613,6 +3613,55 @@
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
+  }
+
+  /* Engagement shapes block — Partnership-specific content (time buckets + contract shape) that Practice page does not cover. Uses a two-column dl layout so time labels align vertically on the left and descriptions read as a schedule on the right; footer note carries the subcontract-or-direct-contract signal so a reader can see the practical shape of working together without leaving the tab. */
+  .partnership-callout .partner-panel .advisory-formats {
+    margin: 0 0 28px;
+  }
+  .partnership-callout .partner-panel .advisory-formats-title {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: #A5BFD8;
+    margin: 0 0 14px;
+    line-height: 1.4;
+  }
+  .partnership-callout .partner-panel .advisory-formats-list {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    column-gap: 18px;
+    row-gap: 9px;
+    margin: 0 0 12px;
+  }
+  .partnership-callout .partner-panel .advisory-format {
+    display: contents;
+  }
+  .partnership-callout .partner-panel .advisory-format-time {
+    font-family: var(--sans);
+    font-size: 11.5px;
+    color: #A5BFD8;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    padding-top: 1px;
+  }
+  .partnership-callout .partner-panel .advisory-format-desc {
+    font-family: var(--sans);
+    font-size: 12.5px;
+    color: rgba(232, 220, 196, 0.82);
+    line-height: 1.5;
+    margin: 0;
+  }
+  .partnership-callout .partner-panel .advisory-formats-note {
+    font-family: var(--sans);
+    font-size: 11.5px;
+    color: rgba(232, 220, 196, 0.68);
+    font-style: italic;
+    margin: 0;
+    line-height: 1.5;
   }
 
   /* Per-tab accent — Co-builder (warm terracotta) */
@@ -4608,6 +4657,29 @@
               </div>
             </li>
           </ol>
+        </div>
+
+        <div class="advisory-formats">
+          <h4 class="advisory-formats-title">Engagement shapes</h4>
+          <dl class="advisory-formats-list">
+            <div class="advisory-format">
+              <dt class="advisory-format-time">30 min &ndash; 1 hr</dt>
+              <dd class="advisory-format-desc">Free discovery call &middot; goals, fit, direction</dd>
+            </div>
+            <div class="advisory-format">
+              <dt class="advisory-format-time">A few hours</dt>
+              <dd class="advisory-format-desc">Targeted review &middot; briefing, deck, or code read</dd>
+            </div>
+            <div class="advisory-format">
+              <dt class="advisory-format-time">Weeks to months</dt>
+              <dd class="advisory-format-desc">Project mandate with defined scope and deliverables</dd>
+            </div>
+            <div class="advisory-format">
+              <dt class="advisory-format-time">Months to years</dt>
+              <dd class="advisory-format-desc">Retainer or ongoing partnership</dd>
+            </div>
+          </dl>
+          <p class="advisory-formats-note">Subcontract via consulting firm or direct contract with client. NDA on request.</p>
         </div>
 
         <div class="selected-engagements">
