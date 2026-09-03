@@ -775,28 +775,19 @@
     .hero-journey-dur { font-size: 8.5px; letter-spacing: 1.1px; }
   }
 
-  /* Hero middle row: on desktop, hero-text becomes a 2-col grid with pilot card spanning rows on the right */
+  /* Hero middle row: on desktop, hero-text is a flex row — left column (hero-text-column) keeps natural vertical spacing between its children, right column (hero-side-cards) sits alongside with a fixed width. Flex avoids the grid's row-stretch behaviour that was distributing extra space between the left items. */
   @media (min-width: 960px) {
     .hero-text {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 320px;
-      grid-template-areas:
-        "title pilot"
-        "sub1  pilot"
-        "sub2  pilot"
-        "sig   pilot"
-        "ctas  pilot";
-      column-gap: 0;
-      align-items: start;
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
       max-width: 880px;
     }
 
-    .hero-text > :nth-child(1) { grid-area: title; }
-    .hero-text > :nth-child(2) { grid-area: sub1; }
-    .hero-text > :nth-child(3) { grid-area: sub2; }
-    .hero-text > :nth-child(4) { grid-area: sig; }
-    .hero-text > :nth-child(5) { grid-area: pilot; }
-    .hero-text > :nth-child(6) { grid-area: ctas; }
+    .hero-text-column {
+      flex: 1;
+      min-width: 0;
+    }
 
     .hero-text .hero-sub {
       max-width: none;
@@ -812,10 +803,9 @@
     }
 
     .hero-side-cards {
-      margin-bottom: 0;
+      flex: 0 0 320px;
       max-width: 320px;
-      justify-self: start;
-      margin-left: 0;
+      margin-bottom: 0;
     }
     .hero-side-cards .hero-pilot-card {
       max-width: none;
@@ -3927,6 +3917,7 @@
 
     <div class="hero-middle">
       <div class="hero-text">
+        <div class="hero-text-column">
         <h1 class="hero-title">
           A scientist's <span class="accent">rigor</span>.<br>
           A strategist's <span class="accent">clarity</span>.<br>
@@ -3943,6 +3934,26 @@
         </p>
 
         <p class="hero-sig">Seungeun Lee, PhD, PRINCE2 7 Practitioner<br>Founder &amp; Principal, Dr. S. Lee Life Sciences</p>
+
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#contact">
+            Let's talk
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+          <a class="btn btn-secondary" href="#partnership">
+            Explore partnership
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+        </div>
+
+        <a href="#practice" class="hero-scroll-link">See practice areas <span class="hero-scroll-arrow" aria-hidden="true">&darr;</span></a>
+        </div>
 
         <div class="hero-side-cards">
         <a href="#sense-2026" class="hero-pilot-card" aria-label="Sense 2026, the active agentic AI workspace build for life-science teams">
@@ -4001,25 +4012,6 @@
           </span>
         </a>
         </div>
-
-        <div class="hero-ctas">
-          <a class="btn btn-primary" href="#contact">
-            Let's talk
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="5" y1="12" x2="19" y2="12"/>
-              <polyline points="12 5 19 12 12 19"/>
-            </svg>
-          </a>
-          <a class="btn btn-secondary" href="#partnership">
-            Explore partnership
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="5" y1="12" x2="19" y2="12"/>
-              <polyline points="12 5 19 12 12 19"/>
-            </svg>
-          </a>
-        </div>
-
-        <a href="#practice" class="hero-scroll-link">See practice areas <span class="hero-scroll-arrow" aria-hidden="true">&darr;</span></a>
       </div>
     </div>
   </div>
