@@ -3607,6 +3607,59 @@
     color: #D4C4A8;
   }
 
+  /* Reference scopes — portfolio-style list of anonymised past/current engagements, extensible as more projects land. Lives below the partner tabs so it reads as partnership-level context, not tied to any one tab. */
+  .reference-scopes {
+    margin-top: 56px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(232, 220, 196, 0.15);
+  }
+  .reference-scopes-title {
+    font-family: var(--serif);
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--off-white);
+    margin-bottom: 6px;
+    letter-spacing: -0.1px;
+  }
+  .reference-scopes-note {
+    font-size: 12px;
+    color: var(--cream);
+    opacity: 0.7;
+    font-style: italic;
+    margin-bottom: 22px;
+    letter-spacing: 0.1px;
+  }
+  .reference-scopes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .reference-scope {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(232, 220, 196, 0.12);
+    border-radius: 8px;
+    padding: 16px 20px;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .reference-scope:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(232, 220, 196, 0.2);
+  }
+  .reference-scope-meta {
+    font-family: var(--sans);
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+  .reference-scope-body {
+    font-size: 13.5px;
+    color: var(--off-white);
+    line-height: 1.5;
+  }
+
   /* Background and Practice section-lead links — mirrors the partnership-callout link pattern (subtle warm border + hover arrow) on the cream light backgrounds */
   .about .section-lead a,
   .practice .section-lead a {
@@ -4536,6 +4589,18 @@
           </svg>
         </a>
       </article>
+    </div>
+
+    <!-- Reference scopes — extensible list of anonymised engagements, shown below the partner tabs so it reads as partnership-level context -->
+    <div id="reference-scopes" class="reference-scopes">
+      <h3 class="reference-scopes-title">Reference scopes</h3>
+      <p class="reference-scopes-note">Anonymised per standard confidentiality.</p>
+      <div class="reference-scopes-list">
+        <div class="reference-scope">
+          <div class="reference-scope-meta">Consulting subcontract &middot; Korea</div>
+          <div class="reference-scope-body">Healthcare research validation &amp; survey dissemination</div>
+        </div>
+      </div>
     </div>
 
   </div>
