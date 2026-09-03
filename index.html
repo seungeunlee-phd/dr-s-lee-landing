@@ -453,6 +453,17 @@
   }
 
   /* Hero pilot card (Sense 2026) */
+  /* Stack the flagship pilot card (Sense 2026) with the smaller active advisory card as one vertical group inside the hero's right-side grid area */
+  .hero-side-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 36px;
+  }
+  .hero-side-cards .hero-pilot-card {
+    margin-bottom: 0;
+  }
+
   .hero-pilot-card {
     display: block;
     margin-bottom: 36px;
@@ -465,6 +476,92 @@
     overflow: hidden;
     transition: all 0.25s ease;
     max-width: 540px;
+  }
+
+  /* Active advisory card — smaller sibling of hero-pilot-card, whiter tint, no journey steps. Signals a live client engagement running in parallel with the flagship build. */
+  .hero-advisory-card {
+    display: block;
+    padding: 18px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 12px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.25s ease;
+    max-width: 540px;
+  }
+  .hero-advisory-card:hover {
+    background: rgba(255, 255, 255, 0.09);
+    border-color: rgba(255, 255, 255, 0.38);
+    transform: translateY(-2px);
+  }
+  .hero-advisory-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 9px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .hero-advisory-pulse {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #22C55E;
+    position: relative;
+    flex-shrink: 0;
+  }
+  .hero-advisory-pulse::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    background: #22C55E;
+    opacity: 0.45;
+    animation: heroPulse 2s ease-out infinite;
+  }
+  .hero-advisory-name {
+    font-family: var(--serif);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--off-white);
+    margin-bottom: 6px;
+    letter-spacing: -0.2px;
+    line-height: 1.2;
+  }
+  .hero-advisory-desc {
+    color: var(--cream);
+    font-size: 10.5px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+  .hero-advisory-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    border-bottom: 1px solid rgba(197, 181, 154, 0.5);
+    padding-bottom: 2px;
+    transition: gap 0.2s ease, border-color 0.2s ease;
+  }
+  .hero-advisory-card:hover .hero-advisory-link {
+    gap: 10px;
+    border-color: var(--gold);
+  }
+  .hero-advisory-link svg {
+    width: 10px;
+    height: 10px;
+    transition: transform 0.2s ease;
+  }
+  .hero-advisory-card:hover .hero-advisory-link svg {
+    transform: translateX(2px);
   }
 
   .hero-pilot-card:hover {
@@ -714,12 +811,20 @@
       margin-bottom: 14px;
     }
 
-    .hero-pilot-card {
+    .hero-side-cards {
       margin-bottom: 0;
       max-width: 260px;
-      padding: 28px 22px;
       justify-self: start;
       margin-left: -72px;
+    }
+    .hero-side-cards .hero-pilot-card {
+      max-width: none;
+      margin-left: 0;
+      padding: 28px 22px;
+    }
+    .hero-advisory-card {
+      max-width: none;
+      padding: 20px 18px;
     }
     .hero-journey-pill { min-width: 100px; padding: 4px 10px; gap: 6px; }
     .hero-journey-num { font-size: 8px; }
@@ -3839,6 +3944,7 @@
 
         <p class="hero-sig">Seungeun Lee, PhD, PRINCE2 7 Practitioner<br>Founder &amp; Principal, Dr. S. Lee Life Sciences</p>
 
+        <div class="hero-side-cards">
         <a href="#sense-2026" class="hero-pilot-card" aria-label="Sense 2026, the active agentic AI workspace build for life-science teams">
           <span class="hero-pilot-tag">
             <span class="hero-pilot-pulse" aria-hidden="true"></span>
@@ -3878,6 +3984,23 @@
             </svg>
           </span>
         </a>
+
+        <a href="#partnership" class="hero-advisory-card" aria-label="Active senior advisory engagement — see selected engagements on the Partnership page">
+          <span class="hero-advisory-tag">
+            <span class="hero-advisory-pulse" aria-hidden="true"></span>
+            Active
+          </span>
+          <h3 class="hero-advisory-name">Senior Advisory</h3>
+          <p class="hero-advisory-desc">Native language and source verification. Healthcare stakeholder validation.</p>
+          <span class="hero-advisory-link">
+            See selected engagements
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </span>
+        </a>
+        </div>
 
         <div class="hero-ctas">
           <a class="btn btn-primary" href="#contact">
