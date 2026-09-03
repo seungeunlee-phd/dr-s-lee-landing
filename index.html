@@ -2786,6 +2786,36 @@
   @media (max-width: 480px) {
     .advisory-five-cap .p5c-grid { grid-template-columns: 1fr; }
     .advisory-five-cap .p5c-card:nth-child(3) { grid-column: auto; }
+    /* Compact mobile: icon inline with title, essence spans below, so each card takes less vertical room in the single-column stack */
+    .advisory-five-cap .p5c-card {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      column-gap: 12px;
+      row-gap: 6px;
+      padding: 12px 14px;
+      align-items: start;
+    }
+    .advisory-five-cap .p5c-icon {
+      grid-column: 1;
+      grid-row: 1;
+      width: 20px;
+      height: 20px;
+      margin: 0;
+      align-self: center;
+    }
+    .advisory-five-cap .p5c-name {
+      grid-column: 2;
+      grid-row: 1;
+      margin: 0;
+      min-height: 0;
+      align-self: center;
+      font-size: 10.5px;
+    }
+    .advisory-five-cap .p5c-essence {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      margin: 0;
+    }
   }
 
   /* Old swap-notes corner badge - kept for any other panels still using it,
