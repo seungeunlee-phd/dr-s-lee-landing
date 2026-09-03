@@ -673,6 +673,11 @@
     position: relative;
     z-index: 1;
   }
+  /* Product-name suffix ("Sense 2026") in a lighter weight so the category ("AI Workspace") stays the primary read */
+  .hero-pilot-name-suffix {
+    font-weight: 400;
+    color: rgba(250, 250, 247, 0.78);
+  }
 
   .hero-pilot-tagline {
     font-family: var(--serif);
@@ -3795,7 +3800,7 @@
             <span class="hero-pilot-pulse" aria-hidden="true"></span>
             Demo live
           </span>
-          <h3 class="hero-pilot-name">AI Workspace &middot; Sense 2026</h3>
+          <h3 class="hero-pilot-name">AI Workspace <span class="hero-pilot-name-suffix">&middot; Sense 2026</span></h3>
           <ol class="hero-journey-steps" aria-label="Your journey with Sense 2026">
             <li class="hero-journey-step">
               <span class="hero-journey-pill">
