@@ -3612,23 +3612,23 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 9px;
     counter-reset: advisory-offering;
   }
   .partnership-callout .partner-panel .advisory-offering {
     counter-increment: advisory-offering;
     display: grid;
-    grid-template-columns: 32px 1fr;
-    column-gap: 14px;
+    grid-template-columns: 26px 1fr;
+    column-gap: 12px;
     row-gap: 0;
     padding: 0;
   }
   .partnership-callout .partner-panel .advisory-offering::before {
     content: counter(advisory-offering, decimal-leading-zero);
     font-family: var(--sans);
-    font-size: 11px;
+    font-size: 9.5px;
     font-weight: 700;
-    letter-spacing: 1.8px;
+    letter-spacing: 1.6px;
     color: #A5BFD8;
     padding-top: 3px;
     grid-row: 1 / span 2;
@@ -3636,17 +3636,21 @@
   .partnership-callout .partner-panel .advisory-offering-name {
     grid-column: 2;
     font-family: var(--sans);
-    font-size: 13px;
+    font-size: 11.5px;
     font-weight: 600;
     color: var(--cream);
-    margin: 0 0 8px;
+    margin: 0 0 5px;
     letter-spacing: 0.02em;
   }
   .partnership-callout .partner-panel .advisory-offering-pills {
     grid-column: 2;
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: 5px;
+  }
+  .partnership-callout .partner-panel .advisory-offering-pills .meta-pill {
+    font-size: 10.5px;
+    padding: 3px 11px;
   }
 
   /* Engagement shapes block — Partnership-specific content (time buckets + contract shape) that Practice page does not cover. Uses a two-column dl layout so time labels align vertically on the left and descriptions read as a schedule on the right; footer note carries the subcontract-or-direct-contract signal so a reader can see the practical shape of working together without leaving the tab. */
@@ -3670,30 +3674,30 @@
   }
   .partnership-callout .partner-panel .advisory-format {
     display: grid;
-    grid-template-columns: 120px 1fr;
-    column-gap: 18px;
+    grid-template-columns: 110px 1fr;
+    column-gap: 16px;
     align-items: baseline;
-    padding: 5px 0;
+    padding: 4px 0;
     border-bottom: 1px solid rgba(165, 191, 216, 0.14);
   }
   .partnership-callout .partner-panel .advisory-format-time {
     font-family: var(--sans);
-    font-size: 9px;
+    font-size: 8.5px;
     color: #A5BFD8;
     font-weight: 700;
-    letter-spacing: 1.4px;
+    letter-spacing: 1.3px;
     text-transform: uppercase;
     white-space: nowrap;
   }
   .partnership-callout .partner-panel .advisory-format-desc {
     font-family: var(--sans);
-    font-size: 11.5px;
+    font-size: 11px;
     color: rgba(232, 220, 196, 0.9);
     line-height: 1.5;
   }
   .partnership-callout .partner-panel .advisory-formats-note {
     font-family: var(--sans);
-    font-size: 10.5px;
+    font-size: 10px;
     color: rgba(232, 220, 196, 0.7);
     margin: 0;
     line-height: 1.5;
