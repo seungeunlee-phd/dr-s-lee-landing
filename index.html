@@ -3538,6 +3538,53 @@
     z-index: 1;
   }
 
+  /* Practice offerings block — replaces the dense inline paragraph that used to enumerate three offerings with nested parentheticals. Each offering gets a short title, a one-line detail, and its own cluster of meta-pills right below, so the reader can scan the three areas and see the relevant tags grouped with the offering they belong to. */
+  .partnership-callout .partner-panel .advisory-offerings {
+    margin: 8px 0 28px;
+  }
+  .partnership-callout .partner-panel .advisory-offerings-title {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: #5F7A8F;
+    margin: 0 0 14px;
+    line-height: 1.4;
+  }
+  .partnership-callout .partner-panel .advisory-offerings-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .partnership-callout .partner-panel .advisory-offering {
+    border-left: 2px solid rgba(139, 155, 174, 0.32);
+    padding: 4px 0 4px 14px;
+  }
+  .partnership-callout .partner-panel .advisory-offering-name {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--cream);
+    margin: 0 0 5px;
+    letter-spacing: 0.02em;
+  }
+  .partnership-callout .partner-panel .advisory-offering-detail {
+    font-family: var(--sans);
+    font-size: 12.5px;
+    color: rgba(232, 220, 196, 0.75);
+    line-height: 1.5;
+    margin: 0 0 10px;
+  }
+  .partnership-callout .partner-panel .advisory-offering-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
   /* Per-tab accent — Co-builder (warm terracotta) */
   .partnership-callout .partner-panel-cobuilder .service-icon,
   .partnership-callout .partner-panel-cobuilder .service-cta svg {
@@ -4504,7 +4551,36 @@
           </div>
         </section>
 
-        <p class="service-body"><strong>On mandate</strong> with <strong>consulting firms</strong>, <strong>expert networks</strong>, and <strong>research organizations</strong>, flexibly scoped. Practice offerings: <strong>commercial strategy</strong> (Europe–Asia market entry, ICP and stakeholder validation, pricing and positioning input), <strong>technical and scientific advisory</strong> (across clinical, environmental, food-safety and adjacent life-sciences briefings, method and workflow validation, regulatory landscape), and <strong>digital infrastructure</strong> (data platform architecture, LIMS and biobank systems, agentic AI adoption).</p>
+        <p class="service-body"><strong>On mandate</strong> with <strong>consulting firms</strong>, <strong>expert networks</strong>, and <strong>research organizations</strong>, flexibly scoped.</p>
+
+        <div class="advisory-offerings">
+          <h4 class="advisory-offerings-title">Practice offerings</h4>
+          <ol class="advisory-offerings-list">
+            <li class="advisory-offering">
+              <h5 class="advisory-offering-name">Commercial strategy</h5>
+              <p class="advisory-offering-detail">Europe&ndash;Asia market entry, ICP and stakeholder validation, pricing and positioning input.</p>
+              <div class="advisory-offering-pills">
+                <span class="meta-pill">Market research &amp; intelligence</span>
+                <span class="meta-pill">ICP &amp; stakeholder mapping</span>
+              </div>
+            </li>
+            <li class="advisory-offering">
+              <h5 class="advisory-offering-name">Technical and scientific advisory</h5>
+              <p class="advisory-offering-detail">Across clinical, environmental, food-safety and adjacent life-sciences briefings, method and workflow validation, regulatory landscape.</p>
+              <div class="advisory-offering-pills">
+                <span class="meta-pill">Method, workflow &amp; assay validation</span>
+                <span class="meta-pill">Regulatory strategy &amp; compliance</span>
+              </div>
+            </li>
+            <li class="advisory-offering">
+              <h5 class="advisory-offering-name">Digital infrastructure</h5>
+              <p class="advisory-offering-detail">Data platform architecture, LIMS and biobank systems, agentic AI adoption.</p>
+              <div class="advisory-offering-pills">
+                <span class="meta-pill">Agentic AI &amp; LLM adoption</span>
+              </div>
+            </li>
+          </ol>
+        </div>
 
         <div class="selected-engagements">
           <h4 class="selected-engagements-title">Selected engagements</h4>
@@ -4515,13 +4591,6 @@
               <div class="selected-engagement-body">Stakeholder research validation &middot; Native Korean source verification &amp; delivery</div>
             </div>
           </div>
-        </div>
-        <div class="service-meta-pills">
-          <span class="meta-pill">Market research &amp; intelligence</span>
-          <span class="meta-pill">ICP &amp; stakeholder mapping</span>
-          <span class="meta-pill">Method, workflow &amp; assay validation</span>
-          <span class="meta-pill">Regulatory strategy &amp; compliance</span>
-          <span class="meta-pill">Agentic AI &amp; LLM adoption</span>
         </div>
         <a class="service-cta" href="https://card.drsleelifesciences.com/" target="_blank" rel="noopener noreferrer">
           Scope an advisory engagement
