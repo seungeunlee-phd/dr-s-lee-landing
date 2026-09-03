@@ -3473,9 +3473,40 @@
     font-weight: 500;
   }
 
-  /* Per-tab accent — Senior Advisory uses the default gold treatment (no colour override needed since gold is already the base). Class is here so the CSS anchors the intent for future per-tab overrides. */
+  /* Per-tab accent — Senior Advisory carries the same cool sub-identity as the hero advisory card: charcoal-blue icon and meta labels, sapphire-blue CTA hover, subtle blue-grey wash and top-right glow on the card so the tab reads as one continuous surface with the hero card, not the flat warm-gold treatment the other tabs use. */
+  .partnership-callout .partner-panel-advisor .service-icon,
+  .partnership-callout .partner-panel-advisor .service-cta svg {
+    color: #5F7A8F;
+  }
+  .partnership-callout .partner-panel-advisor .service-cta:hover {
+    color: #3B82F6;
+  }
   .partnership-callout .partner-panel-advisor .meta-pill-label {
-    color: var(--gold);
+    color: #5F7A8F;
+  }
+  .partnership-callout .partner-panel-advisor {
+    background: linear-gradient(135deg, rgba(139, 155, 174, 0.10) 0%, rgba(139, 155, 174, 0.03) 60%, rgba(95, 122, 143, 0.02) 100%);
+    border-color: rgba(139, 155, 174, 0.30);
+    overflow: hidden;
+  }
+  .partnership-callout .partner-panel-advisor:hover {
+    background: linear-gradient(135deg, rgba(139, 155, 174, 0.14) 0%, rgba(139, 155, 174, 0.05) 60%, rgba(95, 122, 143, 0.03) 100%);
+    border-color: rgba(139, 155, 174, 0.42);
+  }
+  .partnership-callout .partner-panel-advisor::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 260px;
+    height: 260px;
+    background: radial-gradient(circle, rgba(139, 155, 174, 0.18) 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .partnership-callout .partner-panel-advisor > * {
+    position: relative;
+    z-index: 1;
   }
 
   /* Per-tab accent — Co-builder (warm terracotta) */
@@ -3505,11 +3536,11 @@
     color: #D4C4A8;
   }
 
-  /* Selected engagements — portfolio-style list of anonymised past/current work, sits INSIDE a partner-panel card (currently only Senior Advisory) so it's tied to that shape's active tab and hides with it when other tabs are picked. Sized down accordingly and placed ABOVE the pill row so the concrete work example lands first in the reader's eye. Left gold bar (matches Senior Advisory's tab accent) anchors the whole block as a distinct portfolio surface within the card. */
+  /* Selected engagements — portfolio-style list of anonymised past/current work, sits INSIDE a partner-panel card (currently only Senior Advisory) so it's tied to that shape's active tab and hides with it when other tabs are picked. Sized down accordingly and placed ABOVE the pill row so the concrete work example lands first in the reader's eye. Left charcoal-blue bar (matches Senior Advisory's cool sub-identity) anchors the whole block as a distinct portfolio surface within the card. */
   .partnership-callout .partner-panel .selected-engagements {
     margin-top: 24px;
     padding-left: 14px;
-    border-left: 3px solid var(--gold);
+    border-left: 3px solid #5F7A8F;
   }
   .partnership-callout .partner-panel .selected-engagements-title {
     font-family: var(--serif);
