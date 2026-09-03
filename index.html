@@ -483,8 +483,8 @@
   .hero-advisory-card {
     display: block;
     padding: 18px 20px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: linear-gradient(135deg, rgba(139, 155, 174, 0.14) 0%, rgba(139, 155, 174, 0.05) 60%, rgba(95, 122, 143, 0.04) 100%);
+    border: 1px solid rgba(139, 155, 174, 0.30);
     border-radius: 12px;
     text-decoration: none;
     position: relative;
@@ -493,9 +493,23 @@
     max-width: 540px;
   }
   .hero-advisory-card:hover {
-    background: rgba(255, 255, 255, 0.09);
-    border-color: rgba(255, 255, 255, 0.38);
+    background: rgba(139, 155, 174, 0.12);
+    border-color: rgba(139, 155, 174, 0.48);
     transform: translateY(-2px);
+  }
+  .hero-advisory-card::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(139, 155, 174, 0.18) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-advisory-card > * {
+    position: relative;
+    z-index: 1;
   }
   .hero-advisory-tag {
     display: inline-flex;
@@ -3766,9 +3780,9 @@
               </span>
             </li>
           </ol>
-          <p class="hero-advisory-desc">A senior second read by a scientist-turned-strategist. <strong>Verification and validation</strong> across commercial, scientific, and digital reads. <strong>Native Korean</strong> and Europe-Asia depth, scoped from 1-hour calls to full projects.</p>
+          <p class="hero-advisory-desc">A senior second read by a <strong>scientist-turned-strategist</strong>. <strong>Verification and validation</strong> across commercial, scientific, and digital contexts, flexibly scoped. <strong>Native Korean</strong> and Europe-Asia depth, from 1-hour calls to full projects.</p>
           <span class="hero-advisory-link">
-            See selected engagements
+            Selected engagements
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <line x1="5" y1="12" x2="19" y2="12"/>
               <polyline points="12 5 19 12 12 19"/>
