@@ -3542,6 +3542,13 @@
   .partnership-callout .partner-panel .advisory-offerings {
     margin: 8px 0 28px;
   }
+  .partnership-callout .partner-panel .advisory-offerings-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 0 0 14px;
+  }
   .partnership-callout .partner-panel .advisory-offerings-title {
     font-family: var(--sans);
     font-size: 10px;
@@ -3549,8 +3556,21 @@
     letter-spacing: 1.8px;
     text-transform: uppercase;
     color: #5F7A8F;
-    margin: 0 0 16px;
+    margin: 0;
     line-height: 1.4;
+  }
+  .partnership-callout .partner-panel .advisory-offerings-link {
+    font-family: var(--sans);
+    font-size: 11px;
+    color: rgba(232, 220, 196, 0.75);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(232, 220, 196, 0.25);
+    padding-bottom: 1px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+  .partnership-callout .partner-panel .advisory-offerings-link:hover {
+    color: var(--cream);
+    border-bottom-color: rgba(232, 220, 196, 0.6);
   }
   .partnership-callout .partner-panel .advisory-offerings-list {
     list-style: none;
@@ -3558,7 +3578,7 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
     counter-reset: advisory-offering;
   }
   .partnership-callout .partner-panel .advisory-offering {
@@ -3577,7 +3597,7 @@
     letter-spacing: 1.8px;
     color: #5F7A8F;
     padding-top: 3px;
-    grid-row: 1 / span 3;
+    grid-row: 1 / span 2;
   }
   .partnership-callout .partner-panel .advisory-offering-name {
     grid-column: 2;
@@ -3585,16 +3605,8 @@
     font-size: 13px;
     font-weight: 600;
     color: var(--cream);
-    margin: 0 0 5px;
+    margin: 0 0 8px;
     letter-spacing: 0.02em;
-  }
-  .partnership-callout .partner-panel .advisory-offering-detail {
-    grid-column: 2;
-    font-family: var(--sans);
-    font-size: 12.5px;
-    color: rgba(232, 220, 196, 0.75);
-    line-height: 1.5;
-    margin: 0 0 10px;
   }
   .partnership-callout .partner-panel .advisory-offering-pills {
     grid-column: 2;
@@ -4572,11 +4584,13 @@
         <p class="service-body"><strong>On mandate</strong> with <strong>consulting firms</strong>, <strong>expert networks</strong>, and <strong>research organizations</strong>, flexibly scoped.</p>
 
         <div class="advisory-offerings">
-          <h4 class="advisory-offerings-title">Practice offerings</h4>
+          <div class="advisory-offerings-head">
+            <h4 class="advisory-offerings-title">Advisory scope</h4>
+            <a class="advisory-offerings-link" href="#practice">See practice for details &rarr;</a>
+          </div>
           <ol class="advisory-offerings-list">
             <li class="advisory-offering">
               <h5 class="advisory-offering-name">Commercial strategy</h5>
-              <p class="advisory-offering-detail">Europe&ndash;Asia market entry, ICP and stakeholder validation, pricing and positioning input.</p>
               <div class="advisory-offering-pills">
                 <span class="meta-pill">Market research &amp; intelligence</span>
                 <span class="meta-pill">ICP &amp; stakeholder mapping</span>
@@ -4584,7 +4598,6 @@
             </li>
             <li class="advisory-offering">
               <h5 class="advisory-offering-name">Technical and scientific advisory</h5>
-              <p class="advisory-offering-detail">Across clinical, environmental, food-safety and adjacent life-sciences briefings, method and workflow validation, regulatory landscape.</p>
               <div class="advisory-offering-pills">
                 <span class="meta-pill">Method, workflow &amp; assay validation</span>
                 <span class="meta-pill">Regulatory strategy &amp; compliance</span>
@@ -4592,7 +4605,6 @@
             </li>
             <li class="advisory-offering">
               <h5 class="advisory-offering-name">Digital infrastructure</h5>
-              <p class="advisory-offering-detail">Data platform architecture, LIMS and biobank systems, agentic AI adoption.</p>
               <div class="advisory-offering-pills">
                 <span class="meta-pill">Agentic AI &amp; LLM adoption</span>
               </div>
