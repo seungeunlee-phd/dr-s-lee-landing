@@ -3657,6 +3657,29 @@
     font-size: 10.5px;
     padding: 3px 11px;
   }
+  /* Clickable pill variant — used when a pill navigates to another surface (e.g. Agentic AI pill -> Sense 2026 tab). Adds a subtle trailing arrow so the reader can spot which pill in the row is actionable, and a warmer hover to signal state, without disrupting the row rhythm of the other static tag pills. */
+  .partnership-callout .partner-panel a.meta-pill-link {
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  }
+  .partnership-callout .partner-panel a.meta-pill-link::after {
+    content: '\2192';
+    margin-left: 6px;
+    font-size: 0.95em;
+    opacity: 0.7;
+    display: inline-block;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+  }
+  .partnership-callout .partner-panel a.meta-pill-link:hover {
+    background: rgba(232, 220, 196, 0.13);
+    border-color: rgba(232, 220, 196, 0.38);
+    color: var(--cream);
+  }
+  .partnership-callout .partner-panel a.meta-pill-link:hover::after {
+    opacity: 1;
+    transform: translateX(2px);
+  }
 
   /* Engagement shapes block — Partnership-specific content (time buckets + contract shape) that Practice page does not cover. Uses a two-column dl layout so time labels align vertically on the left and descriptions read as a schedule on the right; footer note carries the subcontract-or-direct-contract signal so a reader can see the practical shape of working together without leaving the tab. */
   .partnership-callout .partner-panel .advisory-formats {
@@ -4716,7 +4739,7 @@
               <h5 class="advisory-offering-name">Digital infrastructure</h5>
               <div class="advisory-offering-pills">
                 <span class="meta-pill">Database architecture</span>
-                <span class="meta-pill">Agentic AI &amp; LLM adoption</span>
+                <a class="meta-pill meta-pill-link" href="#sense-2026">Agentic AI &amp; LLM adoption</a>
               </div>
             </li>
           </ol>
