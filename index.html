@@ -4238,6 +4238,20 @@
     color: var(--cream);
     line-height: 1.5;
   }
+  /* Second sub-block inside .selected-engagements — Publications and reports.
+     Sits right after the engagements list, gets extra top space so the two
+     sub-blocks read as related-but-distinct records under one portfolio bar. */
+  .partnership-callout .partner-panel .selected-records-title {
+    margin-top: 22px;
+  }
+  .partnership-callout .partner-panel a.selected-record-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+  .partnership-callout .partner-panel a.selected-record-link:hover .selected-engagement-meta {
+    color: var(--off-white);
+  }
 
   /* Background and Practice section-lead links — mirrors the partnership-callout link pattern (subtle warm border + hover arrow) on the cream light backgrounds */
   .about .section-lead a,
@@ -4555,7 +4569,7 @@
             </a>
           </li>
           <li><strong>Europe&ndash;Asia</strong> go-to-market and partnerships, with B2B/B2C, channel, and distribution strategies</li>
-          <li><strong>Sales-operations data analysis</strong>, <strong>strategic direction</strong> & pricing optimization</li>
+          <li><strong>Sales-operations data analysis</strong>, <strong>strategic direction</strong> & pricing optimization. (<a href="#publications" class="service-list-link">Records</a>)</li>
         </ul>
         <a class="service-cta" href="https://card.drsleelifesciences.com/" target="_blank" rel="noopener noreferrer">
           Talk about commercial strategy
@@ -5173,6 +5187,15 @@
               <div class="selected-engagement-meta">Consulting &middot; Global &middot; Healthcare</div>
               <div class="selected-engagement-body">Stakeholder research validation &middot; Native Korean source verification &amp; delivery</div>
             </div>
+          </div>
+
+          <h4 class="selected-engagements-title selected-records-title">Selected publications and reports</h4>
+          <p class="selected-engagements-note">Peer-reviewed publications, proficiency and cross-laboratory evaluations, technical and method validation reports, and commercial and market intelligence.</p>
+          <div class="selected-engagements-list">
+            <a href="#publications" class="selected-engagement selected-record-link">
+              <div class="selected-engagement-meta">See full record &rarr;</div>
+              <div class="selected-engagement-body">Peer-reviewed &middot; Commercial and market intelligence &middot; Inter-laboratory proficiency studies &middot; Technical and method validation reports &middot; Conference presentations</div>
+            </a>
           </div>
         </div>
 
