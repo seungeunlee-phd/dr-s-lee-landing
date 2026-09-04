@@ -4238,19 +4238,25 @@
     color: var(--cream);
     line-height: 1.5;
   }
-  /* Second sub-block inside .selected-engagements — Publications and reports.
-     Sits right after the engagements list, gets extra top space so the two
-     sub-blocks read as related-but-distinct records under one portfolio bar. */
-  .partnership-callout .partner-panel .selected-records-title {
-    margin-top: 22px;
-  }
-  .partnership-callout .partner-panel a.selected-record-link {
-    display: block;
+  /* Publications link under the engagements list — subtle secondary route
+     that does not compete visually with the engagement card above it. */
+  .partnership-callout .partner-panel a.selected-records-link {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 16px;
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--gold);
     text-decoration: none;
-    color: inherit;
+    letter-spacing: 0.2px;
+    border-bottom: 1px solid rgba(197, 181, 154, 0.35);
+    padding-bottom: 2px;
+    transition: color 0.15s ease, border-color 0.15s ease;
   }
-  .partnership-callout .partner-panel a.selected-record-link:hover .selected-engagement-meta {
+  .partnership-callout .partner-panel a.selected-records-link:hover {
     color: var(--off-white);
+    border-bottom-color: rgba(232, 220, 196, 0.7);
   }
 
   /* Background and Practice section-lead links — mirrors the partnership-callout link pattern (subtle warm border + hover arrow) on the cream light backgrounds */
@@ -5188,14 +5194,9 @@
             </div>
           </div>
 
-          <h4 class="selected-engagements-title selected-records-title">Selected publications and reports</h4>
-          <p class="selected-engagements-note">Peer-reviewed publications, proficiency and cross-laboratory evaluations, technical and method validation reports, and commercial and market intelligence.</p>
-          <div class="selected-engagements-list">
-            <a href="#publications" class="selected-engagement selected-record-link">
-              <div class="selected-engagement-meta">See full record &rarr;</div>
-              <div class="selected-engagement-body">Peer-reviewed &middot; Commercial and market intelligence &middot; Inter-laboratory proficiency studies &middot; Technical and method validation reports &middot; Conference presentations</div>
-            </a>
-          </div>
+          <a href="#publications" class="selected-records-link">
+            Selected publications and reports &rarr;
+          </a>
         </div>
 
         <div class="advisory-formats">
